@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dashboard Admin - Intranet Formation</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "primary-dark": "#0e45b5",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1e2736",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#111318] dark:text-gray-100 transition-colors duration-200">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-gray-200 dark:border-gray-800 bg-surface-light dark:bg-surface-dark px-10 py-3 sticky top-0 z-50">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-[#111318] dark:text-white">
+<div class="size-8 flex items-center justify-center bg-primary/10 rounded-lg text-primary">
+<span class="material-symbols-outlined text-2xl">school</span>
+</div>
+<h2 class="text-lg font-bold leading-tight tracking-tight">Intranet Formation</h2>
+</div>
+<nav class="hidden md:flex items-center gap-9">
+<a class="text-primary text-sm font-bold leading-normal" href="#">Dashboard Admin</a>
+<a class="text-gray-600 dark:text-gray-400 text-sm font-medium hover:text-primary transition-colors" href="#">Demandes</a>
+<a class="text-gray-600 dark:text-gray-400 text-sm font-medium hover:text-primary transition-colors" href="#">Planification</a>
+<a class="text-gray-600 dark:text-gray-400 text-sm font-medium hover:text-primary transition-colors" href="#">Reporting</a>
+<a class="text-gray-600 dark:text-gray-400 text-sm font-medium hover:text-primary transition-colors" href="#">Utilisateurs</a>
+</nav>
+</div>
+<div class="flex flex-1 justify-end gap-6 items-center">
+<div class="relative hidden sm:flex items-center w-full max-w-xs">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-400">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</div>
+<input class="block w-full rounded-lg border-none bg-gray-100 dark:bg-gray-800 py-2 pl-10 pr-3 text-sm placeholder-gray-500 focus:ring-2 focus:ring-primary dark:text-white" placeholder="Rechercher..." type="text"/>
+</div>
+<div class="flex items-center gap-3">
+<button class="flex items-center justify-center size-10 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-600 dark:text-gray-300">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-10 border-2 border-white dark:border-gray-700 shadow-sm" data-alt="Portrait of the administrator user" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBSIWwuj-TTtaeswbdROp9UZl9nvHsScK7GrYpSPSieD9JGBq8mThZr0yKlNKWEe-KCBaLDAbZncF3v4IlnQHwyWvh4MElrCDkPfMfCk49dLzBshJ3kiJ7HQbUHmvhGqKQ4T3krOT_oWeWwXTanTAPQPysKQSpSjIWFaY9Mcgx_QRcsRNSzuECjNSF1M39Dx4Pds96Lkw0o7DXOXOVz08xgMw2Cc2EFJu8u6A9G1FRT4ZYOx_bR66kUAuXbDSO09vMioc3o9obhV20E");'></div>
+</div>
+</div>
+</header>
+<main class="flex-1 flex justify-center py-8 px-4 sm:px-6 lg:px-8">
+<div class="flex flex-col max-w-7xl w-full gap-8">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 bg-surface-light dark:bg-surface-dark p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-800">
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-3">
+<h1 class="text-3xl font-black text-[#111318] dark:text-white tracking-tight">Dashboard Admin</h1>
+<span class="px-2 py-0.5 rounded text-xs font-bold bg-primary/10 text-primary uppercase tracking-wide">Vue Globale</span>
+</div>
+<p class="text-gray-500 dark:text-gray-400 text-base">Supervision de l'activité Demandeurs, Formateurs et TMA.</p>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center gap-2 bg-white dark:bg-surface-dark border border-gray-300 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-200 px-4 py-2.5 rounded-lg font-bold text-sm transition-colors">
+<span class="material-symbols-outlined text-[20px]">bar_chart</span>
+<span>Rapport Power BI</span>
+</button>
+<button class="flex items-center gap-2 bg-primary hover:bg-primary-dark text-white px-5 py-2.5 rounded-lg font-bold text-sm transition-colors shadow-md shadow-primary/20">
+<span class="material-symbols-outlined text-[20px]">download</span>
+<span>Exporter (CSV/Excel)</span>
+</button>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-3">
+<div class="flex items-center gap-2 bg-white dark:bg-surface-dark border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-2 cursor-pointer hover:border-primary transition-colors group shadow-sm">
+<span class="material-symbols-outlined text-gray-500 dark:text-gray-400 group-hover:text-primary text-[20px]">calendar_month</span>
+<span class="text-sm font-medium text-[#111318] dark:text-gray-200">Période: Ce trimestre</span>
+<span class="material-symbols-outlined text-gray-500 text-[20px]">expand_more</span>
+</div>
+<div class="flex items-center gap-2 bg-white dark:bg-surface-dark border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-2 cursor-pointer hover:border-primary transition-colors group shadow-sm">
+<span class="material-symbols-outlined text-gray-500 dark:text-gray-400 group-hover:text-primary text-[20px]">group</span>
+<span class="text-sm font-medium text-[#111318] dark:text-gray-200">Rôle: Tous</span>
+<span class="material-symbols-outlined text-gray-500 text-[20px]">expand_more</span>
+</div>
+<div class="flex items-center gap-2 bg-white dark:bg-surface-dark border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-2 cursor-pointer hover:border-primary transition-colors group shadow-sm">
+<span class="material-symbols-outlined text-gray-500 dark:text-gray-400 group-hover:text-primary text-[20px]">public</span>
+<span class="text-sm font-medium text-[#111318] dark:text-gray-200">Région: Tous</span>
+<span class="material-symbols-outlined text-gray-500 text-[20px]">expand_more</span>
+</div>
+<div class="flex items-center gap-2 bg-white dark:bg-surface-dark border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-2 cursor-pointer hover:border-primary transition-colors group shadow-sm">
+<span class="material-symbols-outlined text-gray-500 dark:text-gray-400 group-hover:text-primary text-[20px]">person</span>
+<span class="text-sm font-medium text-[#111318] dark:text-gray-200">Formateur: Tous</span>
+<span class="material-symbols-outlined text-gray-500 text-[20px]">expand_more</span>
+</div>
+<div class="flex items-center gap-2 bg-white dark:bg-surface-dark border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-2 cursor-pointer hover:border-primary transition-colors group shadow-sm">
+<span class="material-symbols-outlined text-gray-500 dark:text-gray-400 group-hover:text-primary text-[20px]">filter_list</span>
+<span class="text-sm font-medium text-[#111318] dark:text-gray-200">Statut: Tous</span>
+<span class="material-symbols-outlined text-gray-500 text-[20px]">expand_more</span>
+</div>
+<button class="ml-auto text-sm text-primary font-medium hover:underline">Réinitialiser les filtres</button>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<div class="flex flex-col gap-3 rounded-xl bg-surface-light dark:bg-surface-dark p-6 shadow-sm border border-gray-200 dark:border-gray-800">
+<div class="flex items-center justify-between">
+<div class="p-2 bg-blue-50 dark:bg-blue-900/30 rounded-lg text-primary">
+<span class="material-symbols-outlined text-2xl">check_circle</span>
+</div>
+<span class="flex items-center text-emerald-600 text-sm font-bold bg-emerald-50 dark:bg-emerald-900/20 px-2 py-1 rounded">
+<span class="material-symbols-outlined text-sm mr-1">trending_up</span>
+                                +12%
+                            </span>
+</div>
+<div>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-medium">Formations réalisées</p>
+<p class="text-[#111318] dark:text-white text-3xl font-black tracking-tight mt-1">124</p>
+</div>
+</div>
+<div class="flex flex-col gap-3 rounded-xl bg-surface-light dark:bg-surface-dark p-6 shadow-sm border border-gray-200 dark:border-gray-800">
+<div class="flex items-center justify-between">
+<div class="p-2 bg-purple-50 dark:bg-purple-900/30 rounded-lg text-purple-600">
+<span class="material-symbols-outlined text-2xl">groups</span>
+</div>
+<span class="flex items-center text-emerald-600 text-sm font-bold bg-emerald-50 dark:bg-emerald-900/20 px-2 py-1 rounded">
+<span class="material-symbols-outlined text-sm mr-1">trending_up</span>
+                                +5%
+                            </span>
+</div>
+<div>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-medium">Participants formés</p>
+<p class="text-[#111318] dark:text-white text-3xl font-black tracking-tight mt-1">850</p>
+</div>
+</div>
+<div class="flex flex-col gap-3 rounded-xl bg-surface-light dark:bg-surface-dark p-6 shadow-sm border border-gray-200 dark:border-gray-800">
+<div class="flex items-center justify-between">
+<div class="p-2 bg-orange-50 dark:bg-orange-900/30 rounded-lg text-orange-600">
+<span class="material-symbols-outlined text-2xl">donut_large</span>
+</div>
+<span class="flex items-center text-emerald-600 text-sm font-bold bg-emerald-50 dark:bg-emerald-900/20 px-2 py-1 rounded">
+<span class="material-symbols-outlined text-sm mr-1">trending_up</span>
+                                +1.5%
+                            </span>
+</div>
+<div>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-medium">Taux de complétion</p>
+<p class="text-[#111318] dark:text-white text-3xl font-black tracking-tight mt-1">92%</p>
+</div>
+</div>
+<div class="flex flex-col gap-3 rounded-xl bg-surface-light dark:bg-surface-dark p-6 shadow-sm border border-gray-200 dark:border-gray-800">
+<div class="flex items-center justify-between">
+<div class="p-2 bg-yellow-50 dark:bg-yellow-900/30 rounded-lg text-yellow-600">
+<span class="material-symbols-outlined text-2xl">star</span>
+</div>
+<span class="flex items-center text-emerald-600 text-sm font-bold bg-emerald-50 dark:bg-emerald-900/20 px-2 py-1 rounded">
+<span class="material-symbols-outlined text-sm mr-1">trending_up</span>
+                                +0.2%
+                            </span>
+</div>
+<div>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-medium">Satisfaction moyenne</p>
+<p class="text-[#111318] dark:text-white text-3xl font-black tracking-tight mt-1">4.8<span class="text-lg text-gray-400 font-normal">/5</span></p>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm p-6 relative overflow-hidden group hover:border-primary/50 transition-colors">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-[100px] text-blue-500">person_add</span>
+</div>
+<div class="relative z-10 flex flex-col h-full justify-between">
+<div>
+<div class="flex items-center gap-3 mb-4">
+<div class="p-2 bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300 rounded-lg">
+<span class="material-symbols-outlined">person_add</span>
+</div>
+<h3 class="text-lg font-bold text-[#111318] dark:text-white">Activité Demandeurs</h3>
+</div>
+<div class="space-y-4">
+<div class="flex justify-between items-center pb-2 border-b border-gray-100 dark:border-gray-800">
+<span class="text-gray-500 dark:text-gray-400 text-sm">Nouvelles demandes</span>
+<span class="text-lg font-bold text-[#111318] dark:text-white">18</span>
+</div>
+<div class="flex justify-between items-center pb-2 border-b border-gray-100 dark:border-gray-800">
+<span class="text-gray-500 dark:text-gray-400 text-sm">En attente validation</span>
+<span class="text-lg font-bold text-orange-500">7</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-gray-500 dark:text-gray-400 text-sm">Demandes refusées</span>
+<span class="text-lg font-bold text-red-500">2</span>
+</div>
+</div>
+</div>
+<a class="mt-6 text-sm font-bold text-primary hover:underline flex items-center gap-1" href="#">
+                                Voir détails <span class="material-symbols-outlined text-base">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm p-6 relative overflow-hidden group hover:border-purple-500/50 transition-colors">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-[100px] text-purple-500">school</span>
+</div>
+<div class="relative z-10 flex flex-col h-full justify-between">
+<div>
+<div class="flex items-center gap-3 mb-4">
+<div class="p-2 bg-purple-100 dark:bg-purple-900/50 text-purple-700 dark:text-purple-300 rounded-lg">
+<span class="material-symbols-outlined">school</span>
+</div>
+<h3 class="text-lg font-bold text-[#111318] dark:text-white">Activité Formateurs</h3>
+</div>
+<div class="space-y-4">
+<div class="flex justify-between items-center pb-2 border-b border-gray-100 dark:border-gray-800">
+<span class="text-gray-500 dark:text-gray-400 text-sm">Formations validées</span>
+<span class="text-lg font-bold text-[#111318] dark:text-white">42</span>
+</div>
+<div class="flex justify-between items-center pb-2 border-b border-gray-100 dark:border-gray-800">
+<span class="text-gray-500 dark:text-gray-400 text-sm">Attente validation pédago.</span>
+<span class="text-lg font-bold text-orange-500">5</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-gray-500 dark:text-gray-400 text-sm">Taux de présence</span>
+<span class="text-lg font-bold text-emerald-500">96%</span>
+</div>
+</div>
+</div>
+<a class="mt-6 text-sm font-bold text-purple-600 hover:underline flex items-center gap-1" href="#">
+                                Voir planning <span class="material-symbols-outlined text-base">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm p-6 relative overflow-hidden group hover:border-orange-500/50 transition-colors">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-[100px] text-orange-500">build</span>
+</div>
+<div class="relative z-10 flex flex-col h-full justify-between">
+<div>
+<div class="flex items-center gap-3 mb-4">
+<div class="p-2 bg-orange-100 dark:bg-orange-900/50 text-orange-700 dark:text-orange-300 rounded-lg">
+<span class="material-symbols-outlined">build</span>
+</div>
+<h3 class="text-lg font-bold text-[#111318] dark:text-white">Activité TMA</h3>
+</div>
+<div class="space-y-4">
+<div class="flex justify-between items-center pb-2 border-b border-gray-100 dark:border-gray-800">
+<span class="text-gray-500 dark:text-gray-400 text-sm">Blocages MEP</span>
+<span class="text-lg font-bold text-red-500">1</span>
+</div>
+<div class="flex justify-between items-center pb-2 border-b border-gray-100 dark:border-gray-800">
+<span class="text-gray-500 dark:text-gray-400 text-sm">Conflits planning</span>
+<span class="text-lg font-bold text-[#111318] dark:text-white">0</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-gray-500 dark:text-gray-400 text-sm">Taux de résolution</span>
+<span class="text-lg font-bold text-emerald-500">99%</span>
+</div>
+</div>
+</div>
+<a class="mt-6 text-sm font-bold text-orange-600 hover:underline flex items-center gap-1" href="#">
+                                Vue technique <span class="material-symbols-outlined text-base">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-6 rounded-xl bg-surface-light dark:bg-surface-dark p-6 shadow-sm border border-gray-200 dark:border-gray-800">
+<div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+<div>
+<div class="flex items-center gap-2">
+<h3 class="text-[#111318] dark:text-white text-lg font-bold">Planning Global (Formateurs &amp; TMA)</h3>
+<span class="px-2 py-0.5 rounded text-xs font-bold bg-gray-100 dark:bg-gray-700 text-gray-500 border border-gray-200 dark:border-gray-600">Octobre 2023</span>
+</div>
+<p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Vue consolidée : Formations, Indisponibilités et MEP</p>
+</div>
+<div class="flex flex-wrap items-center gap-3">
+<div class="flex items-center gap-2 bg-white dark:bg-surface-dark border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-1.5 cursor-pointer hover:border-primary transition-colors">
+<span class="text-xs font-medium text-gray-600 dark:text-gray-300">Formateur: Tous</span>
+<span class="material-symbols-outlined text-gray-400 text-sm">expand_more</span>
+</div>
+<div class="flex items-center gap-2 bg-white dark:bg-surface-dark border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-1.5 cursor-pointer hover:border-primary transition-colors">
+<span class="text-xs font-medium text-gray-600 dark:text-gray-300">Type: Tous</span>
+<span class="material-symbols-outlined text-gray-400 text-sm">expand_more</span>
+</div>
+<button class="text-sm font-bold text-primary hover:text-primary-dark transition-colors flex items-center gap-1">
+                Voir calendrier complet
+                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="w-full border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
+<div class="grid grid-cols-7 bg-gray-50 dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
+<div class="py-2 text-center text-xs font-semibold text-gray-500 uppercase">Lun</div>
+<div class="py-2 text-center text-xs font-semibold text-gray-500 uppercase">Mar</div>
+<div class="py-2 text-center text-xs font-semibold text-gray-500 uppercase">Mer</div>
+<div class="py-2 text-center text-xs font-semibold text-gray-500 uppercase">Jeu</div>
+<div class="py-2 text-center text-xs font-semibold text-gray-500 uppercase">Ven</div>
+<div class="py-2 text-center text-xs font-semibold text-gray-500 uppercase text-red-400">Sam</div>
+<div class="py-2 text-center text-xs font-semibold text-gray-500 uppercase text-red-400">Dim</div>
+</div>
+<div class="bg-white dark:bg-surface-dark">
+<div class="grid grid-cols-7 border-b border-gray-100 dark:border-gray-800 last:border-0">
+<div class="min-h-[100px] border-r border-gray-100 dark:border-gray-800 p-2 bg-gray-50/30 dark:bg-gray-900/20"></div>
+<div class="min-h-[100px] border-r border-gray-100 dark:border-gray-800 p-2 bg-gray-50/30 dark:bg-gray-900/20"></div>
+<div class="min-h-[100px] border-r border-gray-100 dark:border-gray-800 p-2 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+<span class="text-xs font-bold text-gray-500">01</span>
+</div>
+<div class="min-h-[100px] border-r border-gray-100 dark:border-gray-800 p-2 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+<span class="text-xs font-bold text-gray-500">02</span>
+<div class="mt-1 px-1.5 py-1 rounded text-[10px] font-bold bg-orange-50 dark:bg-orange-900/30 text-orange-700 dark:text-orange-400 border-l-2 border-orange-500 truncate cursor-help" title="Blocage MEP: Release 2.4">
+                        MEP Rel 2.4
+                    </div>
+</div>
+<div class="min-h-[100px] border-r border-gray-100 dark:border-gray-800 p-2 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+<span class="text-xs font-bold text-gray-500">03</span>
+</div>
+<div class="min-h-[100px] border-r border-gray-100 dark:border-gray-800 p-2 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors bg-gray-50/30 dark:bg-gray-900/20">
+<span class="text-xs font-bold text-red-400">04</span>
+</div>
+<div class="min-h-[100px] p-2 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors bg-gray-50/30 dark:bg-gray-900/20">
+<span class="text-xs font-bold text-red-400">05</span>
+</div>
+</div>
+<div class="grid grid-cols-7 border-b border-gray-100 dark:border-gray-800 last:border-0">
+<div class="min-h-[100px] border-r border-gray-100 dark:border-gray-800 p-2 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+<span class="text-xs font-bold text-gray-500">06</span>
+<div class="mt-1 px-1.5 py-1 rounded text-[10px] font-bold bg-red-50 dark:bg-red-900/30 text-red-700 dark:text-red-400 border-l-2 border-red-500 truncate cursor-help" title="Indisponibilité: J. Dupont">
+                        Indispo. J.D
+                    </div>
+</div>
+<div class="min-h-[100px] border-r border-gray-100 dark:border-gray-800 p-2 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+<span class="text-xs font-bold text-gray-500">07</span>
+</div>
+<div class="min-h-[100px] border-r border-gray-100 dark:border-gray-800 p-2 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+<span class="text-xs font-bold text-gray-500">08</span>
+</div>
+<div class="min-h-[100px] border-r border-gray-100 dark:border-gray-800 p-2 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+<span class="text-xs font-bold text-gray-500">09</span>
+</div>
+<div class="min-h-[100px] border-r border-gray-100 dark:border-gray-800 p-2 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+<span class="text-xs font-bold text-gray-500">10</span>
+</div>
+<div class="min-h-[100px] border-r border-gray-100 dark:border-gray-800 p-2 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors bg-gray-50/30 dark:bg-gray-900/20">
+<span class="text-xs font-bold text-red-400">11</span>
+</div>
+<div class="min-h-[100px] p-2 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors bg-gray-50/30 dark:bg-gray-900/20">
+<span class="text-xs font-bold text-red-400">12</span>
+</div>
+</div>
+<div class="grid grid-cols-7 border-b border-gray-100 dark:border-gray-800 last:border-0">
+<div class="min-h-[100px] border-r border-gray-100 dark:border-gray-800 p-2 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+<span class="text-xs font-bold text-gray-500">13</span>
+<div class="mt-1 px-1.5 py-1 rounded text-[10px] font-bold bg-blue-50 dark:bg-blue-900/30 text-primary border-l-2 border-primary truncate cursor-help" title="Formation: Management Agile (J. Dupont)">
+                        Mngmt Agile
+                    </div>
+</div>
+<div class="min-h-[100px] border-r border-gray-100 dark:border-gray-800 p-2 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+<span class="text-xs font-bold text-gray-500">14</span>
+<div class="mt-1 px-1.5 py-1 rounded text-[10px] font-bold bg-blue-50 dark:bg-blue-900/30 text-primary border-l-2 border-primary truncate cursor-help" title="Formation: Sécurité Informatique (S. Martin)">
+                        Sécu Info
+                    </div>
+</div>
+<div class="min-h-[100px] border-r border-gray-100 dark:border-gray-800 p-2 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+<span class="text-xs font-bold text-gray-500">15</span>
+</div>
+<div class="min-h-[100px] border-r border-gray-100 dark:border-gray-800 p-2 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+<span class="text-xs font-bold text-gray-500">16</span>
+<div class="mt-1 px-1.5 py-1 rounded text-[10px] font-bold bg-orange-50 dark:bg-orange-900/30 text-orange-700 dark:text-orange-400 border-l-2 border-orange-500 truncate cursor-help" title="Blocage MEP: Patch Correctif">
+                        MEP Patch
+                    </div>
+</div>
+<div class="min-h-[100px] border-r border-gray-100 dark:border-gray-800 p-2 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+<span class="text-xs font-bold text-gray-500">17</span>
+</div>
+<div class="min-h-[100px] border-r border-gray-100 dark:border-gray-800 p-2 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors bg-gray-50/30 dark:bg-gray-900/20">
+<span class="text-xs font-bold text-red-400">18</span>
+</div>
+<div class="min-h-[100px] p-2 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors bg-gray-50/30 dark:bg-gray-900/20">
+<span class="text-xs font-bold text-red-400">19</span>
+</div>
+</div>
+<div class="grid grid-cols-7 border-b border-gray-100 dark:border-gray-800 last:border-0">
+<div class="min-h-[100px] border-r border-gray-100 dark:border-gray-800 p-2 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+<span class="text-xs font-bold text-gray-500">20</span>
+<div class="mt-1 px-1.5 py-1 rounded text-[10px] font-bold bg-blue-50 dark:bg-blue-900/30 text-primary border-l-2 border-primary truncate cursor-help" title="Formation: Communication Orale (M. Bernard)">
+                        Comm. Orale
+                    </div>
+</div>
+<div class="min-h-[100px] border-r border-gray-100 dark:border-gray-800 p-2 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+<span class="text-xs font-bold text-gray-500">21</span>
+</div>
+<div class="min-h-[100px] border-r border-gray-100 dark:border-gray-800 p-2 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+<span class="text-xs font-bold text-gray-500">22</span>
+</div>
+<div class="min-h-[100px] border-r border-gray-100 dark:border-gray-800 p-2 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+<span class="text-xs font-bold text-gray-500">23</span>
+</div>
+<div class="min-h-[100px] border-r border-gray-100 dark:border-gray-800 p-2 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+<span class="text-xs font-bold text-gray-500">24</span>
+<div class="mt-1 px-1.5 py-1 rounded text-[10px] font-bold bg-red-50 dark:bg-red-900/30 text-red-700 dark:text-red-400 border-l-2 border-red-500 truncate cursor-help" title="Indisponibilité: L. Petit">
+                        Indispo. L.P
+                    </div>
+</div>
+<div class="min-h-[100px] border-r border-gray-100 dark:border-gray-800 p-2 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors bg-gray-50/30 dark:bg-gray-900/20">
+<span class="text-xs font-bold text-red-400">25</span>
+</div>
+<div class="min-h-[100px] p-2 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors bg-gray-50/30 dark:bg-gray-900/20">
+<span class="text-xs font-bold text-red-400">26</span>
+</div>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-6 text-xs font-medium text-gray-600 dark:text-gray-300">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded bg-blue-100 dark:bg-blue-900 border border-blue-200 dark:border-blue-800"></span>
+            Formation Validée
+        </div>
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded bg-orange-100 dark:bg-orange-900 border border-orange-200 dark:border-orange-800"></span>
+            Blocage MEP (TMA)
+        </div>
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded bg-red-100 dark:bg-red-900 border border-red-200 dark:border-red-800"></span>
+            Indisponibilité Formateur
+        </div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<div class="lg:col-span-2 flex flex-col gap-4 rounded-xl bg-surface-light dark:bg-surface-dark p-6 shadow-sm border border-gray-200 dark:border-gray-800">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-[#111318] dark:text-white text-lg font-bold">Évolution Mensuelle</h3>
+<p class="text-sm text-gray-500 dark:text-gray-400">Nombre de sessions de formation par mois</p>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2">
+<span class="size-3 rounded-full bg-primary"></span>
+<span class="text-xs text-gray-500 dark:text-gray-400 font-medium">Sessions</span>
+</div>
+<button class="text-xs text-gray-400 hover:text-primary flex items-center gap-1 transition-colors" title="Voir dans Power BI">
+<span class="material-symbols-outlined text-sm">open_in_new</span>
+</button>
+</div>
+</div>
+<div class="relative h-64 w-full mt-4 flex items-end justify-between gap-2 px-2">
+<svg class="absolute inset-0 h-full w-full overflow-visible" preserveAspectRatio="none" viewBox="0 0 100 100">
+<defs>
+<linearGradient id="chartGradient" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#135bec" stop-opacity="0.2"></stop>
+<stop offset="100%" stop-color="#135bec" stop-opacity="0"></stop>
+</linearGradient>
+</defs>
+<path d="M0 80 C 10 70, 20 75, 30 60 S 50 40, 60 45 S 80 20, 100 30 V 100 H 0 Z" fill="url(#chartGradient)"></path>
+<path d="M0 80 C 10 70, 20 75, 30 60 S 50 40, 60 45 S 80 20, 100 30" fill="none" stroke="#135bec" stroke-linecap="round" stroke-width="3"></path>
+</svg>
+<div class="absolute bottom-[-24px] left-0 right-0 flex justify-between text-xs text-gray-400 font-medium uppercase tracking-wide">
+<span>Jan</span><span>Fév</span><span>Mar</span><span>Avr</span><span>Mai</span><span>Juin</span>
+</div>
+<div class="absolute inset-0 flex flex-col justify-between pointer-events-none">
+<div class="border-t border-dashed border-gray-200 dark:border-gray-700 w-full h-px"></div>
+<div class="border-t border-dashed border-gray-200 dark:border-gray-700 w-full h-px"></div>
+<div class="border-t border-dashed border-gray-200 dark:border-gray-700 w-full h-px"></div>
+<div class="border-t border-dashed border-gray-200 dark:border-gray-700 w-full h-px"></div>
+<div class="border-t border-gray-200 dark:border-gray-700 w-full h-px"></div>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-4 rounded-xl bg-surface-light dark:bg-surface-dark p-6 shadow-sm border border-gray-200 dark:border-gray-800">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-[#111318] dark:text-white text-lg font-bold">Répartition par Statut</h3>
+<p class="text-sm text-gray-500 dark:text-gray-400">État d'avancement des demandes</p>
+</div>
+<button class="text-xs text-gray-400 hover:text-primary flex items-center gap-1 transition-colors" title="Voir dans Power BI">
+<span class="material-symbols-outlined text-sm">open_in_new</span>
+</button>
+</div>
+<div class="flex-1 flex flex-col items-center justify-center">
+<div class="relative size-48">
+<svg class="size-full -rotate-90" viewBox="0 0 36 36">
+<path class="text-gray-100 dark:text-gray-800" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="4"></path>
+<path class="text-emerald-500" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="60, 100" stroke-width="4"></path>
+<path class="text-primary" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="25, 100" stroke-dashoffset="-60" stroke-width="4"></path>
+<path class="text-orange-400" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="15, 100" stroke-dashoffset="-85" stroke-width="4"></path>
+</svg>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center">
+<span class="text-3xl font-bold text-[#111318] dark:text-white">124</span>
+<span class="block text-xs text-gray-500">Total</span>
+</div>
+</div>
+<div class="w-full mt-6 grid grid-cols-2 gap-3">
+<div class="flex items-center gap-2">
+<span class="size-3 rounded-full bg-emerald-500"></span>
+<span class="text-sm text-gray-600 dark:text-gray-300">Terminé (60%)</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="size-3 rounded-full bg-primary"></span>
+<span class="text-sm text-gray-600 dark:text-gray-300">En cours (25%)</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="size-3 rounded-full bg-orange-400"></span>
+<span class="text-sm text-gray-600 dark:text-gray-300">Planifié (15%)</span>
+</div>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-4 rounded-xl bg-surface-light dark:bg-surface-dark p-6 shadow-sm border border-gray-200 dark:border-gray-800">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-[#111318] dark:text-white text-lg font-bold">Top Formateurs</h3>
+<p class="text-sm text-gray-500 dark:text-gray-400">Les plus actifs ce trimestre</p>
+</div>
+<button class="text-xs text-gray-400 hover:text-primary flex items-center gap-1 transition-colors" title="Voir dans Power BI">
+<span class="material-symbols-outlined text-sm">open_in_new</span>
+</button>
+</div>
+<div class="flex flex-col gap-4 mt-2">
+<div class="flex items-center gap-3">
+<div class="w-16 text-sm font-medium text-gray-600 dark:text-gray-300 truncate">Dupont</div>
+<div class="flex-1 h-2 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 90%"></div>
+</div>
+<div class="w-8 text-xs font-bold text-gray-500 text-right">45</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-16 text-sm font-medium text-gray-600 dark:text-gray-300 truncate">Martin</div>
+<div class="flex-1 h-2 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+<div class="h-full bg-primary/80 rounded-full" style="width: 75%"></div>
+</div>
+<div class="w-8 text-xs font-bold text-gray-500 text-right">32</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-16 text-sm font-medium text-gray-600 dark:text-gray-300 truncate">Bernard</div>
+<div class="flex-1 h-2 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+<div class="h-full bg-primary/60 rounded-full" style="width: 60%"></div>
+</div>
+<div class="w-8 text-xs font-bold text-gray-500 text-right">28</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-16 text-sm font-medium text-gray-600 dark:text-gray-300 truncate">Petit</div>
+<div class="flex-1 h-2 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+<div class="h-full bg-primary/40 rounded-full" style="width: 45%"></div>
+</div>
+<div class="w-8 text-xs font-bold text-gray-500 text-right">15</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-16 text-sm font-medium text-gray-600 dark:text-gray-300 truncate">Robert</div>
+<div class="flex-1 h-2 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+<div class="h-full bg-primary/30 rounded-full" style="width: 30%"></div>
+</div>
+<div class="w-8 text-xs font-bold text-gray-500 text-right">10</div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-2 flex flex-col gap-4 rounded-xl bg-surface-light dark:bg-surface-dark p-6 shadow-sm border border-gray-200 dark:border-gray-800">
+<div class="flex justify-between items-center">
+<div>
+<h3 class="text-[#111318] dark:text-white text-lg font-bold">Formations par Région</h3>
+<p class="text-sm text-gray-500 dark:text-gray-400">Volume de formation géographique</p>
+</div>
+<button class="text-primary text-sm font-bold hover:underline flex items-center gap-1">
+<span class="material-symbols-outlined text-base">bar_chart</span>
+                                Rapport complet
+                            </button>
+</div>
+<div class="h-48 mt-4 flex items-end justify-around gap-4 px-4">
+<div class="flex flex-col items-center gap-2 group w-1/6">
+<div class="relative w-full bg-gray-100 dark:bg-gray-800 rounded-t-lg h-32 flex items-end overflow-hidden group-hover:bg-gray-200 transition-colors">
+<div class="w-full bg-primary group-hover:bg-blue-600 transition-colors rounded-t-lg" style="height: 80%;"></div>
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-gray-900 text-white text-xs py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity">80</div>
+</div>
+<span class="text-xs font-semibold text-gray-500 dark:text-gray-400">Paris</span>
+</div>
+<div class="flex flex-col items-center gap-2 group w-1/6">
+<div class="relative w-full bg-gray-100 dark:bg-gray-800 rounded-t-lg h-32 flex items-end overflow-hidden group-hover:bg-gray-200 transition-colors">
+<div class="w-full bg-primary group-hover:bg-blue-600 transition-colors rounded-t-lg" style="height: 65%;"></div>
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-gray-900 text-white text-xs py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity">65</div>
+</div>
+<span class="text-xs font-semibold text-gray-500 dark:text-gray-400">Lyon</span>
+</div>
+<div class="flex flex-col items-center gap-2 group w-1/6">
+<div class="relative w-full bg-gray-100 dark:bg-gray-800 rounded-t-lg h-32 flex items-end overflow-hidden group-hover:bg-gray-200 transition-colors">
+<div class="w-full bg-primary group-hover:bg-blue-600 transition-colors rounded-t-lg" style="height: 45%;"></div>
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-gray-900 text-white text-xs py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity">45</div>
+</div>
+<span class="text-xs font-semibold text-gray-500 dark:text-gray-400">Marseille</span>
+</div>
+<div class="flex flex-col items-center gap-2 group w-1/6">
+<div class="relative w-full bg-gray-100 dark:bg-gray-800 rounded-t-lg h-32 flex items-end overflow-hidden group-hover:bg-gray-200 transition-colors">
+<div class="w-full bg-primary group-hover:bg-blue-600 transition-colors rounded-t-lg" style="height: 55%;"></div>
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-gray-900 text-white text-xs py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity">55</div>
+</div>
+<span class="text-xs font-semibold text-gray-500 dark:text-gray-400">Lille</span>
+</div>
+<div class="flex flex-col items-center gap-2 group w-1/6">
+<div class="relative w-full bg-gray-100 dark:bg-gray-800 rounded-t-lg h-32 flex items-end overflow-hidden group-hover:bg-gray-200 transition-colors">
+<div class="w-full bg-primary group-hover:bg-blue-600 transition-colors rounded-t-lg" style="height: 30%;"></div>
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-gray-900 text-white text-xs py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity">30</div>
+</div>
+<span class="text-xs font-semibold text-gray-500 dark:text-gray-400">Bordeaux</span>
+</div>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-4 rounded-xl bg-surface-light dark:bg-surface-dark shadow-sm border border-gray-200 dark:border-gray-800 overflow-hidden">
+<div class="p-6 border-b border-gray-200 dark:border-gray-700 flex flex-wrap justify-between items-center gap-4">
+<div>
+<h3 class="text-[#111318] dark:text-white text-lg font-bold">Derniers Rapports de Session</h3>
+<p class="text-sm text-gray-500 dark:text-gray-400">Liste détaillée des 5 dernières sessions clôturées</p>
+</div>
+<div class="flex gap-2">
+<button class="px-4 py-2 text-sm font-medium text-gray-600 dark:text-gray-300 bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg border border-gray-200 dark:border-gray-700 transition-colors">Filtrer</button>
+<button class="px-4 py-2 text-sm font-medium text-white bg-primary hover:bg-blue-700 rounded-lg transition-colors">Tout voir</button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-gray-50 dark:bg-gray-900/50 border-b border-gray-200 dark:border-gray-700">
+<th class="px-6 py-4 text-xs font-bold text-gray-500 uppercase tracking-wider">Formation</th>
+<th class="px-6 py-4 text-xs font-bold text-gray-500 uppercase tracking-wider">Date</th>
+<th class="px-6 py-4 text-xs font-bold text-gray-500 uppercase tracking-wider">Formateur</th>
+<th class="px-6 py-4 text-xs font-bold text-gray-500 uppercase tracking-wider">Région</th>
+<th class="px-6 py-4 text-xs font-bold text-gray-500 uppercase tracking-wider text-center">Participants</th>
+<th class="px-6 py-4 text-xs font-bold text-gray-500 uppercase tracking-wider text-right">Statut</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-gray-100 dark:divide-gray-800">
+<tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded bg-blue-100 dark:bg-blue-900 text-primary flex items-center justify-center font-bold text-xs">M</div>
+<div>
+<p class="text-sm font-bold text-[#111318] dark:text-white">Management Agile</p>
+<p class="text-xs text-gray-500">ID: #TR-2023-89</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-gray-600 dark:text-gray-300">12 Oct 2023</td>
+<td class="px-6 py-4 text-sm text-gray-600 dark:text-gray-300">Jean Dupont</td>
+<td class="px-6 py-4 text-sm text-gray-600 dark:text-gray-300">Paris</td>
+<td class="px-6 py-4 text-sm text-gray-600 dark:text-gray-300 text-center">15/20</td>
+<td class="px-6 py-4 text-right">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400">
+<span class="size-1.5 rounded-full bg-green-600"></span> Terminé
+                                        </span>
+</td>
+</tr>
+<tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded bg-purple-100 dark:bg-purple-900 text-purple-600 flex items-center justify-center font-bold text-xs">S</div>
+<div>
+<p class="text-sm font-bold text-[#111318] dark:text-white">Sécurité Informatique</p>
+<p class="text-xs text-gray-500">ID: #TR-2023-90</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-gray-600 dark:text-gray-300">14 Oct 2023</td>
+<td class="px-6 py-4 text-sm text-gray-600 dark:text-gray-300">Sophie Martin</td>
+<td class="px-6 py-4 text-sm text-gray-600 dark:text-gray-300">Lyon</td>
+<td class="px-6 py-4 text-sm text-gray-600 dark:text-gray-300 text-center">8/10</td>
+<td class="px-6 py-4 text-right">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400">
+<span class="size-1.5 rounded-full bg-green-600"></span> Terminé
+                                        </span>
+</td>
+</tr>
+<tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded bg-orange-100 dark:bg-orange-900 text-orange-600 flex items-center justify-center font-bold text-xs">C</div>
+<div>
+<p class="text-sm font-bold text-[#111318] dark:text-white">Communication Orale</p>
+<p class="text-xs text-gray-500">ID: #TR-2023-92</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-gray-600 dark:text-gray-300">20 Oct 2023</td>
+<td class="px-6 py-4 text-sm text-gray-600 dark:text-gray-300">Marc Bernard</td>
+<td class="px-6 py-4 text-sm text-gray-600 dark:text-gray-300">Marseille</td>
+<td class="px-6 py-4 text-sm text-gray-600 dark:text-gray-300 text-center">12/12</td>
+<td class="px-6 py-4 text-right">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-400">
+<span class="size-1.5 rounded-full bg-blue-600"></span> En cours
+                                        </span>
+</td>
+</tr>
+<tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded bg-indigo-100 dark:bg-indigo-900 text-indigo-600 flex items-center justify-center font-bold text-xs">E</div>
+<div>
+<p class="text-sm font-bold text-[#111318] dark:text-white">Excel Avancé</p>
+<p class="text-xs text-gray-500">ID: #TR-2023-95</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-gray-600 dark:text-gray-300">05 Nov 2023</td>
+<td class="px-6 py-4 text-sm text-gray-600 dark:text-gray-300">Lucie Petit</td>
+<td class="px-6 py-4 text-sm text-gray-600 dark:text-gray-300">Lille</td>
+<td class="px-6 py-4 text-sm text-gray-600 dark:text-gray-300 text-center">25/25</td>
+<td class="px-6 py-4 text-right">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-orange-100 text-orange-800 dark:bg-orange-900/30 dark:text-orange-400">
+<span class="size-1.5 rounded-full bg-orange-600"></span> Planifié
+                                        </span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

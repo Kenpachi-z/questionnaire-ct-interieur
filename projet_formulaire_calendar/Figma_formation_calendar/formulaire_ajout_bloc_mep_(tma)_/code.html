@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ajout Blocage MEP - Intranet Formation</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "primary-dark": "#0e45b5",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom scrollbar for better aesthetics */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased overflow-hidden">
+<div class="flex h-screen w-full overflow-hidden">
+<!-- SideNavBar -->
+<aside class="w-72 bg-white dark:bg-[#1a2233] border-r border-slate-200 dark:border-slate-800 flex flex-col shrink-0 transition-all duration-300 hidden md:flex">
+<div class="p-6 flex items-center gap-3">
+<div class="bg-center bg-no-repeat bg-cover rounded-lg size-10 shadow-sm" data-alt="Intranet logo with abstract blue geometric shapes" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCXEW6cVIXIiD1uI7kd4ok07y8gqZlNQ5q8Lv4MjF3ulEiITyM16HKrVrCY0h7wHms1zypltmtA59PxkWw-WdwgwKnw8Ts1f1SxTKNk91ShmdEc1y0wAehR9N-G0hiV-zHg7Fu6G8aNN-SDegSIvYWGnI3ZaWyy9HBGiwQC9N21pf1IzYhcvRZ9oiTPHvc_XeDy5ariczubAXyqBS-jya41qVbXTYEOj2vq92udw-CBlV27KhyxNmW7E3T6LEyfaBM2cR0HltFuN0Dy");'></div>
+<div class="flex flex-col">
+<h1 class="text-slate-900 dark:text-white text-base font-bold leading-none">Intranet Formation</h1>
+<p class="text-slate-500 dark:text-slate-400 text-xs font-normal mt-1">Espace TMA</p>
+</div>
+</div>
+<nav class="flex-1 overflow-y-auto px-4 py-2 flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" href="#">
+<span class="material-symbols-outlined text-slate-500 group-hover:text-primary dark:text-slate-400">dashboard</span>
+<span class="text-sm font-medium">Tableau de bord</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" href="#">
+<span class="material-symbols-outlined text-slate-500 group-hover:text-primary dark:text-slate-400">calendar_month</span>
+<span class="text-sm font-medium">Planning Formations</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" href="#">
+<span class="material-symbols-outlined text-slate-500 group-hover:text-primary dark:text-slate-400">check_circle</span>
+<span class="text-sm font-medium">Demandes</span>
+</a>
+<!-- Active Item -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary/10 text-primary dark:text-white dark:bg-primary/20 transition-colors" href="#">
+<span class="material-symbols-outlined fill-1">block</span>
+<span class="text-sm font-medium">Blocage MEP</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" href="#">
+<span class="material-symbols-outlined text-slate-500 group-hover:text-primary dark:text-slate-400">group</span>
+<span class="text-sm font-medium">Utilisateurs</span>
+</a>
+</nav>
+<div class="p-4 border-t border-slate-200 dark:border-slate-800">
+<div class="flex items-center gap-3 p-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 cursor-pointer">
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-9 border border-slate-200 dark:border-slate-700" data-alt="User profile photo placeholder" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD_H_wlsXh-ulboLBy3NSwHVdz3Tq5eWJBCKysQjMRO-HFe6kRa_mdQCDiWfQd6uR1qtTcrm4KG6fkF3w4lkn_lQrxWOL1lC6CNzZd9qKps6GFM_xIqTgs-9nM21ORTtpZJQVqW6MIRDFf7IB4KyFJfkwnp07sU70cnYZfSHzrqrqJLQ--fyi6n2wHItCNJVQBJ3B6lu9F2CItCxt2tbSN-fuOmUQJfGaFf1gR2aiX_LfMbfrLcy1UG9VVK8JU6-c0NMTDam9VYWlfB");'></div>
+<div class="flex flex-col overflow-hidden">
+<p class="text-sm font-medium text-slate-900 dark:text-white truncate">Jean Dupont</p>
+<p class="text-xs text-slate-500 dark:text-slate-400 truncate">Admin TMA</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col min-w-0 overflow-hidden bg-background-light dark:bg-background-dark">
+<!-- TopNavBar -->
+<header class="h-16 flex items-center justify-between px-6 bg-white dark:bg-[#1a2233] border-b border-slate-200 dark:border-slate-800 shrink-0">
+<div class="flex items-center gap-4">
+<button class="md:hidden text-slate-500 dark:text-slate-400">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h2 class="text-lg font-bold text-slate-900 dark:text-white tracking-tight">Gestion des Indisponibilités</h2>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden sm:block">
+<span class="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-400 dark:text-slate-500">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</span>
+<input class="pl-10 pr-4 py-2 rounded-lg bg-slate-100 dark:bg-slate-800 border-none text-sm text-slate-900 dark:text-white focus:ring-2 focus:ring-primary placeholder:text-slate-500 w-64 transition-all" placeholder="Rechercher..." type="text"/>
+</div>
+<button class="relative p-2 text-slate-500 hover:text-primary dark:text-slate-400 transition-colors rounded-full hover:bg-slate-100 dark:hover:bg-slate-800">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-1.5 right-1.5 size-2 bg-red-500 rounded-full border-2 border-white dark:border-[#1a2233]"></span>
+</button>
+</div>
+</header>
+<!-- Scrollable Content -->
+<div class="flex-1 overflow-y-auto p-6 md:p-8">
+<div class="max-w-6xl mx-auto space-y-6">
+<!-- Breadcrumbs -->
+<nav class="flex items-center text-sm text-slate-500 dark:text-slate-400">
+<a class="hover:text-primary transition-colors" href="#">Accueil</a>
+<span class="mx-2 text-slate-300 dark:text-slate-600">/</span>
+<a class="hover:text-primary transition-colors" href="#">TMA</a>
+<span class="mx-2 text-slate-300 dark:text-slate-600">/</span>
+<span class="text-slate-900 dark:text-white font-medium">Ajout Bloc MEP</span>
+</nav>
+<!-- Page Heading -->
+<div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+<div>
+<h1 class="text-3xl font-bold text-slate-900 dark:text-white tracking-tight">Nouveau Blocage MEP</h1>
+<p class="text-slate-500 dark:text-slate-400 mt-2 max-w-2xl">
+                                Définir une période d'indisponibilité pour maintenance technique ou mise en production.
+                                Ce blocage sera visible par tous les formateurs.
+                            </p>
+</div>
+</div>
+<!-- Main Content Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<!-- Form Section (2/3 width) -->
+<div class="lg:col-span-2">
+<div class="bg-white dark:bg-[#1a2233] rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 overflow-hidden">
+<div class="p-6 border-b border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-white/5 flex items-center justify-between">
+<h3 class="font-semibold text-slate-900 dark:text-white flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">edit_calendar</span>
+                                        Détails de l'intervention
+                                    </h3>
+</div>
+<form class="p-6 space-y-6">
+<!-- Date Range -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="text-sm font-medium text-slate-700 dark:text-slate-300" for="start_date">Date de Début</label>
+<div class="relative">
+<input class="w-full rounded-lg border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-white shadow-sm focus:border-primary focus:ring-primary pl-10 h-10" id="start_date" type="date"/>
+<span class="absolute left-3 top-2.5 text-slate-400 pointer-events-none">
+<span class="material-symbols-outlined text-[20px]">calendar_today</span>
+</span>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-medium text-slate-700 dark:text-slate-300" for="end_date">Date de Fin</label>
+<div class="relative">
+<input class="w-full rounded-lg border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-white shadow-sm focus:border-primary focus:ring-primary pl-10 h-10" id="end_date" type="date"/>
+<span class="absolute left-3 top-2.5 text-slate-400 pointer-events-none">
+<span class="material-symbols-outlined text-[20px]">event</span>
+</span>
+</div>
+</div>
+</div>
+<!-- Reason -->
+<div class="space-y-2">
+<label class="text-sm font-medium text-slate-700 dark:text-slate-300" for="reason">Motif du blocage</label>
+<input class="w-full rounded-lg border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-white shadow-sm focus:border-primary focus:ring-primary h-10 px-3" id="reason" placeholder="Ex: MEP Release 4.2, Maintenance Serveurs..." type="text"/>
+<p class="text-xs text-slate-500 dark:text-slate-400">Ce motif sera affiché sur le planning général.</p>
+</div>
+<!-- Conflict Alert (Example State) -->
+<div class="bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-lg p-4 flex gap-3 animate-pulse">
+<span class="material-symbols-outlined text-amber-600 dark:text-amber-500 shrink-0">warning</span>
+<div class="flex flex-col">
+<h4 class="text-sm font-bold text-amber-800 dark:text-amber-500">Conflit détecté</h4>
+<p class="text-sm text-amber-700 dark:text-amber-400 mt-1">
+                                                Une formation "Java Avancé" est déjà validée sur cette période (Formateur: S. Martin).
+                                                En enregistrant, une demande d'arbitrage prioritaire sera envoyée.
+                                            </p>
+</div>
+</div>
+<!-- Actions -->
+<div class="pt-4 flex items-center justify-end gap-3 border-t border-slate-100 dark:border-slate-800">
+<button class="px-4 py-2 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" type="button">
+                                            Annuler
+                                        </button>
+<button class="px-4 py-2 rounded-lg text-sm font-medium text-white bg-primary hover:bg-primary-dark shadow-sm hover:shadow transition-all flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-[18px]">save</span>
+                                            Enregistrer Blocage MEP
+                                        </button>
+</div>
+</form>
+</div>
+<!-- History / Quick View -->
+<div class="mt-6">
+<h3 class="text-sm font-semibold text-slate-500 dark:text-slate-400 mb-3 uppercase tracking-wider">Derniers blocages ajoutés</h3>
+<div class="bg-white dark:bg-[#1a2233] rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 divide-y divide-slate-100 dark:divide-slate-800">
+<div class="p-4 flex items-center justify-between hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+<div class="flex items-center gap-4">
+<div class="size-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-500">
+<span class="material-symbols-outlined text-[20px]">dns</span>
+</div>
+<div>
+<p class="text-sm font-medium text-slate-900 dark:text-white">Maintenance Base de Données</p>
+<p class="text-xs text-slate-500">12 Oct - 13 Oct 2023</p>
+</div>
+</div>
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400">
+                                            Validé
+                                        </span>
+</div>
+<div class="p-4 flex items-center justify-between hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+<div class="flex items-center gap-4">
+<div class="size-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-500">
+<span class="material-symbols-outlined text-[20px]">rocket_launch</span>
+</div>
+<div>
+<p class="text-sm font-medium text-slate-900 dark:text-white">MEP Version 3.1.0</p>
+<p class="text-xs text-slate-500">25 Sept 2023</p>
+</div>
+</div>
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400">
+                                            Validé
+                                        </span>
+</div>
+</div>
+</div>
+</div>
+<!-- Calendar Widget (1/3 width) -->
+<div class="lg:col-span-1">
+<div class="bg-white dark:bg-[#1a2233] rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 p-4 sticky top-6">
+<div class="flex items-center justify-between mb-4 px-2">
+<h3 class="font-semibold text-slate-900 dark:text-white">Aperçu Disponibilités</h3>
+<div class="flex gap-1">
+<button class="p-1 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-md text-slate-500">
+<span class="material-symbols-outlined text-[20px]">chevron_left</span>
+</button>
+<button class="p-1 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-md text-slate-500">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Mini Calendar Grid -->
+<div class="mb-4">
+<div class="text-center font-bold text-slate-900 dark:text-white mb-2 text-sm">Octobre 2023</div>
+<div class="grid grid-cols-7 text-center text-xs text-slate-500 mb-2">
+<div>L</div><div>M</div><div>M</div><div>J</div><div>V</div><div>S</div><div>D</div>
+</div>
+<div class="grid grid-cols-7 text-center gap-y-2 text-sm">
+<div class="text-slate-300 dark:text-slate-700 py-1">29</div>
+<div class="text-slate-300 dark:text-slate-700 py-1">30</div>
+<div class="text-slate-700 dark:text-slate-300 py-1">1</div>
+<div class="text-slate-700 dark:text-slate-300 py-1">2</div>
+<div class="text-slate-700 dark:text-slate-300 py-1">3</div>
+<div class="text-slate-700 dark:text-slate-300 py-1 font-semibold text-primary">4</div>
+<div class="text-slate-400 dark:text-slate-500 py-1">5</div>
+<div class="text-slate-700 dark:text-slate-300 py-1">6</div>
+<div class="text-slate-700 dark:text-slate-300 py-1">7</div>
+<div class="text-slate-700 dark:text-slate-300 py-1">8</div>
+<div class="relative py-1">
+<span class="z-10 relative text-white">9</span>
+<span class="absolute inset-x-1 inset-y-0.5 bg-primary rounded-full z-0"></span>
+</div>
+<div class="relative py-1">
+<span class="z-10 relative text-white">10</span>
+<span class="absolute inset-x-1 inset-y-0.5 bg-primary rounded-full z-0"></span>
+</div>
+<div class="text-slate-400 dark:text-slate-500 py-1">11</div>
+<div class="text-slate-400 dark:text-slate-500 py-1">12</div>
+<div class="text-slate-700 dark:text-slate-300 py-1">13</div>
+<div class="relative py-1">
+<span class="z-10 relative text-white">14</span>
+<span class="absolute inset-x-1 inset-y-0.5 bg-amber-500 rounded-full z-0"></span>
+</div>
+<div class="text-slate-700 dark:text-slate-300 py-1">15</div>
+<div class="text-slate-700 dark:text-slate-300 py-1">16</div>
+<div class="text-slate-700 dark:text-slate-300 py-1">17</div>
+<div class="text-slate-400 dark:text-slate-500 py-1">18</div>
+<div class="text-slate-400 dark:text-slate-500 py-1">19</div>
+</div>
+</div>
+<!-- Legend -->
+<div class="mt-6 border-t border-slate-100 dark:border-slate-800 pt-4 space-y-2">
+<div class="flex items-center gap-2 text-xs text-slate-600 dark:text-slate-400">
+<span class="size-2 rounded-full bg-primary"></span>
+<span>Sélection actuelle</span>
+</div>
+<div class="flex items-center gap-2 text-xs text-slate-600 dark:text-slate-400">
+<span class="size-2 rounded-full bg-amber-500"></span>
+<span>Formation planifiée</span>
+</div>
+<div class="flex items-center gap-2 text-xs text-slate-600 dark:text-slate-400">
+<span class="size-2 rounded-full bg-slate-300 dark:bg-slate-600"></span>
+<span>Blocage MEP existant</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

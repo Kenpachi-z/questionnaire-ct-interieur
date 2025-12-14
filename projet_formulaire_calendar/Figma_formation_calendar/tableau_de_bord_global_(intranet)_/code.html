@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tableau de Bord Global - Intranet Formation</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "primary-hover": "#0f4bc4",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1a2233",
+                        "text-main": "#111318",
+                        "text-sub": "#616f89",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+        .icon-filled {
+            font-variation-settings:
+            'FILL' 1,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen text-text-main dark:text-white transition-colors duration-200">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden font-display">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-gray-200 dark:border-gray-800 bg-surface-light dark:bg-surface-dark px-6 py-3 sticky top-0 z-50">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-3 text-primary">
+<div class="size-8 flex items-center justify-center bg-primary/10 rounded-lg text-primary">
+<span class="material-symbols-outlined">school</span>
+</div>
+<h2 class="text-text-main dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">Intranet Formation</h2>
+</div>
+<div class="hidden md:flex items-center bg-background-light dark:bg-background-dark rounded-lg h-10 w-96 px-3 gap-2">
+<span class="material-symbols-outlined text-text-sub">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-full text-text-main dark:text-white placeholder-text-sub" placeholder="Rechercher une formation, un utilisateur..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<button class="relative text-text-sub hover:text-primary transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-0 right-0 size-2 bg-red-500 rounded-full border-2 border-surface-light dark:border-surface-dark"></span>
+</button>
+<div class="flex items-center gap-3 cursor-pointer group">
+<div class="text-right hidden sm:block">
+<p class="text-sm font-bold text-text-main dark:text-white leading-none">Jean Dupont</p>
+<p class="text-xs text-text-sub mt-1">Formateur &amp; Admin</p>
+</div>
+<div class="size-10 rounded-full overflow-hidden border-2 border-background-light dark:border-gray-700 bg-gray-200">
+<img alt="Profile avatar of Jean Dupont" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7JwyRmHFh9xjxLJlwtTGWbwe8tNO5O-EO_ctcfZUV2W3MJUQJ0Ovmt9seiXw_yQdVy8UsGA_U-i2urzvOOXjKxbBdklMwOY_OfIl5ZJ3P2drnrAt5xmn981Qz9Q73gcvHHMdDcGCIOFpU7LVX-d0peA9FKWsYd3KW8pPp0O-SF4dJcOkhkzy35PMjzBpMMJiVy6Is8rFObiLy0LNw9MaB8CP5mhnP0G_i0Tw-Dy2EnFBJSbFFc-sUNvh4EvgGnBuTjcnvSiRBo6f0"/>
+</div>
+<span class="material-symbols-outlined text-text-sub group-hover:text-primary transition-colors">expand_more</span>
+</div>
+</div>
+</header>
+<main class="flex-1 px-4 py-8 md:px-10 lg:px-40 max-w-[1440px] mx-auto w-full">
+<section class="mb-10">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-4">
+<div class="flex flex-col gap-2">
+<h1 class="text-3xl md:text-4xl font-black text-text-main dark:text-white tracking-tight">Bonjour, Jean 👋</h1>
+<p class="text-text-sub text-base max-w-2xl">
+                            Bienvenue sur votre espace de formation. Accédez rapidement à vos outils selon votre rôle.
+                        </p>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center gap-2 bg-surface-light dark:bg-surface-dark border border-gray-200 dark:border-gray-700 hover:border-primary/50 text-text-main dark:text-white px-4 py-2 rounded-lg font-medium text-sm transition-all shadow-sm">
+<span class="material-symbols-outlined text-lg">settings</span>
+                            Paramètres
+                        </button>
+</div>
+</div>
+</section>
+<section class="mb-12">
+<div class="flex items-center gap-3 mb-5 px-1 border-b border-gray-200 dark:border-gray-800 pb-2">
+<div class="h-6 w-1 bg-primary rounded-full"></div>
+<h2 class="text-xl font-bold text-text-main dark:text-white">Espace Demandeur</h2>
+<span class="text-xs font-medium text-text-sub bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded ml-2">Pour vos formations</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<a class="group relative flex flex-col justify-between h-56 p-6 rounded-xl bg-gradient-to-br from-primary to-blue-600 text-white shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all duration-300 overflow-hidden col-span-1 sm:col-span-2" href="#">
+<div class="absolute right-[-20px] top-[-20px] opacity-10 rotate-12">
+<span class="material-symbols-outlined text-[180px]">add_circle</span>
+</div>
+<div class="relative z-10 flex justify-between items-start">
+<div class="bg-white/20 p-2 rounded-lg backdrop-blur-sm">
+<span class="material-symbols-outlined text-2xl">add</span>
+</div>
+<span class="bg-white/20 px-3 py-1 rounded-full text-xs font-semibold backdrop-blur-sm">Action Prioritaire</span>
+</div>
+<div class="relative z-10 mt-auto">
+<h3 class="text-2xl font-bold mb-2">Créer une Nouvelle Demande</h3>
+<p class="text-blue-100 text-sm opacity-90 max-w-sm">Initiez une demande de formation pour vous-même ou votre équipe via notre formulaire simplifié.</p>
+</div>
+<div class="absolute bottom-6 right-6 z-10 bg-white text-primary rounded-full p-2 shadow-md group-hover:bg-blue-50 transition-colors">
+<span class="material-symbols-outlined">arrow_forward</span>
+</div>
+</a>
+<a class="group flex flex-col justify-between h-56 p-6 rounded-xl bg-surface-light dark:bg-surface-dark border border-gray-200 dark:border-gray-700 hover:border-primary/50 hover:shadow-md transition-all duration-300" href="#">
+<div class="flex justify-between items-start">
+<div class="bg-blue-50 dark:bg-blue-900/20 p-2 rounded-lg text-primary">
+<span class="material-symbols-outlined icon-filled text-2xl">history</span>
+</div>
+<span class="text-xs font-bold bg-yellow-100 text-yellow-800 px-2 py-1 rounded">2 en cours</span>
+</div>
+<div>
+<h3 class="text-lg font-bold text-text-main dark:text-white mb-2 group-hover:text-primary transition-colors">Mes Demandes</h3>
+<div class="space-y-2 mt-3">
+<div class="flex items-center gap-2 text-xs text-text-sub">
+<span class="size-2 rounded-full bg-yellow-400"></span> Management (Validation N+1)
+                        </div>
+<div class="flex items-center gap-2 text-xs text-text-sub">
+<span class="size-2 rounded-full bg-green-400"></span> Anglais B2 (Validée)
+                        </div>
+</div>
+</div>
+</a>
+<a class="group flex flex-col justify-between h-56 p-6 rounded-xl bg-surface-light dark:bg-surface-dark border border-gray-200 dark:border-gray-700 hover:border-primary/50 hover:shadow-md transition-all duration-300" href="#">
+<div class="flex justify-between items-start">
+<div class="bg-indigo-50 dark:bg-indigo-900/20 p-2 rounded-lg text-indigo-600">
+<span class="material-symbols-outlined icon-filled text-2xl">menu_book</span>
+</div>
+</div>
+<div>
+<h3 class="text-lg font-bold text-text-main dark:text-white mb-1 group-hover:text-indigo-600 transition-colors">Catalogue</h3>
+<p class="text-text-sub text-sm mb-4">Parcourir les formations disponibles par domaine.</p>
+<span class="text-indigo-600 text-sm font-medium flex items-center gap-1 group-hover:gap-2 transition-all">
+                        Consulter <span class="material-symbols-outlined text-sm">arrow_right_alt</span>
+</span>
+</div>
+</a>
+</div>
+</section>
+<section class="mb-12">
+<div class="flex flex-wrap items-center justify-between gap-3 mb-6 px-1 border-b border-gray-200 dark:border-gray-800 pb-2">
+<div class="flex items-center gap-3">
+<div class="h-6 w-1 bg-orange-500 rounded-full"></div>
+<h2 class="text-xl font-bold text-text-main dark:text-white">Espace Formateur / Planificateur</h2>
+<span class="text-xs font-medium text-text-sub bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded ml-2 hidden sm:inline-block">Pilotage de l'activité</span>
+</div>
+<details class="relative group">
+<summary class="list-none [&amp;::-webkit-details-marker]:hidden flex items-center gap-2 px-3 py-1.5 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-surface-dark text-sm font-medium text-text-sub hover:text-primary hover:border-primary/50 cursor-pointer transition-all select-none shadow-sm">
+<span class="material-symbols-outlined text-[20px]">support_agent</span>
+<span class="hidden sm:inline">Assistance</span>
+</summary>
+<div class="absolute right-0 top-full mt-2 w-72 p-4 bg-white dark:bg-surface-dark rounded-xl shadow-xl border border-gray-200 dark:border-gray-700 z-30 animate-in fade-in zoom-in-95 duration-100">
+<div class="flex gap-4">
+<div class="flex items-center justify-center size-10 rounded-full bg-blue-50 dark:bg-blue-900/20 text-primary shrink-0">
+<span class="material-symbols-outlined">call</span>
+</div>
+<div>
+<p class="text-sm font-bold text-text-main dark:text-white mb-1">Support Formateurs</p>
+<p class="text-xs text-text-sub mb-2">Un problème technique en salle ?</p>
+<div class="bg-gray-50 dark:bg-gray-800 px-3 py-2 rounded border border-gray-100 dark:border-gray-700">
+<span class="text-lg font-mono font-bold text-primary">04 93 00 00 00</span>
+</div>
+</div>
+</div>
+</div>
+</details>
+</div>
+<div class="mb-8 flex flex-col md:flex-row md:items-center justify-between gap-4 p-5 rounded-xl border border-blue-100 dark:border-blue-900/30 bg-blue-50 dark:bg-blue-900/10 shadow-sm relative overflow-hidden group">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-blue-500"></div>
+<div class="flex items-center gap-4">
+<div class="relative flex items-center justify-center size-12 rounded-full bg-white dark:bg-surface-dark text-blue-600 shadow-sm shrink-0">
+<span class="material-symbols-outlined text-2xl">notifications_active</span>
+<span class="absolute top-0 right-0 size-3 bg-red-500 border-2 border-white dark:border-surface-dark rounded-full"></span>
+</div>
+<div>
+<h3 class="font-bold text-text-main dark:text-white text-lg leading-tight">Nouvelles demandes de validation</h3>
+<p class="text-sm text-text-sub mt-1">Vous avez <span class="font-bold text-blue-600 dark:text-blue-400">3 demandes</span> en attente depuis votre dernière connexion.</p>
+</div>
+</div>
+<button class="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-lg text-sm font-bold transition-all shadow-md hover:shadow-lg translate-y-0 hover:-translate-y-0.5">
+                    Voir les demandes
+                    <span class="material-symbols-outlined text-lg">arrow_forward</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+<div class="md:col-span-1 flex items-center p-5 rounded-xl bg-orange-50 dark:bg-orange-900/10 border border-orange-200 dark:border-orange-800/30">
+<div class="p-3 bg-white dark:bg-surface-dark rounded-full mr-4 shadow-sm">
+<span class="material-symbols-outlined text-orange-600 text-2xl">fact_check</span>
+</div>
+<div>
+<div class="flex items-baseline gap-2">
+<p class="text-3xl font-bold text-orange-600 dark:text-orange-400">5</p>
+<span class="text-xs font-bold uppercase tracking-wider text-orange-800 dark:text-orange-300 bg-orange-100 dark:bg-orange-800/40 px-2 py-0.5 rounded">Urgent</span>
+</div>
+<p class="text-sm font-medium text-text-main dark:text-white">Demandes en attente</p>
+<p class="text-xs text-text-sub mt-0.5">Nécessite votre validation</p>
+</div>
+</div>
+<div class="md:col-span-1 flex items-center p-5 rounded-xl bg-red-50 dark:bg-red-900/10 border border-red-200 dark:border-red-800/30">
+<div class="p-3 bg-white dark:bg-surface-dark rounded-full mr-4 shadow-sm">
+<span class="material-symbols-outlined text-red-600 text-2xl">person_alert</span>
+</div>
+<div>
+<div class="flex items-baseline gap-2">
+<p class="text-3xl font-bold text-red-600 dark:text-red-400">2</p>
+<span class="text-xs font-bold uppercase tracking-wider text-red-800 dark:text-red-300 bg-red-100 dark:bg-red-800/40 px-2 py-0.5 rounded">Critique</span>
+</div>
+<p class="text-sm font-medium text-text-main dark:text-white">Saisies manquantes</p>
+<p class="text-xs text-text-sub mt-0.5">Formations passées</p>
+</div>
+</div>
+<div class="md:col-span-1 flex items-center p-5 rounded-xl bg-surface-light dark:bg-surface-dark border border-gray-200 dark:border-gray-700 shadow-sm hover:border-gray-300 transition-colors cursor-pointer group">
+<div class="p-3 bg-gray-100 dark:bg-gray-800 rounded-full mr-4 group-hover:bg-gray-200 dark:group-hover:bg-gray-700 transition-colors">
+<span class="material-symbols-outlined text-text-sub text-2xl">event_busy</span>
+</div>
+<div>
+<p class="text-sm font-bold text-text-main dark:text-white group-hover:text-primary transition-colors">Gestion de mes Indisponibilités</p>
+<p class="text-xs text-text-sub">Déclarer une absence ou un congé</p>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<a class="group flex flex-col p-5 rounded-xl bg-surface-light dark:bg-surface-dark border border-gray-200 dark:border-gray-700 hover:border-blue-500/50 hover:shadow-md transition-all duration-200" href="#">
+<div class="flex justify-between items-start mb-4">
+<div class="bg-blue-50 dark:bg-blue-900/20 p-2 rounded-lg text-blue-600">
+<span class="material-symbols-outlined text-2xl">calendar_month</span>
+</div>
+</div>
+<h3 class="font-bold text-text-main dark:text-white mb-1 group-hover:text-blue-600 transition-colors">Planning Complet</h3>
+<p class="text-xs text-text-sub">Vue agenda global des sessions</p>
+</a>
+<a class="relative group flex flex-col p-5 rounded-xl bg-surface-light dark:bg-surface-dark border-l-4 border-l-orange-500 border-y border-r border-gray-200 dark:border-gray-700 hover:shadow-md transition-all duration-200" href="#">
+<div class="absolute top-3 right-3 flex items-center justify-center size-6 bg-orange-500 text-white text-xs font-bold rounded-full animate-pulse shadow-sm">5</div>
+<div class="flex justify-between items-start mb-4">
+<div class="bg-orange-50 dark:bg-orange-900/20 p-2 rounded-lg text-orange-600">
+<span class="material-symbols-outlined text-2xl">check_circle</span>
+</div>
+</div>
+<h3 class="font-bold text-text-main dark:text-white mb-1 group-hover:text-orange-600 transition-colors">Validation Demandes</h3>
+<p class="text-xs text-text-sub">5 demandes en attente de validation</p>
+<div class="mt-3 h-1 w-full bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+<div class="h-full bg-orange-500 w-3/4"></div>
+</div>
+</a>
+<a class="relative group flex flex-col p-5 rounded-xl bg-surface-light dark:bg-surface-dark border-l-4 border-l-red-500 border-y border-r border-gray-200 dark:border-gray-700 hover:shadow-md transition-all duration-200" href="#">
+<div class="absolute top-3 right-3 flex items-center justify-center size-6 bg-red-500 text-white text-xs font-bold rounded-full shadow-sm">2</div>
+<div class="flex justify-between items-start mb-4">
+<div class="bg-red-50 dark:bg-red-900/20 p-2 rounded-lg text-red-600">
+<span class="material-symbols-outlined text-2xl">group_add</span>
+</div>
+</div>
+<h3 class="font-bold text-text-main dark:text-white mb-1 group-hover:text-red-600 transition-colors">Saisie des Présences</h3>
+<p class="text-xs text-text-sub">2 formations sans saisie de présence</p>
+<div class="mt-3 flex items-center gap-1">
+<span class="inline-block size-2 rounded-full bg-red-500"></span>
+<span class="text-[10px] text-red-600 font-medium uppercase">Action requise</span>
+</div>
+</a>
+<a class="group flex flex-col p-5 rounded-xl bg-surface-light dark:bg-surface-dark border border-gray-200 dark:border-gray-700 hover:border-purple-500/50 hover:shadow-md transition-all duration-200" href="#">
+<div class="flex justify-between items-start mb-4">
+<div class="bg-purple-50 dark:bg-purple-900/20 p-2 rounded-lg text-purple-600">
+<span class="material-symbols-outlined text-2xl">monitoring</span>
+</div>
+</div>
+<h3 class="font-bold text-text-main dark:text-white mb-1 group-hover:text-purple-600 transition-colors">Reporting</h3>
+<p class="text-xs text-text-sub">Statistiques et export de données</p>
+</a>
+</div>
+</section>
+<section class="mb-12">
+<div class="flex items-center gap-3 mb-5 px-1 border-b border-gray-200 dark:border-gray-800 pb-2">
+<div class="h-6 w-1 bg-teal-500 rounded-full"></div>
+<h2 class="text-xl font-bold text-text-main dark:text-white">Administration TMA</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="flex flex-col sm:flex-row bg-surface-light dark:bg-surface-dark rounded-xl border border-gray-200 dark:border-gray-700 overflow-hidden shadow-sm">
+<div class="sm:w-32 bg-teal-50 dark:bg-teal-900/20 flex items-center justify-center p-6 sm:p-0">
+<span class="material-symbols-outlined text-teal-600 text-4xl">settings_applications</span>
+</div>
+<div class="p-5 flex-1 flex flex-col justify-center">
+<h3 class="text-lg font-bold text-text-main dark:text-white mb-2">Gestion des Blocs MEP</h3>
+<p class="text-sm text-text-sub mb-4">Configuration et maintenance des blocs de mise en production.</p>
+<a class="text-teal-600 font-medium text-sm hover:underline inline-flex items-center gap-1" href="#">
+                                Accéder à la console <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row bg-surface-light dark:bg-surface-dark rounded-xl border border-gray-200 dark:border-gray-700 overflow-hidden shadow-sm">
+<div class="sm:w-32 bg-gray-50 dark:bg-gray-800 flex items-center justify-center p-6 sm:p-0">
+<span class="material-symbols-outlined text-gray-500 text-4xl">visibility</span>
+</div>
+<div class="p-5 flex-1 flex flex-col justify-center">
+<h3 class="text-lg font-bold text-text-main dark:text-white mb-2">Agenda Global</h3>
+<p class="text-sm text-text-sub mb-4">Consultation de l'ensemble des plannings en mode lecture seule.</p>
+<a class="text-text-main dark:text-white font-medium text-sm hover:underline inline-flex items-center gap-1" href="#">
+                                Voir le planning <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6 border-t border-gray-200 dark:border-gray-800">
+<div class="bg-surface-light dark:bg-surface-dark p-4 rounded-lg border border-gray-100 dark:border-gray-800">
+<p class="text-sm text-text-sub font-medium mb-1">Formations ce mois</p>
+<p class="text-2xl font-bold text-text-main dark:text-white">24</p>
+</div>
+<div class="bg-surface-light dark:bg-surface-dark p-4 rounded-lg border border-gray-100 dark:border-gray-800">
+<p class="text-sm text-text-sub font-medium mb-1">Taux de présence</p>
+<p class="text-2xl font-bold text-primary">92%</p>
+</div>
+<div class="bg-surface-light dark:bg-surface-dark p-4 rounded-lg border border-gray-100 dark:border-gray-800 flex items-center justify-between">
+<div>
+<p class="text-sm text-text-sub font-medium mb-1">Support Technique</p>
+<p class="text-sm font-bold text-text-main dark:text-white">Besoin d'aide ?</p>
+</div>
+<button class="size-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-text-sub hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+<span class="material-symbols-outlined">headset_mic</span>
+</button>
+</div>
+</section>
+</main>
+</div>
+
+</body></html>

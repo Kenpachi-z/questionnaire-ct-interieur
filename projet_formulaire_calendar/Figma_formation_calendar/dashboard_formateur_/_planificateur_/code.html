@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dashboard Formateur</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-slate-900 dark:text-white antialiased">
+<div class="flex h-screen overflow-hidden">
+<!-- Sidebar Navigation -->
+<aside class="w-64 flex-shrink-0 bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 flex flex-col justify-between hidden md:flex transition-all duration-300">
+<div class="flex flex-col h-full">
+<!-- Logo Area -->
+<div class="h-16 flex items-center px-6 border-b border-slate-100 dark:border-slate-800">
+<div class="w-8 h-8 rounded bg-primary flex items-center justify-center text-white mr-3">
+<span class="material-symbols-outlined text-xl">school</span>
+</div>
+<div>
+<h1 class="text-slate-900 dark:text-white text-base font-bold leading-none">Formateur</h1>
+<p class="text-slate-500 dark:text-slate-400 text-xs font-medium mt-1">Intranet RH</p>
+</div>
+</div>
+<!-- Menu Items -->
+<div class="flex-1 overflow-y-auto py-6 px-3 flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary/10 text-primary font-medium" href="#">
+<span class="material-symbols-outlined">home</span>
+<span>Accueil</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined">check_circle</span>
+<span>Validation</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined">edit_note</span>
+<span>Saisie Présences</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined">event_busy</span>
+<span>Indisponibilités</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined">bar_chart</span>
+<span>Reporting</span>
+</a>
+</div>
+<!-- User Profile Snippet (Bottom) -->
+<div class="p-4 border-t border-slate-100 dark:border-slate-800">
+<div class="flex items-center gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 ring-2 ring-white dark:ring-slate-800" data-alt="Profile picture of the logged in user" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA452ZgArFzazRY7Brpf6q2qWvd03oGRl2-Nmd9tOubCbPZZcOyWQ8uzBhmvI1bxtXpMHz8zisMONrQBcZ0IL2lEMTE0y0bi6heUwvdSRrVwZZc5zoQlFKizvIGCixFn7zeAAshKEzOvB5CQKqyZ6vRJBRsi4Wnx5F4RKv3fLnVE-kE9huy6xzj0Jt70WC5W8hYmx6woVpxE8C6oYMSh-x-YnVJaH83DZmofdvUjH67tZaTpKKeYqnrn9rXflOY5eAGsX5cOQQfyDWn");'>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<p class="text-sm font-medium text-slate-900 dark:text-white truncate">Thomas Durand</p>
+<p class="text-xs text-slate-500 dark:text-slate-400 truncate">Planificateur Senior</p>
+</div>
+<button class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200">
+<span class="material-symbols-outlined text-xl">logout</span>
+</button>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col h-full overflow-hidden relative">
+<!-- Mobile Header -->
+<header class="md:hidden h-16 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between px-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">school</span>
+<span class="font-bold text-lg">Formateur</span>
+</div>
+<button class="p-2 rounded-md hover:bg-slate-100 dark:hover:bg-slate-800">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</header>
+<!-- Scrollable Content Area -->
+<div class="flex-1 overflow-y-auto p-4 md:p-8 lg:p-10 scroll-smooth">
+<div class="max-w-7xl mx-auto space-y-8">
+<!-- Breadcrumbs & Date -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+<nav class="flex text-sm text-slate-500 dark:text-slate-400">
+<a class="hover:text-primary transition-colors" href="#">Accueil</a>
+<span class="mx-2">/</span>
+<span class="text-slate-900 dark:text-white font-medium">Tableau de bord</span>
+</nav>
+<div class="flex items-center gap-2 text-sm font-medium text-slate-600 dark:text-slate-300 bg-white dark:bg-slate-800 px-3 py-1.5 rounded-full shadow-sm">
+<span class="material-symbols-outlined text-lg">calendar_today</span>
+<span>Mardi, 24 Octobre 2023</span>
+</div>
+</div>
+<!-- Greeting -->
+<div>
+<h1 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white">Bonjour, Thomas</h1>
+<p class="mt-2 text-slate-600 dark:text-slate-400">Voici vos priorités et votre planning pour aujourd'hui.</p>
+</div>
+<!-- Widget 1: Immediate Actions (KPIs) -->
+<section aria-label="Tâches en Attente">
+<h2 class="text-lg font-semibold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">notifications_active</span>
+                            Tâches en Attente
+                        </h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Card 1: Validations -->
+<div class="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-sm border border-slate-100 dark:border-slate-700 relative overflow-hidden group hover:shadow-md transition-shadow">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-8xl text-primary">check_circle</span>
+</div>
+<div class="relative z-10 flex flex-col h-full justify-between">
+<div>
+<div class="flex items-center gap-3 mb-2">
+<div class="bg-primary/10 p-2 rounded-lg text-primary">
+<span class="material-symbols-outlined">checklist</span>
+</div>
+<p class="text-sm font-medium text-slate-500 dark:text-slate-400">Demandes à Valider</p>
+</div>
+<p class="text-4xl font-bold text-slate-900 dark:text-white mt-2">12</p>
+</div>
+<div class="mt-6">
+<button class="w-full bg-primary hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors flex items-center justify-center gap-2">
+<span>Accéder au module</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 2: Missing Attendance (Urgent) -->
+<div class="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-sm border-l-4 border-l-amber-500 border-y border-r border-slate-100 dark:border-slate-700 relative overflow-hidden hover:shadow-md transition-shadow">
+<div class="relative z-10 flex flex-col h-full justify-between">
+<div>
+<div class="flex items-center gap-3 mb-2">
+<div class="bg-amber-100 dark:bg-amber-900/30 p-2 rounded-lg text-amber-600 dark:text-amber-400">
+<span class="material-symbols-outlined">warning</span>
+</div>
+<p class="text-sm font-medium text-slate-500 dark:text-slate-400">Saisies de Présence Manquantes</p>
+</div>
+<div class="flex items-baseline gap-2 mt-2">
+<p class="text-4xl font-bold text-slate-900 dark:text-white">3</p>
+<span class="text-xs font-semibold text-amber-600 dark:text-amber-400 bg-amber-50 dark:bg-amber-900/20 px-2 py-0.5 rounded">Urgent</span>
+</div>
+</div>
+<div class="mt-6">
+<button class="w-full bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 hover:bg-slate-50 dark:hover:bg-slate-600 text-slate-700 dark:text-white font-medium py-2 px-4 rounded-lg transition-colors flex items-center justify-center gap-2">
+<span>Régulariser</span>
+<span class="material-symbols-outlined text-sm">edit</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 3: Quick Stats (Widget 3) included here for layout balance on smaller screens, or keep separate -->
+<div class="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-sm border border-slate-100 dark:border-slate-700 flex flex-col justify-between">
+<div>
+<h3 class="text-sm font-medium text-slate-500 dark:text-slate-400 mb-4">Performance du Mois</h3>
+<div class="flex items-center gap-6">
+<!-- Radial Progress Representation -->
+<div class="relative size-20 rounded-full flex items-center justify-center bg-slate-100 dark:bg-slate-700" style="background: conic-gradient(#135bec 85%, #e2e8f0 0);">
+<div class="absolute inset-2 bg-white dark:bg-slate-800 rounded-full flex items-center justify-center">
+<span class="text-lg font-bold text-slate-900 dark:text-white">85%</span>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<p class="text-2xl font-bold text-slate-900 dark:text-white">Excellent</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">Taux de réalisation</p>
+<p class="text-xs text-emerald-600 font-medium flex items-center mt-1">
+<span class="material-symbols-outlined text-sm mr-1">trending_up</span>
+                                                +4% vs Sept.
+                                            </p>
+</div>
+</div>
+</div>
+<div class="mt-4 pt-4 border-t border-slate-100 dark:border-slate-700 flex justify-between text-xs text-slate-500">
+<span>Formations: 24</span>
+<span>Heures: 142h</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Widget 2: Agenda Complet -->
+<section aria-label="Agenda Complet" class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+<!-- Main Calendar Area -->
+<div class="lg:col-span-4 bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700 flex flex-col h-[600px]">
+<!-- Calendar Toolbar -->
+<div class="p-4 border-b border-slate-100 dark:border-slate-700 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+<div class="flex items-center gap-4">
+<h2 class="text-lg font-semibold text-slate-900 dark:text-white">Agenda Complet</h2>
+<div class="flex bg-slate-100 dark:bg-slate-700 rounded-lg p-1">
+<button class="px-3 py-1 text-xs font-medium bg-white dark:bg-slate-600 text-slate-900 dark:text-white rounded shadow-sm">Mois</button>
+<button class="px-3 py-1 text-xs font-medium text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white">Semaine</button>
+<button class="px-3 py-1 text-xs font-medium text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white">Jour</button>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-3">
+<div class="flex items-center gap-2">
+<button class="size-8 flex items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-700">
+<span class="material-symbols-outlined text-slate-500">chevron_left</span>
+</button>
+<span class="text-sm font-semibold text-slate-900 dark:text-white w-32 text-center">Octobre 2023</span>
+<button class="size-8 flex items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-700">
+<span class="material-symbols-outlined text-slate-500">chevron_right</span>
+</button>
+</div>
+<div class="h-6 w-px bg-slate-200 dark:bg-slate-600 mx-1 hidden sm:block"></div>
+<button class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-600 rounded-lg px-3 py-1.5 hover:bg-slate-50 dark:hover:bg-slate-700">
+<span class="material-symbols-outlined text-lg">filter_list</span>
+<span>Filtres</span>
+</button>
+</div>
+</div>
+<!-- Calendar Legend / Quick Filters -->
+<div class="px-4 py-3 bg-slate-50 dark:bg-slate-900/50 flex flex-wrap gap-4 border-b border-slate-100 dark:border-slate-700">
+<label class="flex items-center gap-2 cursor-pointer">
+<input checked="" class="rounded border-slate-300 text-primary focus:ring-primary" type="checkbox"/>
+<span class="size-2.5 rounded-full bg-primary"></span>
+<span class="text-xs font-medium text-slate-700 dark:text-slate-300">Formations Validées</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer">
+<input checked="" class="rounded border-slate-300 text-purple-600 focus:ring-purple-600" type="checkbox"/>
+<span class="size-2.5 rounded-full bg-purple-500"></span>
+<span class="text-xs font-medium text-slate-700 dark:text-slate-300">MEP</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer">
+<input checked="" class="rounded border-slate-300 text-slate-500 focus:ring-slate-500" type="checkbox"/>
+<span class="size-2.5 rounded-full bg-slate-400"></span>
+<span class="text-xs font-medium text-slate-700 dark:text-slate-300">Indisponibilités</span>
+</label>
+</div>
+<!-- Calendar Grid -->
+<div class="flex-1 overflow-hidden flex flex-col">
+<!-- Days Header -->
+<div class="grid grid-cols-7 border-b border-slate-100 dark:border-slate-700">
+<div class="py-2 text-center text-xs font-semibold text-slate-500 uppercase">Lun</div>
+<div class="py-2 text-center text-xs font-semibold text-slate-500 uppercase">Mar</div>
+<div class="py-2 text-center text-xs font-semibold text-slate-500 uppercase">Mer</div>
+<div class="py-2 text-center text-xs font-semibold text-slate-500 uppercase">Jeu</div>
+<div class="py-2 text-center text-xs font-semibold text-slate-500 uppercase">Ven</div>
+<div class="py-2 text-center text-xs font-semibold text-slate-500 uppercase">Sam</div>
+<div class="py-2 text-center text-xs font-semibold text-slate-500 uppercase">Dim</div>
+</div>
+<!-- Dates Grid -->
+<div class="flex-1 grid grid-cols-7 grid-rows-5 text-sm">
+<!-- Week 1 -->
+<div class="border-b border-r border-slate-100 dark:border-slate-700 p-2 text-slate-400 dark:text-slate-600 bg-slate-50/50 dark:bg-slate-900/20">25</div>
+<div class="border-b border-r border-slate-100 dark:border-slate-700 p-2 text-slate-400 dark:text-slate-600 bg-slate-50/50 dark:bg-slate-900/20">26</div>
+<div class="border-b border-r border-slate-100 dark:border-slate-700 p-2 text-slate-400 dark:text-slate-600 bg-slate-50/50 dark:bg-slate-900/20">27</div>
+<div class="border-b border-r border-slate-100 dark:border-slate-700 p-2 text-slate-400 dark:text-slate-600 bg-slate-50/50 dark:bg-slate-900/20">28</div>
+<div class="border-b border-r border-slate-100 dark:border-slate-700 p-2 text-slate-400 dark:text-slate-600 bg-slate-50/50 dark:bg-slate-900/20">29</div>
+<div class="border-b border-r border-slate-100 dark:border-slate-700 p-2 text-slate-400 dark:text-slate-600 bg-slate-50/50 dark:bg-slate-900/20">30</div>
+<div class="border-b border-slate-100 dark:border-slate-700 p-2 relative">
+<span class="text-slate-700 dark:text-slate-300">1</span>
+</div>
+<!-- Week 2 -->
+<div class="border-b border-r border-slate-100 dark:border-slate-700 p-2 relative">
+<span class="text-slate-700 dark:text-slate-300">2</span>
+<div class="mt-1 px-1.5 py-0.5 rounded text-[10px] font-medium bg-primary/10 text-primary truncate border-l-2 border-primary">
+                                            Formation Java - Salle 301
+                                        </div>
+</div>
+<div class="border-b border-r border-slate-100 dark:border-slate-700 p-2 relative">
+<span class="text-slate-700 dark:text-slate-300">3</span>
+<div class="mt-1 px-1.5 py-0.5 rounded text-[10px] font-medium bg-primary/10 text-primary truncate border-l-2 border-primary">
+                                            Formation Java - Salle 301
+                                        </div>
+</div>
+<div class="border-b border-r border-slate-100 dark:border-slate-700 p-2 relative">
+<span class="text-slate-700 dark:text-slate-300">4</span>
+<div class="mt-1 px-1.5 py-0.5 rounded text-[10px] font-medium bg-purple-50 text-purple-700 truncate border-l-2 border-purple-500">
+                                            MEP Client X
+                                        </div>
+</div>
+<div class="border-b border-r border-slate-100 dark:border-slate-700 p-2 relative">
+<span class="text-slate-700 dark:text-slate-300">5</span>
+</div>
+<div class="border-b border-r border-slate-100 dark:border-slate-700 p-2 relative">
+<span class="text-slate-700 dark:text-slate-300">6</span>
+<div class="mt-1 px-1.5 py-0.5 rounded text-[10px] font-medium bg-slate-100 text-slate-600 truncate border-l-2 border-slate-400">
+                                            Absence (Matin)
+                                        </div>
+</div>
+<div class="border-b border-r border-slate-100 dark:border-slate-700 p-2 relative">
+<span class="text-slate-700 dark:text-slate-300">7</span>
+</div>
+<div class="border-b border-slate-100 dark:border-slate-700 p-2 relative">
+<span class="text-slate-700 dark:text-slate-300">8</span>
+</div>
+<!-- Week 3 -->
+<div class="border-b border-r border-slate-100 dark:border-slate-700 p-2 relative">
+<span class="text-slate-700 dark:text-slate-300">9</span>
+<div class="mt-1 px-1.5 py-0.5 rounded text-[10px] font-medium bg-primary/10 text-primary truncate border-l-2 border-primary">
+                                            Onboarding RH
+                                        </div>
+</div>
+<div class="border-b border-r border-slate-100 dark:border-slate-700 p-2 relative">
+<span class="text-slate-700 dark:text-slate-300">10</span>
+<div class="mt-1 px-1.5 py-0.5 rounded text-[10px] font-medium bg-primary/10 text-primary truncate border-l-2 border-primary">
+                                            Onboarding RH
+                                        </div>
+</div>
+<div class="border-b border-r border-slate-100 dark:border-slate-700 p-2 relative">
+<span class="text-slate-700 dark:text-slate-300">11</span>
+</div>
+<div class="border-b border-r border-slate-100 dark:border-slate-700 p-2 relative">
+<span class="text-slate-700 dark:text-slate-300">12</span>
+<div class="mt-1 px-1.5 py-0.5 rounded text-[10px] font-medium bg-purple-50 text-purple-700 truncate border-l-2 border-purple-500">
+                                            MEP V2.0 Internal
+                                        </div>
+</div>
+<div class="border-b border-r border-slate-100 dark:border-slate-700 p-2 relative">
+<span class="text-slate-700 dark:text-slate-300">13</span>
+</div>
+<div class="border-b border-r border-slate-100 dark:border-slate-700 p-2 relative">
+<span class="text-slate-700 dark:text-slate-300">14</span>
+</div>
+<div class="border-b border-slate-100 dark:border-slate-700 p-2 relative">
+<span class="text-slate-700 dark:text-slate-300">15</span>
+</div>
+<!-- Week 4 -->
+<div class="border-b border-r border-slate-100 dark:border-slate-700 p-2 relative">
+<span class="text-slate-700 dark:text-slate-300">16</span>
+</div>
+<div class="border-b border-r border-slate-100 dark:border-slate-700 p-2 relative">
+<span class="text-slate-700 dark:text-slate-300">17</span>
+<div class="mt-1 px-1.5 py-0.5 rounded text-[10px] font-medium bg-primary/10 text-primary truncate border-l-2 border-primary">
+                                            Sécurité Incendie
+                                        </div>
+</div>
+<div class="border-b border-r border-slate-100 dark:border-slate-700 p-2 relative">
+<span class="text-slate-700 dark:text-slate-300">18</span>
+<div class="mt-1 px-1.5 py-0.5 rounded text-[10px] font-medium bg-primary/10 text-primary truncate border-l-2 border-primary">
+                                            Sécurité Incendie
+                                        </div>
+</div>
+<div class="border-b border-r border-slate-100 dark:border-slate-700 p-2 relative">
+<span class="text-slate-700 dark:text-slate-300">19</span>
+</div>
+<div class="border-b border-r border-slate-100 dark:border-slate-700 p-2 relative">
+<span class="text-slate-700 dark:text-slate-300">20</span>
+</div>
+<div class="border-b border-r border-slate-100 dark:border-slate-700 p-2 relative">
+<span class="text-slate-700 dark:text-slate-300">21</span>
+</div>
+<div class="border-b border-slate-100 dark:border-slate-700 p-2 relative">
+<span class="text-slate-700 dark:text-slate-300">22</span>
+</div>
+<!-- Week 5 -->
+<div class="border-r border-slate-100 dark:border-slate-700 p-2 relative bg-primary/5">
+<span class="flex size-6 items-center justify-center rounded-full bg-primary text-white text-xs font-bold">23</span>
+<div class="mt-1 px-1.5 py-0.5 rounded text-[10px] font-medium bg-primary text-white shadow-sm truncate">
+                                            Réunion d'équipe
+                                        </div>
+</div>
+<div class="border-r border-slate-100 dark:border-slate-700 p-2 relative">
+<span class="text-slate-700 dark:text-slate-300">24</span>
+<div class="mt-1 px-1.5 py-0.5 rounded text-[10px] font-medium bg-primary/10 text-primary truncate border-l-2 border-primary">
+                                            Formation Agile
+                                        </div>
+</div>
+<div class="border-r border-slate-100 dark:border-slate-700 p-2 relative">
+<span class="text-slate-700 dark:text-slate-300">25</span>
+<div class="mt-1 px-1.5 py-0.5 rounded text-[10px] font-medium bg-primary/10 text-primary truncate border-l-2 border-primary">
+                                            Formation Agile
+                                        </div>
+</div>
+<div class="border-r border-slate-100 dark:border-slate-700 p-2 relative">
+<span class="text-slate-700 dark:text-slate-300">26</span>
+</div>
+<div class="border-r border-slate-100 dark:border-slate-700 p-2 relative">
+<span class="text-slate-700 dark:text-slate-300">27</span>
+<div class="mt-1 px-1.5 py-0.5 rounded text-[10px] font-medium bg-slate-100 text-slate-600 truncate border-l-2 border-slate-400">
+                                            RTT
+                                        </div>
+</div>
+<div class="border-r border-slate-100 dark:border-slate-700 p-2 relative">
+<span class="text-slate-700 dark:text-slate-300">28</span>
+</div>
+<div class="border-slate-100 dark:border-slate-700 p-2 relative">
+<span class="text-slate-700 dark:text-slate-300">29</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</main>
+</div>
+</body></html>

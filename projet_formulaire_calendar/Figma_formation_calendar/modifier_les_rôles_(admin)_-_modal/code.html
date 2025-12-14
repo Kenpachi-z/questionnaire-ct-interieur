@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Modifier les Rôles</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for modal content */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #cbd5e1;
+            border-radius: 20px;
+        }
+        .dark .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #374151;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#111318] dark:text-white h-screen overflow-hidden flex items-center justify-center p-4">
+<!-- Modal Backdrop -->
+<div aria-hidden="true" class="fixed inset-0 bg-gray-900/60 backdrop-blur-sm z-40 transition-opacity"></div>
+<!-- Modal Container -->
+<div class="relative z-50 w-full max-w-lg flex flex-col bg-white dark:bg-[#1A202C] rounded-xl shadow-2xl max-h-[90vh] animate-in fade-in zoom-in duration-200">
+<!-- Header -->
+<div class="flex items-center justify-between px-6 py-5 border-b border-gray-100 dark:border-gray-700">
+<h2 class="text-xl font-bold tracking-tight text-[#111318] dark:text-white">Modifier les Rôles</h2>
+<button class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 transition-colors p-1 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700">
+<span class="material-symbols-outlined text-2xl">close</span>
+</button>
+</div>
+<!-- Scrollable Content -->
+<div class="overflow-y-auto p-6 custom-scrollbar flex-1">
+<!-- User Info Card (Read Only) -->
+<div class="bg-gray-50 dark:bg-gray-800/50 rounded-xl p-4 mb-6 border border-gray-100 dark:border-gray-700 flex items-center gap-4">
+<div class="h-14 w-14 rounded-full bg-primary/10 flex items-center justify-center shrink-0 border border-primary/20 overflow-hidden">
+<img alt="User Avatar" class="h-full w-full object-cover" data-alt="Abstract colorful gradient avatar for user profile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3CfVmjBMSJ11apkaF4H-kSiV5hwaZKqFReCrzyvdvvLvZlIEG-pzg9vKfw5LPnz8YFG5xwdqkze0MP95EcJs3OTZU3AXvCn_Muryek_pGd5pJiUkrIEzKyDxblQyNhThMB7o20B3TlRTArRXTML7tgMdiH35O2Z3_bs4e3VSuFvTaZbrKdYygpB5HT6JDu1LcMLufvFPdV_UaF0eTufEA92QdQi85z4LtqqqZ0sGDVpOGv37j95PIkMDVcK20lLD0j15wNiH8YWsN"/>
+</div>
+<div class="flex flex-col gap-0.5">
+<p class="text-[#111318] dark:text-white text-lg font-bold leading-tight">Jean Dupont</p>
+<div class="flex items-center gap-1.5 text-gray-500 dark:text-gray-400">
+<span class="material-symbols-outlined text-[16px]">badge</span>
+<p class="text-sm font-medium">Matricule: EMP-2024-05</p>
+</div>
+</div>
+<div class="ml-auto">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300">
+                        Actif
+                    </span>
+</div>
+</div>
+<!-- Roles Section -->
+<div class="space-y-4">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-primary">manage_accounts</span>
+<h3 class="text-base font-bold text-[#111318] dark:text-white">Rôles disponibles</h3>
+</div>
+<div class="space-y-3">
+<!-- Role: Demandeur -->
+<label class="group relative flex items-center justify-between p-4 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-primary/50 dark:hover:border-primary/50 bg-white dark:bg-gray-800 cursor-pointer transition-all shadow-sm hover:shadow-md">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 rounded-full bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">person</span>
+</div>
+<div>
+<p class="text-sm font-bold text-gray-900 dark:text-white group-hover:text-primary transition-colors">Demandeur</p>
+<p class="text-xs text-gray-500 dark:text-gray-400">Accès standard pour soumettre des demandes</p>
+</div>
+</div>
+<div class="relative inline-flex items-center">
+<input checked="" class="peer sr-only" type="checkbox"/>
+<div class="h-6 w-11 rounded-full bg-gray-200 dark:bg-gray-700 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary/20 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-primary"></div>
+</div>
+</label>
+<!-- Role: Formateur -->
+<label class="group relative flex items-center justify-between p-4 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-primary/50 dark:hover:border-primary/50 bg-white dark:bg-gray-800 cursor-pointer transition-all shadow-sm hover:shadow-md">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 rounded-full bg-purple-50 dark:bg-purple-900/20 flex items-center justify-center text-purple-600 dark:text-purple-400">
+<span class="material-symbols-outlined">school</span>
+</div>
+<div>
+<p class="text-sm font-bold text-gray-900 dark:text-white group-hover:text-primary transition-colors">Formateur</p>
+<p class="text-xs text-gray-500 dark:text-gray-400">Gestion des sessions de formation</p>
+</div>
+</div>
+<div class="relative inline-flex items-center">
+<input class="peer sr-only" type="checkbox"/>
+<div class="h-6 w-11 rounded-full bg-gray-200 dark:bg-gray-700 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary/20 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-primary"></div>
+</div>
+</label>
+<!-- Role: TMA -->
+<label class="group relative flex items-center justify-between p-4 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-primary/50 dark:hover:border-primary/50 bg-white dark:bg-gray-800 cursor-pointer transition-all shadow-sm hover:shadow-md">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 rounded-full bg-orange-50 dark:bg-orange-900/20 flex items-center justify-center text-orange-600 dark:text-orange-400">
+<span class="material-symbols-outlined">build</span>
+</div>
+<div>
+<p class="text-sm font-bold text-gray-900 dark:text-white group-hover:text-primary transition-colors">TMA</p>
+<p class="text-xs text-gray-500 dark:text-gray-400">Support technique et maintenance</p>
+</div>
+</div>
+<div class="relative inline-flex items-center">
+<input checked="" class="peer sr-only" type="checkbox"/>
+<div class="h-6 w-11 rounded-full bg-gray-200 dark:bg-gray-700 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary/20 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-primary"></div>
+</div>
+</label>
+<!-- Role: Administrateur -->
+<label class="group relative flex items-center justify-between p-4 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-primary/50 dark:hover:border-primary/50 bg-white dark:bg-gray-800 cursor-pointer transition-all shadow-sm hover:shadow-md">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 rounded-full bg-red-50 dark:bg-red-900/20 flex items-center justify-center text-red-600 dark:text-red-400">
+<span class="material-symbols-outlined">admin_panel_settings</span>
+</div>
+<div>
+<p class="text-sm font-bold text-gray-900 dark:text-white group-hover:text-primary transition-colors">Administrateur</p>
+<p class="text-xs text-gray-500 dark:text-gray-400">Accès complet au système</p>
+</div>
+</div>
+<div class="relative inline-flex items-center">
+<input class="peer sr-only" type="checkbox"/>
+<div class="h-6 w-11 rounded-full bg-gray-200 dark:bg-gray-700 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary/20 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-primary"></div>
+</div>
+</label>
+</div>
+</div>
+<!-- Warning/Info Message -->
+<div class="mt-6 flex gap-3 rounded-lg bg-blue-50 dark:bg-blue-900/20 p-3 text-blue-700 dark:text-blue-300">
+<span class="material-symbols-outlined shrink-0">info</span>
+<p class="text-xs font-medium leading-relaxed">Les modifications des rôles prennent effet immédiatement. L'utilisateur recevra une notification par email.</p>
+</div>
+</div>
+<!-- Footer Actions -->
+<div class="p-6 bg-gray-50 dark:bg-[#1A202C] border-t border-gray-100 dark:border-gray-700 rounded-b-xl flex flex-col sm:flex-row justify-end gap-3">
+<button class="w-full sm:w-auto min-w-[100px] h-10 px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-transparent text-gray-700 dark:text-gray-300 font-bold text-sm hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors focus:outline-none focus:ring-2 focus:ring-gray-200">
+                Annuler
+            </button>
+<button class="w-full sm:w-auto min-w-[100px] h-10 px-4 py-2 rounded-lg bg-primary hover:bg-primary/90 text-white font-bold text-sm shadow-sm transition-colors flex items-center justify-center gap-2 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-1 dark:focus:ring-offset-gray-800">
+<span class="material-symbols-outlined text-[18px]">save</span>
+<span>Enregistrer les Modifications</span>
+</button>
+</div>
+</div>
+</body></html>

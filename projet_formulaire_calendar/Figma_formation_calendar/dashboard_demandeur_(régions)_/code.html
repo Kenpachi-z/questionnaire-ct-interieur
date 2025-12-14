@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dashboard Demandeur (Régions) - Intranet Formation</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "primary-hover": "#0f4bc4",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1a2332",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            height: 6px;
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #cbd5e1;
+            border-radius: 9999px;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#111318] dark:text-white transition-colors duration-200">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<header class="sticky top-0 z-50 w-full border-b border-[#f0f2f4] dark:border-[#2a3441] bg-surface-light dark:bg-surface-dark shadow-sm">
+<div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+<div class="flex items-center gap-4">
+<div class="flex size-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
+<span class="material-symbols-outlined text-2xl">school</span>
+</div>
+<h1 class="text-lg font-bold tracking-tight text-[#111318] dark:text-white hidden sm:block">Intranet Formation</h1>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium text-[#111318] dark:text-gray-200 hover:text-primary transition-colors" href="#">Accueil</a>
+<a class="text-sm font-bold text-primary" href="#">Mes Demandes</a>
+<a class="text-sm font-medium text-[#111318] dark:text-gray-200 hover:text-primary transition-colors" href="#">Planning Global</a>
+</nav>
+<div class="flex items-center gap-4">
+<div class="hidden md:flex flex-col items-end">
+<span class="text-sm font-semibold text-[#111318] dark:text-white">Jean Dupont</span>
+<span class="text-xs text-[#616f89] dark:text-gray-400">Demandeur (Région Nord)</span>
+</div>
+<div class="relative size-10 overflow-hidden rounded-full border border-gray-200 dark:border-gray-700 bg-gray-100">
+<img alt="User Avatar" class="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsEp7sGqZQFfKsIcE-4DEtuDZYzb9YdjjKcI9WQJ3iPJbVUiHfwAHwW0XACS46-HNBFpxyM4TyLf3baOS1y-Va3e5A-0SbraNCF0boXuXpB4qrPcrmRidJ0PMJOBItCyreXbIxME-FUP3TZFVAXv_vMQZKoYIEZglFsXvb0i-uHYy0hxLNDeUkA5tsBegTSK0Q4Hyb4enQQI9OJvk8GBvUoxgeAZQFlBZMWKa-5V9J_5ZIba1GpJYQQAFawPAnakYxPMQQ6Uxjugow"/>
+</div>
+</div>
+</div>
+</header>
+<div class="w-full bg-blue-50 dark:bg-blue-900/10 border-b border-blue-100 dark:border-blue-900/20">
+<div class="mx-auto max-w-7xl px-4 py-2 sm:px-6 lg:px-8 text-center">
+<p class="text-sm font-medium text-primary dark:text-blue-300 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-lg">verified_user</span>
+                    Vous êtes connecté en tant que Demandeur.
+                </p>
+</div>
+</div>
+<main class="flex-1 py-10 px-4 sm:px-6 lg:px-8">
+<div class="mx-auto max-w-7xl flex flex-col gap-8">
+<section class="relative overflow-hidden rounded-3xl bg-surface-light dark:bg-surface-dark shadow-lg border border-[#e5e7eb] dark:border-[#2a3441] py-12 px-6 sm:px-16 text-center">
+<div class="absolute top-0 right-0 -mt-16 -mr-16 h-80 w-80 rounded-full bg-primary/5 blur-3xl pointer-events-none"></div>
+<div class="absolute bottom-0 left-0 -mb-16 -ml-16 h-80 w-80 rounded-full bg-blue-400/10 blur-3xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col items-center justify-center max-w-3xl mx-auto space-y-8">
+<div class="space-y-3">
+<h2 class="text-3xl font-black tracking-tight text-[#111318] dark:text-white md:text-4xl leading-tight">
+                                Zone d'Action Prioritaire
+                            </h2>
+<p class="text-lg text-[#616f89] dark:text-gray-300 max-w-2xl mx-auto">
+                                Initialisez vos besoins en formation. Saisie manuelle ou import de masse disponible.
+                            </p>
+</div>
+<a class="group relative flex items-center justify-center gap-3 whitespace-nowrap rounded-xl bg-primary px-8 py-4 text-lg font-bold text-white shadow-xl shadow-blue-500/25 transition-all hover:bg-primary-hover hover:shadow-blue-500/40 hover:-translate-y-1 active:scale-[0.98] w-full sm:w-auto" href="#">
+<span class="material-symbols-outlined text-3xl group-hover:rotate-90 transition-transform duration-300">add</span>
+                            Créer une Nouvelle Demande de Formation
+                        </a>
+<div class="flex items-center gap-6 text-sm text-[#616f89] dark:text-gray-400">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-base">description</span>
+<span>Formulaire unifié</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-base">upload_file</span>
+<span>Import Excel supporté</span>
+</div>
+</div>
+</div>
+</section>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<div class="lg:col-span-8 flex flex-col rounded-2xl bg-surface-light dark:bg-surface-dark border border-[#e5e7eb] dark:border-[#2a3441] shadow-md h-full">
+<div class="flex items-center justify-between border-b border-[#f0f2f4] dark:border-[#2a3441] px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="flex size-10 items-center justify-center rounded-full bg-blue-50 dark:bg-blue-900/20 text-primary">
+<span class="material-symbols-outlined">toc</span>
+</div>
+<div>
+<h3 class="text-lg font-bold text-[#111318] dark:text-white leading-none">Mes Demandes en Cours</h3>
+<p class="text-xs text-[#616f89] dark:text-gray-400 mt-1">Suivi en temps réel</p>
+</div>
+</div>
+<button class="text-sm font-semibold text-primary hover:bg-primary/5 px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-base">filter_list</span>
+                                Filtrer
+                            </button>
+</div>
+<div class="bg-gray-50/50 dark:bg-surface-dark/50 border-b border-[#f0f2f4] dark:border-[#2a3441] px-6 py-3 overflow-x-auto custom-scrollbar">
+<div class="flex gap-2">
+<button class="px-3 py-1.5 text-xs font-semibold rounded-full bg-white dark:bg-gray-700 text-gray-800 dark:text-white shadow-sm border border-gray-200 dark:border-gray-600 hover:border-primary transition-all whitespace-nowrap">Tout voir</button>
+<button class="px-3 py-1.5 text-xs font-semibold rounded-full bg-transparent text-[#616f89] dark:text-gray-400 border border-transparent hover:bg-white dark:hover:bg-gray-700 hover:shadow-sm transition-all whitespace-nowrap">Soumise</button>
+<button class="px-3 py-1.5 text-xs font-semibold rounded-full bg-transparent text-[#616f89] dark:text-gray-400 border border-transparent hover:bg-white dark:hover:bg-gray-700 hover:shadow-sm transition-all whitespace-nowrap">En Validation</button>
+<button class="px-3 py-1.5 text-xs font-semibold rounded-full bg-transparent text-[#616f89] dark:text-gray-400 border border-transparent hover:bg-white dark:hover:bg-gray-700 hover:shadow-sm transition-all whitespace-nowrap">Validée</button>
+<button class="px-3 py-1.5 text-xs font-semibold rounded-full bg-transparent text-[#616f89] dark:text-gray-400 border border-transparent hover:bg-white dark:hover:bg-gray-700 hover:shadow-sm transition-all whitespace-nowrap">Refusée</button>
+</div>
+</div>
+<div class="flex-1 overflow-x-auto custom-scrollbar">
+<table class="w-full text-left text-sm">
+<thead class="bg-[#f8f9fa] dark:bg-[#1f2937] text-[#616f89] dark:text-gray-400 border-b border-[#e5e7eb] dark:border-[#2a3441]">
+<tr>
+<th class="px-6 py-4 font-semibold text-xs uppercase tracking-wider">Intitulé</th>
+<th class="px-6 py-4 font-semibold text-xs uppercase tracking-wider">Date Souhaitée</th>
+<th class="px-6 py-4 font-semibold text-xs uppercase tracking-wider">Statut</th>
+<th class="px-6 py-4 font-semibold w-10"></th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#f0f2f4] dark:divide-[#2a3441]">
+<tr class="hover:bg-gray-50 dark:hover:bg-[#252e3e] transition-colors group cursor-pointer">
+<td class="px-6 py-4 font-medium text-[#111318] dark:text-white">
+                                            Formation Excel Avancé
+                                            <span class="block text-xs font-normal text-gray-500 mt-0.5">Ref: #REQ-2023-894</span>
+</td>
+<td class="px-6 py-4 text-[#616f89] dark:text-gray-400">15 Nov 2023</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 rounded-full bg-amber-50 dark:bg-amber-900/30 px-2.5 py-1 text-xs font-semibold text-amber-700 dark:text-amber-300 border border-amber-200 dark:border-amber-800">
+<span class="material-symbols-outlined text-[14px]">sync</span>
+                                                En Validation
+                                            </span>
+</td>
+<td class="px-6 py-4 text-right">
+<span class="material-symbols-outlined text-gray-400 group-hover:text-primary transition-colors">chevron_right</span>
+</td>
+</tr>
+<tr class="hover:bg-gray-50 dark:hover:bg-[#252e3e] transition-colors group cursor-pointer">
+<td class="px-6 py-4 font-medium text-[#111318] dark:text-white">
+                                            Management d'équipe
+                                            <span class="block text-xs font-normal text-gray-500 mt-0.5">Ref: #REQ-2023-820</span>
+</td>
+<td class="px-6 py-4 text-[#616f89] dark:text-gray-400">02 Déc 2023</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 rounded-full bg-green-50 dark:bg-green-900/30 px-2.5 py-1 text-xs font-semibold text-green-700 dark:text-green-300 border border-green-200 dark:border-green-800">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                                                Validée
+                                            </span>
+</td>
+<td class="px-6 py-4 text-right">
+<span class="material-symbols-outlined text-gray-400 group-hover:text-primary transition-colors">chevron_right</span>
+</td>
+</tr>
+<tr class="hover:bg-gray-50 dark:hover:bg-[#252e3e] transition-colors group cursor-pointer">
+<td class="px-6 py-4 font-medium text-[#111318] dark:text-white">
+                                            Sécurité Incendie - Niv 1
+                                            <span class="block text-xs font-normal text-gray-500 mt-0.5">Ref: #REQ-2024-012</span>
+</td>
+<td class="px-6 py-4 text-[#616f89] dark:text-gray-400">10 Jan 2024</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 rounded-full bg-blue-50 dark:bg-blue-900/30 px-2.5 py-1 text-xs font-semibold text-blue-700 dark:text-blue-300 border border-blue-200 dark:border-blue-800">
+<span class="material-symbols-outlined text-[14px]">send</span>
+                                                Soumise
+                                            </span>
+</td>
+<td class="px-6 py-4 text-right">
+<span class="material-symbols-outlined text-gray-400 group-hover:text-primary transition-colors">chevron_right</span>
+</td>
+</tr>
+<tr class="hover:bg-gray-50 dark:hover:bg-[#252e3e] transition-colors group cursor-pointer">
+<td class="px-6 py-4 font-medium text-[#111318] dark:text-white">
+                                            Anglais B2 Business
+                                            <span class="block text-xs font-normal text-gray-500 mt-0.5">Ref: #REQ-2024-001</span>
+</td>
+<td class="px-6 py-4 text-[#616f89] dark:text-gray-400">20 Fév 2024</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 rounded-full bg-red-50 dark:bg-red-900/30 px-2.5 py-1 text-xs font-semibold text-red-700 dark:text-red-300 border border-red-200 dark:border-red-800">
+<span class="material-symbols-outlined text-[14px]">cancel</span>
+                                                Refusée
+                                            </span>
+</td>
+<td class="px-6 py-4 text-right">
+<span class="material-symbols-outlined text-gray-400 group-hover:text-primary transition-colors">chevron_right</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="lg:col-span-4 flex flex-col rounded-2xl bg-surface-light dark:bg-surface-dark border border-[#e5e7eb] dark:border-[#2a3441] shadow-md h-full">
+<div class="flex items-center justify-between border-b border-[#f0f2f4] dark:border-[#2a3441] px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="flex size-10 items-center justify-center rounded-full bg-purple-50 dark:bg-purple-900/20 text-purple-600 dark:text-purple-400">
+<span class="material-symbols-outlined">calendar_month</span>
+</div>
+<div>
+<h3 class="text-lg font-bold text-[#111318] dark:text-white leading-none">Planning Global</h3>
+<p class="text-xs text-[#616f89] dark:text-gray-400 mt-1">Lecture Seule</p>
+</div>
+</div>
+<button class="text-[#616f89] hover:text-primary transition-colors">
+<span class="material-symbols-outlined">open_in_full</span>
+</button>
+</div>
+<div class="flex flex-col p-6 flex-1 justify-between">
+<div>
+<div class="flex items-center justify-between mb-6">
+<span class="font-bold text-[#111318] dark:text-white">Octobre 2023</span>
+<div class="flex gap-1">
+<button class="p-1 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+<span class="material-symbols-outlined text-sm">chevron_left</span>
+</button>
+<button class="p-1 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-7 gap-2 text-center text-xs mb-4">
+<div class="text-[#616f89] font-bold uppercase">L</div>
+<div class="text-[#616f89] font-bold uppercase">M</div>
+<div class="text-[#616f89] font-bold uppercase">M</div>
+<div class="text-[#616f89] font-bold uppercase">J</div>
+<div class="text-[#616f89] font-bold uppercase">V</div>
+<div class="text-[#616f89] font-bold uppercase">S</div>
+<div class="text-[#616f89] font-bold uppercase">D</div>
+</div>
+<div class="grid grid-cols-7 gap-2 text-center text-sm">
+<div class="text-gray-300 dark:text-gray-700 py-2">25</div>
+<div class="text-gray-300 dark:text-gray-700 py-2">26</div>
+<div class="text-gray-300 dark:text-gray-700 py-2">27</div>
+<div class="text-gray-300 dark:text-gray-700 py-2">28</div>
+<div class="text-gray-300 dark:text-gray-700 py-2">29</div>
+<div class="text-[#111318] dark:text-gray-200 py-2 rounded-lg">1</div>
+<div class="text-[#111318] dark:text-gray-200 py-2 rounded-lg">2</div>
+<div class="text-[#111318] dark:text-gray-200 py-2 rounded-lg">3</div>
+<div class="text-[#111318] dark:text-gray-200 py-2 rounded-lg">4</div>
+<div class="relative text-white font-bold py-2 bg-primary rounded-lg shadow-md shadow-blue-500/30">
+                                        5
+                                    </div>
+<div class="text-[#111318] dark:text-gray-200 py-2 rounded-lg">6</div>
+<div class="text-[#111318] dark:text-gray-200 py-2 rounded-lg">7</div>
+<div class="text-[#111318] dark:text-gray-200 py-2 rounded-lg">8</div>
+<div class="text-[#111318] dark:text-gray-200 py-2 rounded-lg">9</div>
+<div class="relative text-[#111318] dark:text-gray-200 py-2 bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-300 font-semibold rounded-lg border border-green-200 dark:border-green-800">
+                                        10
+                                    </div>
+<div class="text-[#111318] dark:text-gray-200 py-2 rounded-lg">11</div>
+<div class="text-[#111318] dark:text-gray-200 py-2 rounded-lg">12</div>
+<div class="text-[#111318] dark:text-gray-200 py-2 rounded-lg">13</div>
+<div class="text-[#111318] dark:text-gray-200 py-2 rounded-lg">14</div>
+<div class="relative text-[#111318] dark:text-gray-200 py-2 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 font-semibold rounded-lg border border-blue-200 dark:border-blue-800">
+                                        15
+                                    </div>
+<div class="text-[#111318] dark:text-gray-200 py-2 rounded-lg">16</div>
+<div class="text-[#111318] dark:text-gray-200 py-2 rounded-lg">17</div>
+<div class="text-[#111318] dark:text-gray-200 py-2 rounded-lg">18</div>
+<div class="text-[#111318] dark:text-gray-200 py-2 rounded-lg">19</div>
+<div class="text-[#111318] dark:text-gray-200 py-2 rounded-lg">20</div>
+<div class="text-[#111318] dark:text-gray-200 py-2 rounded-lg">21</div>
+<div class="text-[#111318] dark:text-gray-200 py-2 rounded-lg">22</div>
+<div class="text-[#111318] dark:text-gray-200 py-2 rounded-lg">23</div>
+<div class="text-[#111318] dark:text-gray-200 py-2 rounded-lg">24</div>
+<div class="text-[#111318] dark:text-gray-200 py-2 rounded-lg">25</div>
+<div class="text-[#111318] dark:text-gray-200 py-2 rounded-lg">26</div>
+<div class="text-[#111318] dark:text-gray-200 py-2 rounded-lg">27</div>
+<div class="text-[#111318] dark:text-gray-200 py-2 rounded-lg">28</div>
+<div class="text-[#111318] dark:text-gray-200 py-2 rounded-lg">29</div>
+<div class="text-[#111318] dark:text-gray-200 py-2 rounded-lg">30</div>
+<div class="text-[#111318] dark:text-gray-200 py-2 rounded-lg">31</div>
+</div>
+<div class="mt-6 flex flex-wrap gap-4 justify-center">
+<div class="flex items-center gap-2 text-xs text-[#616f89] dark:text-gray-400">
+<span class="size-2.5 rounded-full bg-primary"></span>
+<span>Aujourd'hui</span>
+</div>
+<div class="flex items-center gap-2 text-xs text-[#616f89] dark:text-gray-400">
+<span class="size-2.5 rounded-full bg-blue-100 border border-blue-300 dark:bg-blue-900/30 dark:border-blue-700"></span>
+<span>Formations</span>
+</div>
+<div class="flex items-center gap-2 text-xs text-[#616f89] dark:text-gray-400">
+<span class="size-2.5 rounded-full bg-green-100 border border-green-300 dark:bg-green-900/30 dark:border-green-700"></span>
+<span>Evènements</span>
+</div>
+</div>
+</div>
+<div class="mt-6 p-3 bg-gray-50 dark:bg-surface-dark/50 rounded-lg border border-gray-100 dark:border-gray-700 text-xs text-center text-gray-500">
+                                Vue en mode "Consultation uniquement". Aucune modification possible.
+                            </div>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-12 border-t border-[#f0f2f4] dark:border-[#2a3441] pt-8">
+<div class="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-[#616f89] dark:text-gray-400">
+<p>© 2023 Intranet Formation. Tous droits réservés.</p>
+<div class="flex gap-6">
+<a class="hover:text-primary transition-colors" href="#">Support</a>
+<a class="hover:text-primary transition-colors" href="#">Règlementation</a>
+<a class="hover:text-primary transition-colors" href="#">Contact RH</a>
+</div>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>

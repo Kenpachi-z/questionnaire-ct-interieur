@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Intranet Formation - Nouvelle Demande</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0056b3","primary-dark": "#004494","background-light": "#f1f5f9","background-dark": "#0f172a","surface-light": "#ffffff",
+                        "surface-dark": "#1e293b","border-light": "#cbd5e1","border-dark": "#334155","text-main": "#1e293b","text-muted": "#64748b",},
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                    },
+                    borderRadius: { 
+                        "DEFAULT": "0.25rem", 
+                        "lg": "0.375rem","xl": "0.5rem", 
+                        "full": "9999px" 
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-main dark:text-white antialiased selection:bg-primary selection:text-white">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-border-light dark:border-border-dark bg-surface-light dark:bg-surface-dark px-6 py-3 shadow-sm">
+<div class="flex items-center gap-4">
+<div class="flex items-center justify-center size-10 rounded-lg bg-primary text-white shadow-sm">
+<span class="material-symbols-outlined">school</span>
+</div>
+<div>
+<h2 class="text-text-main dark:text-white text-lg font-bold leading-tight">Intranet Formation</h2>
+<p class="text-xs text-text-muted">Portail Collaborateur</p>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden md:flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 border border-transparent focus-within:border-primary focus-within:ring-1 focus-within:ring-primary transition-all">
+<span class="material-symbols-outlined text-text-muted text-[18px]">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm p-0 w-48 placeholder:text-text-muted" placeholder="Rechercher une formation..." type="text"/>
+</div>
+<button class="relative flex items-center justify-center text-text-muted hover:text-primary transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-0 right-0 size-2 bg-red-600 rounded-full ring-2 ring-white dark:ring-surface-dark"></span>
+</button>
+<div class="flex items-center gap-3 pl-6 border-l border-border-light dark:border-border-dark">
+<div class="text-right hidden sm:block">
+<p class="text-sm font-semibold leading-none text-text-main">Sophie Martin</p>
+<p class="text-xs text-text-muted leading-none mt-1">Requester</p>
+</div>
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-10 ring-2 ring-white dark:ring-border-dark shadow-sm" data-alt="Portrait of a professional woman smiling" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCXlGilaGtrMF0gZr9tfZzgyanphNkCDQXqjSBXuuaKylx-zI4vdwGGLGJb6CTHBQDDKS7K66igrUky1Ao0lbCrOuZGvdwSFYz_kbKwzzOyCSOtsI4hrzRgxuqoqDJrHXXgLckICEm74Vq31phoIT_2C6QVFJ7rewoy8xo_Ti57WN22Z_YsXx83PI4Kj9XU-r21rB7lK6w3Y8s4xETLk0f6vsFzp7HTvOAEzyynb16ewfbVfXEfLH39S194cv0mgTTMaKbB4FFOAc44");'></div>
+</div>
+</div>
+</header>
+<main class="flex-1 px-4 md:px-8 py-8 md:py-10 max-w-7xl mx-auto w-full">
+<div class="mb-6">
+<a class="inline-flex items-center gap-1 text-sm font-medium text-text-muted hover:text-primary transition-colors mb-4" href="#">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+                    Retour au tableau de bord
+                </a>
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<h1 class="text-2xl md:text-3xl font-bold tracking-tight text-text-main dark:text-white">Nouvelle Demande de Formation</h1>
+<p class="text-text-muted mt-2 max-w-2xl text-sm md:text-base">Remplissez le formulaire ci-dessous pour soumettre votre demande. Les dates seront soumises à validation par le responsable pédagogique.</p>
+</div>
+</div>
+</div>
+<div class="mb-8 bg-surface-light dark:bg-surface-dark p-4 rounded-xl border border-border-light dark:border-border-dark shadow-sm">
+<div class="flex justify-between items-center mb-2">
+<div class="flex items-center gap-2">
+<span class="flex items-center justify-center size-6 rounded-full bg-primary text-white text-xs font-bold">1</span>
+<span class="text-sm font-bold text-primary">Saisie &amp; Planification</span>
+</div>
+<span class="text-xs font-semibold uppercase tracking-wider text-text-muted">Étape 1 sur 2</span>
+</div>
+<div class="h-2 w-full bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-primary w-1/2 rounded-full transition-all duration-500"></div>
+</div>
+</div>
+<div class="grid lg:grid-cols-12 gap-6 lg:gap-8">
+<div class="lg:col-span-7 flex flex-col gap-6">
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm border border-border-light dark:border-border-dark p-6 md:p-8">
+<div class="flex items-center gap-3 mb-6 pb-4 border-b border-border-light dark:border-border-dark">
+<span class="material-symbols-outlined text-primary">description</span>
+<h3 class="text-lg font-bold text-text-main dark:text-white">Informations Générales</h3>
+</div>
+<div class="space-y-6">
+<label class="block group">
+<span class="text-sm font-semibold text-text-main dark:text-white mb-1.5 block group-focus-within:text-primary transition-colors">Titre de la formation</span>
+<input class="w-full rounded-lg border-border-light dark:border-border-dark bg-slate-50 dark:bg-background-dark text-text-main dark:text-white placeholder:text-text-muted/60 focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all h-11 px-4 text-sm" placeholder="Ex: Formation React Avancée" type="text"/>
+</label>
+<div class="grid sm:grid-cols-2 gap-6">
+<label class="block group">
+<span class="text-sm font-semibold text-text-main dark:text-white mb-1.5 block group-focus-within:text-primary transition-colors">Type de formation</span>
+<div class="relative">
+<select class="w-full appearance-none rounded-lg border-border-light dark:border-border-dark bg-slate-50 dark:bg-background-dark text-text-main dark:text-white focus:ring-2 focus:ring-primary/20 focus:border-primary h-11 px-4 pr-10 text-sm transition-all">
+<option>Technique</option>
+<option>Soft Skills</option>
+<option>Management</option>
+<option>Langues</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-text-muted pointer-events-none text-lg">expand_more</span>
+</div>
+</label>
+<label class="block group">
+<span class="text-sm font-semibold text-text-main dark:text-white mb-1.5 block group-focus-within:text-primary transition-colors">Niveau requis</span>
+<div class="relative">
+<select class="w-full appearance-none rounded-lg border-border-light dark:border-border-dark bg-slate-50 dark:bg-background-dark text-text-main dark:text-white focus:ring-2 focus:ring-primary/20 focus:border-primary h-11 px-4 pr-10 text-sm transition-all">
+<option>Débutant</option>
+<option>Intermédiaire</option>
+<option>Avancé</option>
+<option>Expert</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-text-muted pointer-events-none text-lg">expand_more</span>
+</div>
+</label>
+</div>
+<label class="block group">
+<span class="text-sm font-semibold text-text-main dark:text-white mb-1.5 block group-focus-within:text-primary transition-colors">Objectif pédagogique</span>
+<textarea class="w-full rounded-lg border-border-light dark:border-border-dark bg-slate-50 dark:bg-background-dark text-text-main dark:text-white placeholder:text-text-muted/60 focus:ring-2 focus:ring-primary/20 focus:border-primary min-h-[140px] p-4 resize-y text-sm transition-all" placeholder="Décrivez les compétences visées et les résultats attendus à l'issue de cette formation..."></textarea>
+</label>
+</div>
+</div>
+</div>
+<div class="lg:col-span-5 flex flex-col gap-6">
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm border border-border-light dark:border-border-dark p-6 md:p-8 h-full flex flex-col">
+<div class="flex items-center gap-3 mb-6 pb-4 border-b border-border-light dark:border-border-dark">
+<span class="material-symbols-outlined text-primary">calendar_month</span>
+<h3 class="text-lg font-bold text-text-main dark:text-white">Dates souhaitées</h3>
+</div>
+<div class="flex items-center justify-between mb-6 bg-slate-50 dark:bg-slate-800/50 p-2 rounded-lg border border-border-light dark:border-border-dark">
+<button class="size-8 flex items-center justify-center rounded-md hover:bg-white dark:hover:bg-slate-700 text-text-muted hover:text-primary hover:shadow-sm transition-all">
+<span class="material-symbols-outlined text-sm">chevron_left</span>
+</button>
+<h4 class="font-bold text-text-main dark:text-white text-sm uppercase tracking-wide">Novembre 2023</h4>
+<button class="size-8 flex items-center justify-center rounded-md hover:bg-white dark:hover:bg-slate-700 text-text-main dark:text-white hover:text-primary hover:shadow-sm transition-all">
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+</div>
+<div class="grid grid-cols-7 mb-2 text-center">
+<div class="text-[10px] font-bold text-text-muted uppercase tracking-wider py-1">Lun</div>
+<div class="text-[10px] font-bold text-text-muted uppercase tracking-wider py-1">Mar</div>
+<div class="text-[10px] font-bold text-text-muted uppercase tracking-wider py-1">Mer</div>
+<div class="text-[10px] font-bold text-text-muted uppercase tracking-wider py-1">Jeu</div>
+<div class="text-[10px] font-bold text-text-muted uppercase tracking-wider py-1">Ven</div>
+<div class="text-[10px] font-bold text-text-muted uppercase tracking-wider py-1">Sam</div>
+<div class="text-[10px] font-bold text-text-muted uppercase tracking-wider py-1">Dim</div>
+</div>
+<div class="grid grid-cols-7 gap-1 md:gap-2 mb-6 flex-1">
+<div class="aspect-square"></div>
+<div class="aspect-square"></div>
+<button class="aspect-square rounded-md flex items-center justify-center text-sm font-medium text-text-main dark:text-white hover:bg-primary/10 hover:text-primary transition-colors border border-transparent hover:border-primary/20">1</button>
+<button class="aspect-square rounded-md flex items-center justify-center text-sm font-medium text-text-main dark:text-white hover:bg-primary/10 hover:text-primary transition-colors border border-transparent hover:border-primary/20">2</button>
+<button class="aspect-square rounded-md flex items-center justify-center text-sm font-medium text-text-main dark:text-white hover:bg-primary/10 hover:text-primary transition-colors border border-transparent hover:border-primary/20">3</button>
+<div class="aspect-square rounded-md flex items-center justify-center text-sm font-medium text-text-muted bg-slate-50 dark:bg-slate-800/50">4</div>
+<div class="aspect-square rounded-md flex items-center justify-center text-sm font-medium text-text-muted bg-slate-50 dark:bg-slate-800/50">5</div>
+<div class="group relative aspect-square rounded-md flex items-center justify-center text-sm font-medium text-text-muted bg-slate-100 dark:bg-slate-800 cursor-not-allowed border border-transparent hover:border-red-300 dark:hover:border-red-900/50 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNCIgaGVpZ2h0PSI0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik0xIDNMMCA0VjN6TTAgMkwyIDBIMWwtMSAxek0zIDBMMCAzaDFsMy0zek00IDB2MWwtMS0xek0yIDRMMCA2di0xeiIgZmlsbD0iIzk0YTNQOCIgZmlsbC1ydWxlPSJldmVub2RkIiBmaWxsLW9wYWNpdHk9IjAuMSIvPjwvc3ZnPg==')]">
+                                6
+                                <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block w-max max-w-[150px] z-20">
+<div class="bg-slate-800 text-white text-xs px-2 py-1.5 rounded shadow-lg text-center border border-slate-700">
+                                        Indisponible<br/><span class="opacity-75 text-[10px]">(Maintenance TMA)</span>
+</div>
+<div class="w-2 h-2 bg-slate-800 rotate-45 absolute left-1/2 -translate-x-1/2 -bottom-1 border-r border-b border-slate-700"></div>
+</div>
+</div>
+<div class="group relative aspect-square rounded-md flex items-center justify-center text-sm font-medium text-text-muted bg-slate-100 dark:bg-slate-800 cursor-not-allowed bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNCIgaGVpZ2h0PSI0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik0xIDNMMCA0VjN6TTAgMkwyIDBIMWwtMSAxek0zIDBMMCAzaDFsMy0zek00IDB2MWwtMS0xek0yIDRMMCA2di0xeiIgZmlsbD0iIzk0YTNQOCIgZmlsbC1ydWxlPSJldmVub2RkIiBmaWxsLW9wYWNpdHk9IjAuMSIvPjwvc3ZnPg==')]">
+                                7
+                                <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block w-max max-w-[150px] z-20">
+<div class="bg-slate-800 text-white text-xs px-2 py-1.5 rounded shadow-lg text-center border border-slate-700">
+                                        Indisponible<br/><span class="opacity-75 text-[10px]">(Maintenance TMA)</span>
+</div>
+<div class="w-2 h-2 bg-slate-800 rotate-45 absolute left-1/2 -translate-x-1/2 -bottom-1 border-r border-b border-slate-700"></div>
+</div>
+</div>
+<button class="aspect-square rounded-md flex items-center justify-center text-sm font-medium text-text-main dark:text-white hover:bg-primary/10 hover:text-primary transition-colors border border-transparent hover:border-primary/20">8</button>
+<button class="aspect-square rounded-md flex items-center justify-center text-sm font-medium text-text-main dark:text-white hover:bg-primary/10 hover:text-primary transition-colors border border-transparent hover:border-primary/20">9</button>
+<button class="aspect-square rounded-md flex items-center justify-center text-sm font-bold text-white bg-primary shadow-md shadow-primary/20 border border-primary-dark">10</button>
+<div class="aspect-square rounded-md flex items-center justify-center text-sm font-medium text-text-muted bg-slate-50 dark:bg-slate-800/50">11</div>
+<div class="aspect-square rounded-md flex items-center justify-center text-sm font-medium text-text-muted bg-slate-50 dark:bg-slate-800/50">12</div>
+<button class="aspect-square rounded-md flex items-center justify-center text-sm font-medium text-text-main dark:text-white hover:bg-primary/10 hover:text-primary transition-colors border border-transparent hover:border-primary/20">13</button>
+<div class="group relative aspect-square rounded-md flex items-center justify-center text-sm font-medium text-text-muted bg-slate-100 dark:bg-slate-800 cursor-not-allowed bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNCIgaGVpZ2h0PSI0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik0xIDNMMCA0VjN6TTAgMkwyIDBIMWwtMSAxek0zIDBMMCAzaDFsMy0zek00IDB2MWwtMS0xek0yIDRMMCA2di0xeiIgZmlsbD0iIzk0YTNQOCIgZmlsbC1ydWxlPSJldmVub2RkIiBmaWxsLW9wYWNpdHk9IjAuMSIvPjwvc3ZnPg==')]">
+                                14
+                                <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block w-max max-w-[150px] z-20">
+<div class="bg-slate-800 text-white text-xs px-2 py-1.5 rounded shadow-lg text-center border border-slate-700">
+                                        Indisponible<br/><span class="opacity-75 text-[10px]">(Formateur absent)</span>
+</div>
+<div class="w-2 h-2 bg-slate-800 rotate-45 absolute left-1/2 -translate-x-1/2 -bottom-1 border-r border-b border-slate-700"></div>
+</div>
+</div>
+<button class="aspect-square rounded-md flex items-center justify-center text-sm font-medium text-text-main dark:text-white hover:bg-primary/10 hover:text-primary transition-colors border border-transparent hover:border-primary/20">15</button>
+<button class="aspect-square rounded-md flex items-center justify-center text-sm font-medium text-text-main dark:text-white hover:bg-primary/10 hover:text-primary transition-colors border border-transparent hover:border-primary/20">16</button>
+<button class="aspect-square rounded-md flex items-center justify-center text-sm font-medium text-text-main dark:text-white hover:bg-primary/10 hover:text-primary transition-colors border border-transparent hover:border-primary/20">17</button>
+<div class="aspect-square rounded-md flex items-center justify-center text-sm font-medium text-text-muted bg-slate-50 dark:bg-slate-800/50">18</div>
+<div class="aspect-square rounded-md flex items-center justify-center text-sm font-medium text-text-muted bg-slate-50 dark:bg-slate-800/50">19</div>
+<button class="aspect-square rounded-md flex items-center justify-center text-sm font-medium text-text-main dark:text-white hover:bg-primary/10 hover:text-primary transition-colors border border-transparent hover:border-primary/20">20</button>
+<button class="aspect-square rounded-md flex items-center justify-center text-sm font-medium text-text-main dark:text-white hover:bg-primary/10 hover:text-primary transition-colors border border-transparent hover:border-primary/20">21</button>
+<button class="aspect-square rounded-md flex items-center justify-center text-sm font-medium text-text-main dark:text-white hover:bg-primary/10 hover:text-primary transition-colors border border-transparent hover:border-primary/20">22</button>
+<button class="aspect-square rounded-md flex items-center justify-center text-sm font-medium text-text-main dark:text-white hover:bg-primary/10 hover:text-primary transition-colors border border-transparent hover:border-primary/20">23</button>
+<button class="aspect-square rounded-md flex items-center justify-center text-sm font-medium text-text-main dark:text-white hover:bg-primary/10 hover:text-primary transition-colors border border-transparent hover:border-primary/20">24</button>
+<div class="aspect-square rounded-md flex items-center justify-center text-sm font-medium text-text-muted bg-slate-50 dark:bg-slate-800/50">25</div>
+<div class="aspect-square rounded-md flex items-center justify-center text-sm font-medium text-text-muted bg-slate-50 dark:bg-slate-800/50">26</div>
+<button class="aspect-square rounded-md flex items-center justify-center text-sm font-medium text-text-main dark:text-white hover:bg-primary/10 hover:text-primary transition-colors border border-transparent hover:border-primary/20">27</button>
+<button class="aspect-square rounded-md flex items-center justify-center text-sm font-medium text-text-main dark:text-white hover:bg-primary/10 hover:text-primary transition-colors border border-transparent hover:border-primary/20">28</button>
+<button class="aspect-square rounded-md flex items-center justify-center text-sm font-medium text-text-main dark:text-white hover:bg-primary/10 hover:text-primary transition-colors border border-transparent hover:border-primary/20">29</button>
+<button class="aspect-square rounded-md flex items-center justify-center text-sm font-medium text-text-main dark:text-white hover:bg-primary/10 hover:text-primary transition-colors border border-transparent hover:border-primary/20">30</button>
+</div>
+<div class="flex flex-wrap gap-4 pt-4 border-t border-border-light dark:border-border-dark mt-auto">
+<div class="flex items-center gap-2">
+<span class="size-3 rounded bg-primary"></span>
+<span class="text-xs text-text-muted">Sélectionné</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="size-3 rounded bg-surface-light dark:bg-surface-dark border border-border-light dark:border-border-dark"></span>
+<span class="text-xs text-text-muted">Disponible</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="size-3 rounded bg-slate-200 dark:bg-slate-700 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNCIgaGVpZ2h0PSI0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik0xIDNMMCA0VjN6TTAgMkwyIDBIMWwtMSAxek0zIDBMMCAzaDFsMy0zek00IDB2MWwtMS0xek0yIDRMMCA2di0xeiIgZmlsbD0iIzk0YTNQOCIgZmlsbC1ydWxlPSJldmVub2RkIiBmaWxsLW9wYWNpdHk9IjAuMiIvPjwvc3ZnPg==')]"></span>
+<span class="text-xs text-text-muted">Indisponible</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="flex flex-col-reverse md:flex-row items-center justify-between gap-4 mt-8 pt-8 border-t border-border-light dark:border-border-dark">
+<button class="w-full md:w-auto px-6 h-11 rounded-lg border border-border-light dark:border-border-dark text-text-main dark:text-white font-medium hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors text-sm">
+                    Annuler la demande
+                </button>
+<div class="flex items-center gap-4 w-full md:w-auto">
+<button class="flex-1 md:flex-none px-6 h-11 rounded-lg text-primary font-semibold hover:bg-primary/5 transition-colors text-sm">
+                        Enregistrer en brouillon
+                    </button>
+<button class="flex-1 md:flex-none px-8 h-11 rounded-lg bg-primary hover:bg-primary-dark text-white font-bold shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 text-sm transform active:scale-95">
+                        Suivant
+                        <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>

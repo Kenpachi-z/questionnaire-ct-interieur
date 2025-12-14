@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Chargement - Intranet Formation</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#111318] dark:text-white antialiased">
+<div class="relative flex min-h-screen w-full flex-col overflow-hidden">
+<!-- Top Navigation Bar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-[#dbdfe6] dark:border-slate-800 bg-white dark:bg-slate-900 px-6 py-4 lg:px-10">
+<div class="flex items-center gap-4">
+<div class="size-8 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined !text-3xl">school</span>
+</div>
+<h2 class="text-[#111318] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">Intranet Formation</h2>
+</div>
+<div class="flex items-center gap-8">
+<!-- User Avatar -->
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-10 border border-[#dbdfe6] dark:border-slate-700" data-alt="User profile avatar placeholder" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDciatvd3esW9Eqh7LfkYUGDrP-5LIWfM6eV61FPB-e3i3aFUdT_eT-VtIQ0h3lmweWAD9U9pNQmdiM_UXSQD2Bvs2dmTLzo9IHNvxxzKvbs4VU1thBJ3_9mDKg5owNtHydK2s5vHvaAiHFLPCcrAmtXmkT-acpK5kgqYhh1kaM-C2SNfPYr2OoiNRdEr_EixjqnlS6a29Ym-Gc8caxATcn_E-Q-kCGlKmh4kcdbOXrOTP8ZCzttcEtn0WJcC7nhGitncNuaDx7pZNX");'></div>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex flex-1 flex-col items-center justify-center p-4">
+<div class="w-full max-w-[480px] flex flex-col items-center gap-8 animate-fade-in">
+<!-- Illustration Card -->
+<div class="w-full bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-[#dbdfe6] dark:border-slate-800 p-6 flex flex-col items-center gap-6">
+<!-- Visual Illustration -->
+<div class="bg-center bg-no-repeat bg-cover rounded-lg w-full aspect-video shadow-inner" data-alt="Abstract blue geometric shapes and gradients representing digital workspace loading" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC6DJtcuiaYyzo9eePdv-RXkqw6F-luv9wk9NVT1KUSXwvtEJIQ7xnboC0FBWUQiX5wrZ8N3TpVyxgpiBY05LTwVr6VnxACcPrO8FYxrad4OVOVSneCfDU-wM_yxdAyfYLtyUgABXes1mM3xhH42QGvHgDNvb4zyT3F0SMWTydBBqtAdE1x-jVCBKkIKlMqfvvT0NlTo9WuDySfFa4iYNO2lZgFe4AlDhaITRM1c4T5KPGwupW5MuzS3DUdYZufKGS1jnaBmHdYjzPX");'>
+</div>
+<!-- Text Content -->
+<div class="flex flex-col items-center gap-3 text-center">
+<h1 class="text-[#111318] dark:text-white text-xl font-bold leading-tight">
+                            Redirection en cours vers votre Tableau de Bord...
+                        </h1>
+<p class="text-[#616f89] dark:text-slate-400 text-sm font-normal leading-normal max-w-[90%]">
+                            Veuillez patienter pendant que nous préparons vos données pour l'espace de travail.
+                        </p>
+</div>
+<!-- Progress Section -->
+<div class="w-full flex flex-col gap-3 pt-2">
+<div class="flex justify-between items-end">
+<span class="text-[#616f89] dark:text-slate-400 text-xs font-medium uppercase tracking-wider">Chargement</span>
+<span class="text-primary text-sm font-bold">75%</span>
+</div>
+<div class="h-2 w-full rounded-full bg-[#f0f2f4] dark:bg-slate-700 overflow-hidden">
+<div class="h-full rounded-full bg-primary" style="width: 75%;"></div>
+</div>
+<div class="flex items-center justify-center gap-2 mt-2 text-[#616f89] dark:text-slate-500 text-xs">
+<span class="material-symbols-outlined text-[16px] animate-spin">sync</span>
+<span>Synchronisation des permissions...</span>
+</div>
+</div>
+</div>
+<!-- Footer / Help Link -->
+<div class="text-center">
+<a class="text-primary text-sm hover:underline opacity-80 hover:opacity-100 transition-opacity" href="#">
+                        Le chargement est trop long ? Cliquez ici.
+                    </a>
+</div>
+</div>
+</main>
+</div>
+</body></html>

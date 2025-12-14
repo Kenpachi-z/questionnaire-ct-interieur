@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Calendrier Central (Formateur) - Gestion</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "primary-dark": "#0f4bb8",
+                        "secondary": "#616f89",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1a2233",
+                        "border-light": "#e5e7eb",
+                        "border-dark": "#2d3748",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for better intranet look */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8; 
+        }
+        .dark ::-webkit-scrollbar-thumb {
+            background: #475569; 
+        }
+        .dark ::-webkit-scrollbar-thumb:hover {
+            background: #64748b; 
+        }
+
+        /* Diagonal stripes for Indisponibility */
+        .pattern-diagonal-lines {
+            background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(0, 0, 0, 0.05) 10px, rgba(0, 0, 0, 0.05) 20px);
+        }
+        .dark .pattern-diagonal-lines {
+            background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255, 255, 255, 0.05) 10px, rgba(255, 255, 255, 0.05) 20px);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display transition-colors duration-200 h-screen flex flex-col overflow-hidden">
+<!-- Top Navigation -->
+<header class="flex-none bg-surface-light dark:bg-surface-dark border-b border-border-light dark:border-border-dark px-6 py-3 shadow-sm z-20">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-3 text-slate-900 dark:text-white">
+<div class="size-8 bg-primary rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined">school</span>
+</div>
+<h2 class="text-lg font-bold tracking-tight">Intranet Formation</h2>
+</div>
+<!-- Search -->
+<div class="hidden md:flex relative group w-64">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-secondary text-[20px]">search</span>
+</div>
+<input class="block w-full pl-10 pr-3 py-2 border-none rounded-lg bg-background-light dark:bg-slate-800 text-sm focus:ring-2 focus:ring-primary placeholder-secondary dark:text-white" placeholder="Rechercher une formation..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<nav class="hidden lg:flex items-center gap-6 text-sm font-medium text-slate-600 dark:text-slate-300">
+<a class="hover:text-primary transition-colors" href="#">Tableau de bord</a>
+<a class="text-primary font-semibold" href="#">Calendrier</a>
+<a class="hover:text-primary transition-colors" href="#">Formations</a>
+<a class="hover:text-primary transition-colors" href="#">Ressources</a>
+</nav>
+<div class="h-6 w-px bg-border-light dark:bg-border-dark hidden lg:block"></div>
+<div class="flex items-center gap-3">
+<button class="relative p-2 text-slate-500 dark:text-slate-400 hover:bg-background-light dark:hover:bg-slate-800 rounded-lg transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 size-2 bg-red-500 rounded-full border-2 border-white dark:border-surface-dark"></span>
+</button>
+<button class="flex items-center gap-2 pl-2 pr-4 py-1.5 rounded-lg hover:bg-background-light dark:hover:bg-slate-800 transition-colors">
+<div class="size-8 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-xs">JD</div>
+<span class="text-sm font-medium hidden sm:block">Jean Dupont</span>
+</button>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Layout -->
+<div class="flex flex-1 overflow-hidden">
+<!-- Sidebar Filter Panel -->
+<aside class="w-80 flex-none bg-surface-light dark:bg-surface-dark border-r border-border-light dark:border-border-dark flex flex-col overflow-y-auto z-10">
+<div class="p-6">
+<!-- Breadcrumbs -->
+<nav class="flex text-sm text-secondary mb-6">
+<a class="hover:text-primary" href="#">Accueil</a>
+<span class="mx-2">/</span>
+<a class="hover:text-primary" href="#">Calendrier</a>
+<span class="mx-2">/</span>
+<span class="font-semibold text-slate-900 dark:text-white">Gestion</span>
+</nav>
+<div class="mb-6">
+<h1 class="text-2xl font-black text-slate-900 dark:text-white mb-2">Filtres</h1>
+<p class="text-sm text-secondary">Affinez l'affichage du calendrier.</p>
+</div>
+<!-- Filters -->
+<div class="space-y-6">
+<!-- Search Formateur -->
+<div class="space-y-2">
+<label class="text-sm font-semibold text-slate-900 dark:text-white flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">person_search</span>
+                            Formateurs
+                        </label>
+<div class="relative">
+<input class="w-full text-sm rounded-lg border-border-light dark:border-border-dark bg-background-light dark:bg-slate-800 focus:ring-primary focus:border-primary px-3 py-2.5" placeholder="Rechercher..." type="text"/>
+<span class="absolute right-3 top-2.5 material-symbols-outlined text-secondary text-lg">search</span>
+</div>
+<div class="flex flex-wrap gap-2 mt-2">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary border border-primary/20">
+                                Jean Dupont
+                                <button class="hover:text-primary-dark"><span class="material-symbols-outlined text-[14px]">close</span></button>
+</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary border border-primary/20">
+                                Marie Currie
+                                <button class="hover:text-primary-dark"><span class="material-symbols-outlined text-[14px]">close</span></button>
+</span>
+</div>
+</div>
+<!-- Type d'événement -->
+<div class="space-y-3">
+<label class="text-sm font-semibold text-slate-900 dark:text-white flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">category</span>
+                            Type d'événement
+                        </label>
+<div class="space-y-2">
+<label class="flex items-center gap-3 p-2 rounded-lg hover:bg-background-light dark:hover:bg-slate-800 cursor-pointer transition-colors group">
+<input checked="" class="rounded border-gray-300 text-primary focus:ring-primary" type="checkbox"/>
+<div class="flex items-center gap-2 flex-1">
+<div class="size-3 rounded-full bg-blue-600"></div>
+<span class="text-sm text-slate-700 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-white">Formations</span>
+</div>
+</label>
+<label class="flex items-center gap-3 p-2 rounded-lg hover:bg-background-light dark:hover:bg-slate-800 cursor-pointer transition-colors group">
+<input checked="" class="rounded border-gray-300 text-primary focus:ring-primary" type="checkbox"/>
+<div class="flex items-center gap-2 flex-1">
+<div class="size-3 rounded-full bg-amber-500"></div>
+<span class="text-sm text-slate-700 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-white">TMA MEP / Bloquant</span>
+</div>
+</label>
+<label class="flex items-center gap-3 p-2 rounded-lg hover:bg-background-light dark:hover:bg-slate-800 cursor-pointer transition-colors group">
+<input checked="" class="rounded border-gray-300 text-primary focus:ring-primary" type="checkbox"/>
+<div class="flex items-center gap-2 flex-1">
+<div class="size-3 rounded-full bg-slate-400 pattern-diagonal-lines"></div>
+<span class="text-sm text-slate-700 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-white">Indisponibilités</span>
+</div>
+</label>
+</div>
+</div>
+<!-- Status -->
+<div class="space-y-3">
+<label class="text-sm font-semibold text-slate-900 dark:text-white flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">toggle_on</span>
+                            Statut
+                        </label>
+<div class="flex flex-wrap gap-2">
+<button class="px-3 py-1.5 rounded-full text-xs font-semibold bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400 border border-green-200 dark:border-green-800 hover:bg-green-200 dark:hover:bg-green-900/50 transition-colors">Validé</button>
+<button class="px-3 py-1.5 rounded-full text-xs font-semibold bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-400 border border-yellow-200 dark:border-yellow-800 hover:bg-yellow-200 dark:hover:bg-yellow-900/50 transition-colors">En attente</button>
+<button class="px-3 py-1.5 rounded-full text-xs font-semibold bg-red-50 text-red-600 dark:bg-red-900/20 dark:text-red-400 border border-red-100 dark:border-red-900 hover:bg-red-100 dark:hover:bg-red-900/40 transition-colors opacity-60 grayscale">Refusé</button>
+</div>
+</div>
+<!-- Region -->
+<div class="space-y-2">
+<label class="text-sm font-semibold text-slate-900 dark:text-white flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">public</span>
+                            Région
+                        </label>
+<select class="w-full text-sm rounded-lg border-border-light dark:border-border-dark bg-background-light dark:bg-slate-800 focus:ring-primary focus:border-primary p-2.5">
+<option>Toutes les régions</option>
+<option>Europe (EMEA)</option>
+<option>Amérique du Nord</option>
+<option>Asie Pacifique</option>
+</select>
+</div>
+</div>
+</div>
+<!-- Sidebar Footer -->
+<div class="mt-auto p-4 border-t border-border-light dark:border-border-dark">
+<div class="bg-blue-50 dark:bg-blue-900/20 p-3 rounded-lg flex gap-3 items-start">
+<span class="material-symbols-outlined text-primary text-xl mt-0.5">info</span>
+<div>
+<p class="text-xs font-semibold text-primary mb-1">Besoin d'aide ?</p>
+<p class="text-xs text-secondary leading-relaxed">Contactez le support IT pour signaler un problème de synchronisation.</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Calendar Area -->
+<main class="flex-1 flex flex-col overflow-hidden relative">
+<!-- Calendar Header Toolbar -->
+<div class="flex-none p-6 border-b border-border-light dark:border-border-dark bg-surface-light dark:bg-surface-dark flex flex-wrap items-center justify-between gap-4">
+<div class="flex items-center gap-4">
+<button class="px-4 py-2 bg-background-light dark:bg-slate-800 border border-border-light dark:border-border-dark rounded-lg text-sm font-medium hover:bg-gray-100 dark:hover:bg-slate-700 transition-colors">Aujourd'hui</button>
+<div class="flex items-center gap-1">
+<button class="p-1.5 rounded-full hover:bg-background-light dark:hover:bg-slate-800 text-secondary hover:text-primary transition-colors">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="p-1.5 rounded-full hover:bg-background-light dark:hover:bg-slate-800 text-secondary hover:text-primary transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+<h2 class="text-xl font-bold text-slate-900 dark:text-white capitalize">Octobre 2023</h2>
+</div>
+<div class="flex items-center gap-3">
+<div class="flex bg-background-light dark:bg-slate-800 p-1 rounded-lg border border-border-light dark:border-border-dark">
+<button class="px-3 py-1.5 text-sm font-medium rounded text-secondary hover:text-slate-900 dark:hover:text-white transition-colors">Mois</button>
+<button class="px-3 py-1.5 text-sm font-medium rounded bg-white dark:bg-slate-700 shadow-sm text-slate-900 dark:text-white">Semaine</button>
+<button class="px-3 py-1.5 text-sm font-medium rounded text-secondary hover:text-slate-900 dark:hover:text-white transition-colors">Jour</button>
+<button class="px-3 py-1.5 text-sm font-medium rounded text-secondary hover:text-slate-900 dark:hover:text-white transition-colors">Agenda</button>
+</div>
+<button class="flex items-center gap-2 bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-lg text-sm font-bold shadow-sm shadow-blue-500/30 transition-all hover:shadow-md hover:shadow-blue-500/40">
+<span class="material-symbols-outlined text-[20px]">add</span>
+<span class="hidden sm:inline">Ajouter un événement</span>
+</button>
+</div>
+</div>
+<!-- Calendar Grid (Week View) -->
+<div class="flex-1 overflow-y-auto bg-white dark:bg-surface-dark relative">
+<!-- Time/Grid Structure -->
+<div class="min-w-[1000px] h-full flex flex-col">
+<!-- Days Header -->
+<div class="flex border-b border-border-light dark:border-border-dark sticky top-0 bg-surface-light dark:bg-surface-dark z-10">
+<div class="w-16 flex-none border-r border-border-light dark:border-border-dark"></div> <!-- Time column spacer -->
+<!-- Day Columns -->
+<div class="flex-1 grid grid-cols-5">
+<div class="border-r border-border-light dark:border-border-dark p-3 text-center">
+<span class="block text-xs font-semibold text-secondary uppercase">Lun</span>
+<span class="block text-xl font-bold text-slate-900 dark:text-white mt-1">16</span>
+</div>
+<div class="border-r border-border-light dark:border-border-dark p-3 text-center bg-blue-50/50 dark:bg-blue-900/10">
+<span class="block text-xs font-semibold text-primary uppercase">Mar</span>
+<span class="block text-xl font-bold text-primary mt-1 w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900 flex items-center justify-center mx-auto">17</span>
+</div>
+<div class="border-r border-border-light dark:border-border-dark p-3 text-center">
+<span class="block text-xs font-semibold text-secondary uppercase">Mer</span>
+<span class="block text-xl font-bold text-slate-900 dark:text-white mt-1">18</span>
+</div>
+<div class="border-r border-border-light dark:border-border-dark p-3 text-center">
+<span class="block text-xs font-semibold text-secondary uppercase">Jeu</span>
+<span class="block text-xl font-bold text-slate-900 dark:text-white mt-1">19</span>
+</div>
+<div class="p-3 text-center">
+<span class="block text-xs font-semibold text-secondary uppercase">Ven</span>
+<span class="block text-xl font-bold text-slate-900 dark:text-white mt-1">20</span>
+</div>
+</div>
+</div>
+<!-- Scrollable Time Grid -->
+<div class="flex flex-1 relative">
+<!-- Time Labels -->
+<div class="w-16 flex-none border-r border-border-light dark:border-border-dark bg-background-light dark:bg-surface-dark">
+<div class="h-20 border-b border-dashed border-border-light dark:border-border-dark text-xs text-secondary text-right pr-2 pt-2">08:00</div>
+<div class="h-20 border-b border-dashed border-border-light dark:border-border-dark text-xs text-secondary text-right pr-2 pt-2">09:00</div>
+<div class="h-20 border-b border-dashed border-border-light dark:border-border-dark text-xs text-secondary text-right pr-2 pt-2">10:00</div>
+<div class="h-20 border-b border-dashed border-border-light dark:border-border-dark text-xs text-secondary text-right pr-2 pt-2">11:00</div>
+<div class="h-20 border-b border-dashed border-border-light dark:border-border-dark text-xs text-secondary text-right pr-2 pt-2">12:00</div>
+<div class="h-20 border-b border-dashed border-border-light dark:border-border-dark text-xs text-secondary text-right pr-2 pt-2">13:00</div>
+<div class="h-20 border-b border-dashed border-border-light dark:border-border-dark text-xs text-secondary text-right pr-2 pt-2">14:00</div>
+<div class="h-20 border-b border-dashed border-border-light dark:border-border-dark text-xs text-secondary text-right pr-2 pt-2">15:00</div>
+<div class="h-20 border-b border-dashed border-border-light dark:border-border-dark text-xs text-secondary text-right pr-2 pt-2">16:00</div>
+<div class="h-20 border-b border-dashed border-border-light dark:border-border-dark text-xs text-secondary text-right pr-2 pt-2">17:00</div>
+</div>
+<!-- Grid Lines Background -->
+<div class="absolute inset-0 left-16 right-0 grid grid-cols-5 pointer-events-none">
+<div class="border-r border-border-light dark:border-border-dark h-full relative">
+<div class="absolute w-full top-0 h-20 border-b border-dashed border-border-light/50 dark:border-border-dark"></div>
+<div class="absolute w-full top-20 h-20 border-b border-dashed border-border-light/50 dark:border-border-dark"></div>
+<div class="absolute w-full top-40 h-20 border-b border-dashed border-border-light/50 dark:border-border-dark"></div>
+<div class="absolute w-full top-60 h-20 border-b border-dashed border-border-light/50 dark:border-border-dark"></div>
+<div class="absolute w-full top-80 h-20 border-b border-dashed border-border-light/50 dark:border-border-dark"></div>
+<div class="absolute w-full top-[25rem] h-20 border-b border-dashed border-border-light/50 dark:border-border-dark"></div>
+<div class="absolute w-full top-[30rem] h-20 border-b border-dashed border-border-light/50 dark:border-border-dark"></div>
+<div class="absolute w-full top-[35rem] h-20 border-b border-dashed border-border-light/50 dark:border-border-dark"></div>
+<div class="absolute w-full top-[40rem] h-20 border-b border-dashed border-border-light/50 dark:border-border-dark"></div>
+<div class="absolute w-full top-[45rem] h-20 border-b border-dashed border-border-light/50 dark:border-border-dark"></div>
+</div>
+<div class="border-r border-border-light dark:border-border-dark h-full bg-blue-50/20 dark:bg-blue-900/5 relative">
+<!-- Grid lines repeated for visual consistency -->
+<div class="absolute w-full top-0 h-20 border-b border-dashed border-border-light/50 dark:border-border-dark"></div>
+<div class="absolute w-full top-20 h-20 border-b border-dashed border-border-light/50 dark:border-border-dark"></div>
+<div class="absolute w-full top-40 h-20 border-b border-dashed border-border-light/50 dark:border-border-dark"></div>
+<div class="absolute w-full top-60 h-20 border-b border-dashed border-border-light/50 dark:border-border-dark"></div>
+<div class="absolute w-full top-80 h-20 border-b border-dashed border-border-light/50 dark:border-border-dark"></div>
+<div class="absolute w-full top-[25rem] h-20 border-b border-dashed border-border-light/50 dark:border-border-dark"></div>
+<div class="absolute w-full top-[30rem] h-20 border-b border-dashed border-border-light/50 dark:border-border-dark"></div>
+<div class="absolute w-full top-[35rem] h-20 border-b border-dashed border-border-light/50 dark:border-border-dark"></div>
+<div class="absolute w-full top-[40rem] h-20 border-b border-dashed border-border-light/50 dark:border-border-dark"></div>
+<div class="absolute w-full top-[45rem] h-20 border-b border-dashed border-border-light/50 dark:border-border-dark"></div>
+<!-- Current Time Indicator -->
+<div class="absolute w-full top-[13.5rem] border-t-2 border-red-500 z-20 flex items-center">
+<div class="size-2 rounded-full bg-red-500 -ml-1"></div>
+</div>
+</div>
+<div class="border-r border-border-light dark:border-border-dark h-full relative">
+<div class="absolute w-full top-0 h-20 border-b border-dashed border-border-light/50 dark:border-border-dark"></div>
+<div class="absolute w-full top-20 h-20 border-b border-dashed border-border-light/50 dark:border-border-dark"></div>
+<div class="absolute w-full top-40 h-20 border-b border-dashed border-border-light/50 dark:border-border-dark"></div>
+<div class="absolute w-full top-60 h-20 border-b border-dashed border-border-light/50 dark:border-border-dark"></div>
+<div class="absolute w-full top-80 h-20 border-b border-dashed border-border-light/50 dark:border-border-dark"></div>
+<div class="absolute w-full top-[25rem] h-20 border-b border-dashed border-border-light/50 dark:border-border-dark"></div>
+<div class="absolute w-full top-[30rem] h-20 border-b border-dashed border-border-light/50 dark:border-border-dark"></div>
+<div class="absolute w-full top-[35rem] h-20 border-b border-dashed border-border-light/50 dark:border-border-dark"></div>
+<div class="absolute w-full top-[40rem] h-20 border-b border-dashed border-border-light/50 dark:border-border-dark"></div>
+<div class="absolute w-full top-[45rem] h-20 border-b border-dashed border-border-light/50 dark:border-border-dark"></div>
+</div>
+<div class="border-r border-border-light dark:border-border-dark h-full relative">
+<div class="absolute w-full top-0 h-20 border-b border-dashed border-border-light/50 dark:border-border-dark"></div>
+<div class="absolute w-full top-20 h-20 border-b border-dashed border-border-light/50 dark:border-border-dark"></div>
+<div class="absolute w-full top-40 h-20 border-b border-dashed border-border-light/50 dark:border-border-dark"></div>
+<div class="absolute w-full top-60 h-20 border-b border-dashed border-border-light/50 dark:border-border-dark"></div>
+<div class="absolute w-full top-80 h-20 border-b border-dashed border-border-light/50 dark:border-border-dark"></div>
+<div class="absolute w-full top-[25rem] h-20 border-b border-dashed border-border-light/50 dark:border-border-dark"></div>
+<div class="absolute w-full top-[30rem] h-20 border-b border-dashed border-border-light/50 dark:border-border-dark"></div>
+<div class="absolute w-full top-[35rem] h-20 border-b border-dashed border-border-light/50 dark:border-border-dark"></div>
+<div class="absolute w-full top-[40rem] h-20 border-b border-dashed border-border-light/50 dark:border-border-dark"></div>
+<div class="absolute w-full top-[45rem] h-20 border-b border-dashed border-border-light/50 dark:border-border-dark"></div>
+</div>
+<div class="h-full relative">
+<div class="absolute w-full top-0 h-20 border-b border-dashed border-border-light/50 dark:border-border-dark"></div>
+<div class="absolute w-full top-20 h-20 border-b border-dashed border-border-light/50 dark:border-border-dark"></div>
+<div class="absolute w-full top-40 h-20 border-b border-dashed border-border-light/50 dark:border-border-dark"></div>
+<div class="absolute w-full top-60 h-20 border-b border-dashed border-border-light/50 dark:border-border-dark"></div>
+<div class="absolute w-full top-80 h-20 border-b border-dashed border-border-light/50 dark:border-border-dark"></div>
+<div class="absolute w-full top-[25rem] h-20 border-b border-dashed border-border-light/50 dark:border-border-dark"></div>
+<div class="absolute w-full top-[30rem] h-20 border-b border-dashed border-border-light/50 dark:border-border-dark"></div>
+<div class="absolute w-full top-[35rem] h-20 border-b border-dashed border-border-light/50 dark:border-border-dark"></div>
+<div class="absolute w-full top-[40rem] h-20 border-b border-dashed border-border-light/50 dark:border-border-dark"></div>
+<div class="absolute w-full top-[45rem] h-20 border-b border-dashed border-border-light/50 dark:border-border-dark"></div>
+</div>
+</div>
+<!-- Events Layer -->
+<div class="relative flex-1 grid grid-cols-5 z-10 pointer-events-none">
+<!-- Column Monday -->
+<div class="relative h-full pointer-events-auto">
+<!-- Event: Formation (Blue) -->
+<div class="absolute top-20 left-1 right-2 h-40 bg-blue-100 dark:bg-blue-900 border-l-4 border-primary rounded shadow-sm hover:shadow-md transition-shadow cursor-pointer p-2 flex flex-col justify-between group">
+<div data-alt="Event details for React JS training">
+<p class="text-xs font-bold text-primary dark:text-blue-300">09:00 - 11:00</p>
+<p class="text-sm font-bold text-slate-800 dark:text-white leading-tight mt-1">Formation React JS</p>
+<p class="text-xs text-slate-600 dark:text-slate-300 mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">person</span>
+                                            J. Dupont
+                                        </p>
+</div>
+<div class="hidden group-hover:flex justify-end gap-1">
+<button class="p-1 rounded hover:bg-white/50 dark:hover:bg-black/20 text-slate-600 dark:text-slate-300"><span class="material-symbols-outlined text-[16px]">edit</span></button>
+</div>
+</div>
+<!-- Event: Indispo (Grey Hatched) -->
+<div class="absolute top-[21rem] left-1 right-2 h-20 bg-slate-100 dark:bg-slate-800 border-l-4 border-slate-400 rounded p-2 pattern-diagonal-lines cursor-not-allowed opacity-90">
+<p class="text-xs font-bold text-slate-500">14:00 - 15:00</p>
+<p class="text-sm font-medium text-slate-600 dark:text-slate-400 mt-0.5">Indisponibilité</p>
+<p class="text-xs text-slate-500 italic">RDV Médical</p>
+</div>
+</div>
+<!-- Column Tuesday -->
+<div class="relative h-full pointer-events-auto">
+<!-- Event: TMA MEP (Amber) -->
+<div class="absolute top-0 left-1 right-2 h-20 bg-amber-50 dark:bg-amber-900/40 border-l-4 border-amber-500 rounded p-2 cursor-pointer hover:bg-amber-100 dark:hover:bg-amber-900/60 transition-colors">
+<div class="flex items-start justify-between">
+<div>
+<p class="text-xs font-bold text-amber-700 dark:text-amber-400">08:00 - 09:00</p>
+<p class="text-sm font-bold text-slate-800 dark:text-white mt-0.5">MEP TMA</p>
+</div>
+<span class="material-symbols-outlined text-amber-500 text-sm">warning</span>
+</div>
+<p class="text-xs text-amber-800 dark:text-amber-200/70 mt-1">Serveurs indisponibles</p>
+</div>
+<!-- Event: Formation (Blue) - Dragging State -->
+<div class="absolute top-40 left-1 right-2 h-40 bg-blue-100 dark:bg-blue-900 border-l-4 border-primary rounded shadow-lg ring-2 ring-primary ring-opacity-50 cursor-move z-20 opacity-90 scale-[1.02]">
+<div class="p-2 h-full flex flex-col justify-between">
+<div>
+<p class="text-xs font-bold text-primary dark:text-blue-300">10:00 - 12:00</p>
+<p class="text-sm font-bold text-slate-800 dark:text-white leading-tight mt-1">Workshop UI/UX</p>
+<p class="text-xs text-slate-600 dark:text-slate-300 mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">person</span>
+                                                M. Currie
+                                            </p>
+</div>
+<div class="flex justify-center pb-1">
+<span class="material-symbols-outlined text-slate-400 text-[18px]">drag_indicator</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Column Wednesday -->
+<div class="relative h-full pointer-events-auto">
+<!-- Event: Formation Pending (Yellow outline) -->
+<div class="absolute top-[20rem] left-1 right-2 h-60 bg-white dark:bg-surface-dark border-2 border-dashed border-yellow-400 rounded p-2 cursor-pointer hover:bg-yellow-50 dark:hover:bg-yellow-900/10">
+<div class="flex justify-between items-start">
+<span class="inline-block px-1.5 py-0.5 rounded text-[10px] font-bold bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200">EN ATTENTE</span>
+</div>
+<p class="text-xs font-bold text-slate-500 mt-2">13:00 - 16:00</p>
+<p class="text-sm font-bold text-slate-800 dark:text-white mt-1">Onboarding RH</p>
+<p class="text-xs text-slate-500 mt-1">Salle A12</p>
+</div>
+</div>
+<!-- Column Thursday -->
+<div class="relative h-full pointer-events-auto">
+<!-- Empty slot interaction hint -->
+<div class="absolute top-[15rem] left-1 right-2 h-20 border-2 border-transparent hover:border-primary/30 hover:bg-primary/5 rounded-lg flex items-center justify-center cursor-pointer group transition-all">
+<span class="hidden group-hover:flex items-center gap-1 text-primary text-xs font-bold">
+<span class="material-symbols-outlined text-[16px]">add</span>
+                                        Ajouter
+                                    </span>
+</div>
+</div>
+<!-- Column Friday -->
+<div class="relative h-full pointer-events-auto">
+<div class="absolute top-20 left-1 right-2 h-80 bg-blue-100 dark:bg-blue-900 border-l-4 border-primary rounded p-2 shadow-sm hover:shadow-md cursor-pointer group">
+<p class="text-xs font-bold text-primary dark:text-blue-300">09:00 - 13:00</p>
+<p class="text-sm font-bold text-slate-800 dark:text-white leading-tight mt-1">Formation Avancée Backend</p>
+<p class="text-xs text-slate-600 dark:text-slate-300 mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">person</span>
+                                        J. Dupont
+                                    </p>
+<div class="mt-2 flex gap-1 flex-wrap">
+<span class="text-[10px] px-1.5 py-0.5 bg-white/60 dark:bg-black/20 rounded text-slate-600 dark:text-slate-300">Paris</span>
+<span class="text-[10px] px-1.5 py-0.5 bg-white/60 dark:bg-black/20 rounded text-slate-600 dark:text-slate-300">12 Participants</span>
+</div>
+<div class="absolute bottom-2 right-2 hidden group-hover:flex gap-1 bg-white/80 dark:bg-black/50 p-1 rounded backdrop-blur-sm">
+<button class="p-1 rounded hover:bg-white dark:hover:bg-slate-700 text-blue-600 dark:text-blue-300"><span class="material-symbols-outlined text-[16px]">edit</span></button>
+<button class="p-1 rounded hover:bg-white dark:hover:bg-slate-700 text-red-500"><span class="material-symbols-outlined text-[16px]">delete</span></button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Toast Notification (simulated) -->
+<div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-50 animate-bounce">
+<div class="bg-surface-dark dark:bg-white text-white dark:text-surface-dark px-4 py-3 rounded-lg shadow-lg flex items-center gap-3">
+<span class="material-symbols-outlined text-green-400 dark:text-green-600">check_circle</span>
+<div class="text-sm">
+<p class="font-bold">Formation déplacée</p>
+<p class="opacity-80 text-xs">Notification envoyée au demandeur (T. Martin).</p>
+</div>
+<button class="ml-2 hover:text-gray-300 dark:hover:text-gray-600"><span class="material-symbols-outlined">close</span></button>
+</div>
+</div>
+</main>
+</div>
+</body></html>

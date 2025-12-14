@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Récupération MDP - Admin</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-[#111318] dark:text-white transition-colors duration-200">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Top Navigation Bar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-[#dbdfe6] dark:border-slate-800 bg-white dark:bg-[#1a202c] px-4 py-3 sm:px-10">
+<div class="flex items-center gap-4 text-[#111318] dark:text-white">
+<div class="size-8 flex items-center justify-center rounded-lg bg-primary/10 text-primary">
+<span class="material-symbols-outlined text-[24px]">admin_panel_settings</span>
+</div>
+<h2 class="text-lg font-bold leading-tight tracking-[-0.015em]">Intranet Admin</h2>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden sm:flex flex-col items-end mr-2">
+<span class="text-sm font-medium leading-none">Admin Support</span>
+<span class="text-xs text-slate-500 dark:text-slate-400">Help Desk</span>
+</div>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border border-slate-200 dark:border-slate-700" data-alt="Support agent avatar placeholder" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDiJbvDXGIHYbb6E2EWgQ41LWcPVb9xZ4JRTMXjzzS8hCxR8G03Nw9Sjwu65bv0j1hJElFfs0wl0qnKAgZGQYyRFo6uEq0_FdPxMfzdLNUXwdeFkeGLYxe7xy7VA6NZRi4fkjBZUctz3mYiTP6qHpu4V1Z59fxEfh-XnDiSOu9LQXDR1ufWluMPm7zPFQxv6pde3mNIzK1bHrdAxMlLWSVjRkZE4fc4JdaFKHqh-clVgwq-HkRPMZkrKV1BCtHLENGJIIz4PG8mbyoy");'>
+</div>
+</div>
+</header>
+<!-- Main Content Centered -->
+<main class="flex flex-1 items-center justify-center p-4 sm:p-6">
+<div class="layout-content-container flex w-full max-w-[480px] flex-col">
+<!-- Card Container -->
+<div class="flex flex-col gap-6 rounded-xl bg-white dark:bg-[#1a202c] p-8 shadow-sm border border-[#dbdfe6] dark:border-slate-700">
+<!-- Header Section -->
+<div class="flex flex-col items-center gap-3 text-center">
+<div class="flex h-14 w-14 items-center justify-center rounded-full bg-primary/10 text-primary mb-2">
+<span class="material-symbols-outlined text-[32px]">lock_reset</span>
+</div>
+<h1 class="text-[#111318] dark:text-white text-2xl font-bold leading-tight tracking-tight">
+                            Récupération MDP
+                        </h1>
+<p class="text-[#616f89] dark:text-slate-400 text-sm font-normal leading-normal max-w-xs">
+                            Veuillez saisir votre identifiant ou votre adresse e-mail administrateur pour recevoir les instructions de réinitialisation.
+                        </p>
+</div>
+<!-- Form Section -->
+<div class="flex flex-col gap-5">
+<!-- Input Field -->
+<div class="flex flex-col gap-2">
+<label class="text-[#111318] dark:text-slate-200 text-sm font-medium leading-normal" for="email-input">
+                                Identifiant ou Adresse e-mail
+                            </label>
+<div class="relative">
+<div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-4 text-[#616f89]">
+<span class="material-symbols-outlined text-[20px]">mail</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg border border-[#dbdfe6] dark:border-slate-600 bg-white dark:bg-slate-800 text-[#111318] dark:text-white placeholder:text-[#616f89] dark:placeholder:text-slate-500 focus:border-primary focus:outline-0 focus:ring-0 h-12 pl-11 pr-4 text-base font-normal leading-normal shadow-sm transition-colors" id="email-input" placeholder="admin@company.com" type="text" value=""/>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex flex-col gap-3 pt-2">
+<!-- Primary Button -->
+<button class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-primary hover:bg-blue-700 text-white text-base font-bold leading-normal tracking-[0.015em] shadow-sm transition-colors duration-200">
+<span class="truncate">Envoyer les instructions</span>
+</button>
+<!-- Secondary Button (Link) -->
+<button class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-transparent hover:bg-slate-50 dark:hover:bg-slate-800 text-[#616f89] hover:text-[#111318] dark:text-slate-400 dark:hover:text-white text-sm font-semibold leading-normal tracking-[0.015em] transition-colors duration-200 group">
+<span class="material-symbols-outlined mr-2 text-[18px] transition-transform group-hover:-translate-x-1">arrow_back</span>
+<span class="truncate">Retour à la connexion</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Footer / Help Link -->
+<div class="mt-8 flex justify-center text-center">
+<p class="text-xs text-[#616f89] dark:text-slate-500">
+                        Vous rencontrez des problèmes ? <a class="text-primary hover:underline font-medium" href="#">Contacter le support IT</a>
+</p>
+</div>
+</div>
+</main>
+</div>
+</body></html>

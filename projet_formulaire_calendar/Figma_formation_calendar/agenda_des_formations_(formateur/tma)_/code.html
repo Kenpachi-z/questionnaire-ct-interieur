@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Agenda des Formations (Formateur/TMA)</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1e40af", // Corporate Deep Blue
+                        "primary-hover": "#1e3a8a", // Darker Blue for hover
+                        "secondary": "#64748b", // Slate Grey
+                        "background-light": "#f8fafc", // Slate 50
+                        "background-dark": "#0f172a", // Slate 900
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1e293b",
+                        "border-light": "#e2e8f0", // Slate 200
+                        "border-dark": "#334155", // Slate 700
+                        "text-main": "#1e293b", // Slate 800
+                        "text-muted": "#64748b", // Slate 500
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-main dark:text-white">
+<div class="relative flex h-screen w-full flex-col overflow-hidden">
+<header class="flex shrink-0 items-center justify-between whitespace-nowrap border-b border-solid border-border-light dark:border-border-dark bg-white dark:bg-[#1a202c] px-6 py-3 z-20 shadow-sm">
+<div class="flex items-center gap-4 text-text-main dark:text-white">
+<div class="size-8 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl">school</span>
+</div>
+<h2 class="text-text-main dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">Intranet Formation</h2>
+</div>
+<div class="flex flex-1 justify-end gap-8">
+<div class="hidden md:flex items-center gap-9">
+<a class="text-text-muted dark:text-gray-300 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Accueil</a>
+<a class="text-text-muted dark:text-gray-300 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Demandes</a>
+<a class="text-primary text-sm font-bold leading-normal border-b-2 border-primary" href="#">Planning</a>
+<a class="text-text-muted dark:text-gray-300 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Rapports</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="hidden sm:flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal hover:bg-primary-hover transition shadow-sm">
+<span class="truncate">Mon Profil</span>
+</button>
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-10 border-2 border-white dark:border-gray-700 shadow-sm ring-1 ring-slate-200 dark:ring-gray-700" data-alt="User profile picture placeholder" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBhuab6yJ2Yf1kbJErRNfK-1vyGfTvyQ3ps2Zfz7nUP2d6GfaqYlw0WBIONZZufEsd8MRBOQujRcIjUY656SdWEzBHSpchRNC46gZLtmWLY22OmQMr-8SJClQGpV9aoc9OXvbKKzf2fD4VShS4nsYfdaSAKNuOApChpV_8CpxWfGEI2m-3H419xNip7gsI6dHzy6h0FSWfWGYlmXK2g4HM1Xq0YLpEQI5R4ba9tHwoJvy6jpe4ImGyU06cEvFCIxljBCeMbrjLUxGJx");'></div>
+</div>
+</div>
+</header>
+<div class="flex flex-1 overflow-hidden">
+<main class="flex-1 flex flex-col overflow-y-auto bg-background-light dark:bg-background-dark p-4 md:p-6 lg:p-8">
+<div class="mx-auto w-full max-w-[1400px] flex flex-col gap-6 h-full">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+<div class="flex flex-col gap-1">
+<h1 class="text-text-main dark:text-white tracking-tight text-[28px] md:text-[32px] font-bold leading-tight">Agenda des Formations</h1>
+<p class="text-text-muted dark:text-gray-400 text-sm font-normal">Gestion du calendrier pour Formateurs et TMA</p>
+</div>
+<button class="flex shrink-0 cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary hover:bg-primary-hover text-white shadow-sm transition text-sm font-bold gap-2">
+<span class="material-symbols-outlined text-[20px]">add</span>
+<span class="truncate">Nouvel Événement</span>
+</button>
+</div>
+<div class="flex flex-col xl:flex-row gap-4 justify-between items-start xl:items-center bg-white dark:bg-[#1a202c] p-4 rounded-xl shadow-sm border border-border-light dark:border-border-dark">
+<div class="flex flex-wrap items-center gap-4 w-full xl:w-auto">
+<div class="flex items-center gap-2 bg-slate-100 dark:bg-slate-800 rounded-lg p-1 border border-slate-200 dark:border-slate-700">
+<button class="size-8 flex items-center justify-center rounded hover:bg-white dark:hover:bg-slate-700 text-text-muted dark:text-gray-300 transition shadow-sm">
+<span class="material-symbols-outlined text-[20px]">chevron_left</span>
+</button>
+<span class="px-2 text-sm font-bold text-text-main dark:text-white min-w-[110px] text-center">Octobre 2023</span>
+<button class="size-8 flex items-center justify-center rounded hover:bg-white dark:hover:bg-slate-700 text-text-muted dark:text-gray-300 transition shadow-sm">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</button>
+</div>
+<div class="relative min-w-[220px]">
+<select class="w-full appearance-none rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 px-4 py-2 pr-8 text-sm font-medium text-text-main dark:text-white focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary shadow-sm">
+<option value="all">Tous les formateurs</option>
+<option value="john">John Doe</option>
+<option value="jane">Jane Smith</option>
+</select>
+<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-text-muted">
+<span class="material-symbols-outlined text-[20px]">expand_more</span>
+</div>
+</div>
+</div>
+<div class="flex flex-wrap gap-3 flex-1 justify-end">
+<div class="flex items-center gap-3 px-3 py-2 rounded-lg border border-border-light dark:border-border-dark bg-slate-50 dark:bg-slate-800/50">
+<span class="size-3 rounded-full bg-primary ring-2 ring-blue-100 dark:ring-blue-900"></span>
+<div class="flex flex-col">
+<span class="text-xs text-text-muted dark:text-gray-400 font-semibold uppercase tracking-wider">Validées</span>
+<span class="text-sm font-bold text-text-main dark:text-white">12 Sessions</span>
+</div>
+</div>
+<div class="flex items-center gap-3 px-3 py-2 rounded-lg border border-border-light dark:border-border-dark bg-slate-50 dark:bg-slate-800/50">
+<span class="size-3 rounded-full bg-[#EF4444] ring-2 ring-red-100 dark:ring-red-900"></span>
+<div class="flex flex-col">
+<span class="text-xs text-text-muted dark:text-gray-400 font-semibold uppercase tracking-wider">MEP</span>
+<span class="text-sm font-bold text-text-main dark:text-white">2 Dates</span>
+</div>
+</div>
+<div class="flex items-center gap-3 px-3 py-2 rounded-lg border border-border-light dark:border-border-dark bg-slate-50 dark:bg-slate-800/50">
+<span class="size-3 rounded-full bg-slate-400 ring-2 ring-slate-200 dark:ring-slate-700"></span>
+<div class="flex flex-col">
+<span class="text-xs text-text-muted dark:text-gray-400 font-semibold uppercase tracking-wider">Indisp.</span>
+<span class="text-sm font-bold text-text-main dark:text-white">4 Jours</span>
+</div>
+</div>
+</div>
+<div class="flex bg-slate-100 dark:bg-slate-800 p-1 rounded-lg shrink-0 border border-slate-200 dark:border-slate-700">
+<button class="px-3 py-1.5 rounded-md bg-white dark:bg-slate-600 shadow-sm text-sm font-bold text-primary dark:text-white transition">Mois</button>
+<button class="px-3 py-1.5 rounded-md text-sm font-medium text-text-muted dark:text-gray-400 hover:text-text-main dark:hover:text-white transition">Semaine</button>
+<button class="px-3 py-1.5 rounded-md text-sm font-medium text-text-muted dark:text-gray-400 hover:text-text-main dark:hover:text-white transition">Jour</button>
+</div>
+</div>
+<div class="flex-1 min-h-[600px] bg-white dark:bg-[#1a202c] rounded-xl shadow-sm border border-border-light dark:border-border-dark overflow-hidden flex flex-col">
+<div class="grid grid-cols-7 border-b border-border-light dark:border-border-dark bg-slate-50 dark:bg-slate-800">
+<div class="py-3 text-center text-sm font-semibold text-text-muted dark:text-gray-300 uppercase tracking-wide">Lun</div>
+<div class="py-3 text-center text-sm font-semibold text-text-muted dark:text-gray-300 uppercase tracking-wide">Mar</div>
+<div class="py-3 text-center text-sm font-semibold text-text-muted dark:text-gray-300 uppercase tracking-wide">Mer</div>
+<div class="py-3 text-center text-sm font-semibold text-text-muted dark:text-gray-300 uppercase tracking-wide">Jeu</div>
+<div class="py-3 text-center text-sm font-semibold text-text-muted dark:text-gray-300 uppercase tracking-wide">Ven</div>
+<div class="py-3 text-center text-sm font-semibold text-text-muted dark:text-gray-300 uppercase tracking-wide">Sam</div>
+<div class="py-3 text-center text-sm font-semibold text-text-muted dark:text-gray-300 uppercase tracking-wide">Dim</div>
+</div>
+<div class="grid grid-cols-7 grid-rows-5 flex-1 divide-x divide-y divide-border-light dark:divide-border-dark bg-white dark:bg-slate-900">
+<div class="min-h-[100px] p-2 bg-slate-50/50 dark:bg-slate-900/50">
+<span class="text-sm text-slate-400 font-medium">25</span>
+</div>
+<div class="min-h-[100px] p-2 bg-slate-50/50 dark:bg-slate-900/50">
+<span class="text-sm text-slate-400 font-medium">26</span>
+</div>
+<div class="min-h-[100px] p-2 bg-slate-50/50 dark:bg-slate-900/50">
+<span class="text-sm text-slate-400 font-medium">27</span>
+</div>
+<div class="min-h-[100px] p-2 bg-slate-50/50 dark:bg-slate-900/50">
+<span class="text-sm text-slate-400 font-medium">28</span>
+</div>
+<div class="min-h-[100px] p-2 bg-slate-50/50 dark:bg-slate-900/50">
+<span class="text-sm text-slate-400 font-medium">29</span>
+</div>
+<div class="min-h-[100px] p-2 bg-slate-50/50 dark:bg-slate-900/50">
+<span class="text-sm text-slate-400 font-medium">30</span>
+</div>
+<div class="min-h-[100px] p-2 relative hover:bg-slate-50 dark:hover:bg-slate-800 transition group">
+<div class="flex justify-between">
+<span class="text-sm font-bold text-text-main dark:text-white">1</span>
+<button class="opacity-0 group-hover:opacity-100 p-0.5 rounded hover:bg-slate-200 dark:hover:bg-slate-600 text-slate-500 transition"><span class="material-symbols-outlined text-[16px]">add</span></button>
+</div>
+</div>
+<div class="min-h-[100px] p-2 relative hover:bg-slate-50 dark:hover:bg-slate-800 transition group">
+<div class="flex justify-between">
+<span class="text-sm font-bold text-text-main dark:text-white">2</span>
+<button class="opacity-0 group-hover:opacity-100 p-0.5 rounded hover:bg-slate-200 dark:hover:bg-slate-600 text-slate-500 transition"><span class="material-symbols-outlined text-[16px]">add</span></button>
+</div>
+<div class="mt-1 w-full bg-blue-50 dark:bg-blue-900/20 border-l-4 border-primary rounded-r p-1.5 cursor-pointer hover:bg-blue-100 dark:hover:bg-blue-900/40 transition">
+<p class="text-xs font-bold text-primary dark:text-blue-300 truncate">9:00 - React Basics</p>
+<p class="text-[10px] text-primary/80 dark:text-blue-400 truncate">Salle 102 • J. Doe</p>
+</div>
+</div>
+<div class="min-h-[100px] p-2 relative hover:bg-slate-50 dark:hover:bg-slate-800 transition group">
+<div class="flex justify-between">
+<span class="text-sm font-bold text-text-main dark:text-white">3</span>
+<button class="opacity-0 group-hover:opacity-100 p-0.5 rounded hover:bg-slate-200 dark:hover:bg-slate-600 text-slate-500 transition"><span class="material-symbols-outlined text-[16px]">add</span></button>
+</div>
+<div class="mt-1 w-full bg-blue-50 dark:bg-blue-900/20 border-l-4 border-primary rounded-r p-1.5 cursor-pointer hover:bg-blue-100 dark:hover:bg-blue-900/40 transition">
+<p class="text-xs font-bold text-primary dark:text-blue-300 truncate">14:00 - React Advanced</p>
+<p class="text-[10px] text-primary/80 dark:text-blue-400 truncate">Distanciel • J. Doe</p>
+</div>
+</div>
+<div class="min-h-[100px] p-2 relative hover:bg-slate-50 dark:hover:bg-slate-800 transition group">
+<div class="flex justify-between">
+<span class="text-sm font-bold text-text-main dark:text-white">4</span>
+<button class="opacity-0 group-hover:opacity-100 p-0.5 rounded hover:bg-slate-200 dark:hover:bg-slate-600 text-slate-500 transition"><span class="material-symbols-outlined text-[16px]">add</span></button>
+</div>
+</div>
+<div class="min-h-[100px] p-2 relative hover:bg-slate-50 dark:hover:bg-slate-800 transition group">
+<div class="flex justify-between">
+<span class="text-sm font-bold text-text-main dark:text-white">5</span>
+<button class="opacity-0 group-hover:opacity-100 p-0.5 rounded hover:bg-slate-200 dark:hover:bg-slate-600 text-slate-500 transition"><span class="material-symbols-outlined text-[16px]">add</span></button>
+</div>
+<div class="mt-1 w-full bg-slate-100 dark:bg-slate-700 border-l-4 border-slate-400 rounded-r p-1.5 cursor-pointer hover:opacity-80 transition">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px] text-slate-600 dark:text-gray-300">block</span>
+<p class="text-xs font-bold text-slate-600 dark:text-gray-300 truncate">Indisponible</p>
+</div>
+<p class="text-[10px] text-slate-500 dark:text-gray-400 truncate">S. Martin</p>
+</div>
+</div>
+<div class="min-h-[100px] p-2 relative hover:bg-slate-50 dark:hover:bg-slate-800 transition group bg-red-50 dark:bg-red-900/10">
+<div class="flex justify-between">
+<span class="text-sm font-bold text-[#EF4444]">6</span>
+<span class="text-[10px] font-bold text-[#EF4444] border border-[#EF4444] px-1 rounded bg-white dark:bg-red-900/30">MEP</span>
+</div>
+<div class="mt-1 w-full h-full min-h-[40px] flex items-center justify-center rounded border border-dashed border-[#EF4444]/40 bg-[#EF4444]/5">
+<span class="text-[10px] text-[#EF4444] font-medium text-center">Gel des env.</span>
+</div>
+</div>
+<div class="min-h-[100px] p-2 relative hover:bg-slate-50 dark:hover:bg-slate-800 transition group">
+<div class="flex justify-between">
+<span class="text-sm font-bold text-text-main dark:text-white">7</span>
+<button class="opacity-0 group-hover:opacity-100 p-0.5 rounded hover:bg-slate-200 dark:hover:bg-slate-600 text-slate-500 transition"><span class="material-symbols-outlined text-[16px]">add</span></button>
+</div>
+</div>
+<div class="min-h-[100px] p-2 relative hover:bg-slate-50 dark:hover:bg-slate-800 transition group">
+<div class="flex justify-between">
+<span class="text-sm font-bold text-text-main dark:text-white">8</span>
+<button class="opacity-0 group-hover:opacity-100 p-0.5 rounded hover:bg-slate-200 dark:hover:bg-slate-600 text-slate-500 transition"><span class="material-symbols-outlined text-[16px]">add</span></button>
+</div>
+</div>
+<div class="min-h-[100px] p-2 relative hover:bg-slate-50 dark:hover:bg-slate-800 transition group">
+<div class="flex justify-between">
+<span class="text-sm font-bold text-text-main dark:text-white">9</span>
+<button class="opacity-0 group-hover:opacity-100 p-0.5 rounded hover:bg-slate-200 dark:hover:bg-slate-600 text-slate-500 transition"><span class="material-symbols-outlined text-[16px]">add</span></button>
+</div>
+<div class="mt-1 w-full bg-blue-50 dark:bg-blue-900/20 border-l-4 border-primary rounded-r p-1.5 cursor-pointer hover:bg-blue-100 dark:hover:bg-blue-900/40 transition ring-2 ring-primary ring-opacity-30 shadow-md">
+<p class="text-xs font-bold text-primary dark:text-blue-300 truncate">10:00 - UI Design System</p>
+<p class="text-[10px] text-primary/80 dark:text-blue-400 truncate">Salle 204 • A. Dubois</p>
+</div>
+</div>
+<div class="min-h-[100px] p-2 relative hover:bg-slate-50 dark:hover:bg-slate-800 transition group">
+<div class="flex justify-between">
+<span class="text-sm font-bold text-text-main dark:text-white">10</span>
+<button class="opacity-0 group-hover:opacity-100 p-0.5 rounded hover:bg-slate-200 dark:hover:bg-slate-600 text-slate-500 transition"><span class="material-symbols-outlined text-[16px]">add</span></button>
+</div>
+<div class="mt-1 w-full bg-blue-50 dark:bg-blue-900/20 border-l-4 border-primary rounded-r p-1.5 cursor-pointer hover:bg-blue-100 dark:hover:bg-blue-900/40 transition">
+<p class="text-xs font-bold text-primary dark:text-blue-300 truncate">10:00 - UI Design System</p>
+<p class="text-[10px] text-primary/80 dark:text-blue-400 truncate">Salle 204 • A. Dubois</p>
+</div>
+<div class="mt-1 w-full bg-blue-50 dark:bg-blue-900/20 border-l-4 border-primary rounded-r p-1.5 cursor-pointer hover:bg-blue-100 dark:hover:bg-blue-900/40 transition">
+<p class="text-xs font-bold text-primary dark:text-blue-300 truncate">14:00 - Workshop UX</p>
+<p class="text-[10px] text-primary/80 dark:text-blue-400 truncate">Salle 204 • A. Dubois</p>
+</div>
+</div>
+<div class="min-h-[100px] p-2 relative hover:bg-slate-50 dark:hover:bg-slate-800 transition group">
+<div class="flex justify-between">
+<span class="text-sm font-bold text-text-main dark:text-white">11</span>
+<button class="opacity-0 group-hover:opacity-100 p-0.5 rounded hover:bg-slate-200 dark:hover:bg-slate-600 text-slate-500 transition"><span class="material-symbols-outlined text-[16px]">add</span></button>
+</div>
+</div>
+<div class="min-h-[100px] p-2 relative hover:bg-slate-50 dark:hover:bg-slate-800 transition group">
+<div class="flex justify-between">
+<span class="text-sm font-bold text-text-main dark:text-white">12</span>
+<button class="opacity-0 group-hover:opacity-100 p-0.5 rounded hover:bg-slate-200 dark:hover:bg-slate-600 text-slate-500 transition"><span class="material-symbols-outlined text-[16px]">add</span></button>
+</div>
+</div>
+<div class="min-h-[100px] p-2 relative hover:bg-slate-50 dark:hover:bg-slate-800 transition group">
+<div class="flex justify-between">
+<span class="text-sm font-bold text-text-main dark:text-white">13</span>
+<button class="opacity-0 group-hover:opacity-100 p-0.5 rounded hover:bg-slate-200 dark:hover:bg-slate-600 text-slate-500 transition"><span class="material-symbols-outlined text-[16px]">add</span></button>
+</div>
+</div>
+<div class="min-h-[100px] p-2 relative hover:bg-slate-50 dark:hover:bg-slate-800 transition group">
+<div class="flex justify-between">
+<span class="text-sm font-bold text-text-main dark:text-white">14</span>
+<button class="opacity-0 group-hover:opacity-100 p-0.5 rounded hover:bg-slate-200 dark:hover:bg-slate-600 text-slate-500 transition"><span class="material-symbols-outlined text-[16px]">add</span></button>
+</div>
+</div>
+<div class="min-h-[100px] p-2 relative hover:bg-slate-50 dark:hover:bg-slate-800 transition group">
+<div class="flex justify-between">
+<span class="text-sm font-bold text-text-main dark:text-white">15</span>
+</div>
+</div>
+<div class="min-h-[100px] p-2 relative hover:bg-slate-50 dark:hover:bg-slate-800 transition group">
+<div class="flex justify-between">
+<span class="text-sm font-bold text-text-main dark:text-white">16</span>
+</div>
+</div>
+<div class="min-h-[100px] p-2 relative hover:bg-slate-50 dark:hover:bg-slate-800 transition group">
+<div class="flex justify-between">
+<span class="text-sm font-bold text-text-main dark:text-white">17</span>
+</div>
+</div>
+<div class="min-h-[100px] p-2 relative hover:bg-slate-50 dark:hover:bg-slate-800 transition group">
+<div class="flex justify-between">
+<span class="text-sm font-bold text-text-main dark:text-white">18</span>
+</div>
+</div>
+<div class="min-h-[100px] p-2 relative hover:bg-slate-50 dark:hover:bg-slate-800 transition group">
+<div class="flex justify-between">
+<span class="text-sm font-bold text-text-main dark:text-white">19</span>
+</div>
+<div class="mt-1 w-full bg-slate-100 dark:bg-slate-700 border-l-4 border-slate-400 rounded-r p-1.5 cursor-pointer hover:opacity-80 transition">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px] text-slate-600 dark:text-gray-300">block</span>
+<p class="text-xs font-bold text-slate-600 dark:text-gray-300 truncate">Indisponible</p>
+</div>
+<p class="text-[10px] text-slate-500 dark:text-gray-400 truncate">J. Doe</p>
+</div>
+</div>
+<div class="min-h-[100px] p-2 relative hover:bg-slate-50 dark:hover:bg-slate-800 transition group">
+<div class="flex justify-between">
+<span class="text-sm font-bold text-text-main dark:text-white">20</span>
+</div>
+</div>
+<div class="min-h-[100px] p-2 relative hover:bg-slate-50 dark:hover:bg-slate-800 transition group">
+<div class="flex justify-between">
+<span class="text-sm font-bold text-text-main dark:text-white">21</span>
+</div>
+</div>
+<div class="min-h-[100px] p-2 relative hover:bg-slate-50 dark:hover:bg-slate-800 transition group">
+<div class="flex justify-between">
+<span class="text-sm font-bold text-text-main dark:text-white">22</span>
+</div>
+</div>
+<div class="min-h-[100px] p-2 relative hover:bg-slate-50 dark:hover:bg-slate-800 transition group">
+<div class="flex justify-between">
+<span class="text-sm font-bold text-text-main dark:text-white">23</span>
+</div>
+</div>
+<div class="min-h-[100px] p-2 relative hover:bg-slate-50 dark:hover:bg-slate-800 transition group">
+<div class="flex justify-between">
+<span class="text-sm font-bold text-text-main dark:text-white">24</span>
+</div>
+</div>
+<div class="min-h-[100px] p-2 relative hover:bg-slate-50 dark:hover:bg-slate-800 transition group">
+<div class="flex justify-between">
+<span class="text-sm font-bold text-text-main dark:text-white">25</span>
+</div>
+</div>
+<div class="min-h-[100px] p-2 relative hover:bg-slate-50 dark:hover:bg-slate-800 transition group">
+<div class="flex justify-between">
+<span class="text-sm font-bold text-text-main dark:text-white">26</span>
+</div>
+</div>
+<div class="min-h-[100px] p-2 relative hover:bg-slate-50 dark:hover:bg-slate-800 transition group">
+<div class="flex justify-between">
+<span class="text-sm font-bold text-text-main dark:text-white">27</span>
+</div>
+</div>
+<div class="min-h-[100px] p-2 relative hover:bg-slate-50 dark:hover:bg-slate-800 transition group">
+<div class="flex justify-between">
+<span class="text-sm font-bold text-text-main dark:text-white">28</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<aside class="w-80 border-l border-border-light dark:border-border-dark bg-white dark:bg-[#1a202c] hidden lg:flex flex-col overflow-y-auto">
+<div class="p-6 border-b border-border-light dark:border-border-dark bg-slate-50/50 dark:bg-slate-800/20">
+<h3 class="text-lg font-bold text-text-main dark:text-white leading-tight">Détails de l'événement</h3>
+<p class="text-sm text-text-muted dark:text-gray-400 mt-1">Sélectionné: 9 Octobre</p>
+</div>
+<div class="p-6 flex flex-col gap-6">
+<div class="flex flex-col gap-4 rounded-xl border border-primary/20 bg-blue-50/50 dark:bg-blue-900/10 p-5 shadow-sm">
+<div class="flex items-center gap-2">
+<span class="flex h-6 items-center justify-center rounded-full bg-primary/10 px-2 text-xs font-bold text-primary dark:text-blue-300">Validée</span>
+<span class="text-xs text-text-muted">Ref: TR-2023-88</span>
+</div>
+<div>
+<h4 class="text-base font-bold text-primary dark:text-white leading-tight">UI Design System</h4>
+<p class="text-sm text-text-muted dark:text-gray-400 mt-1">Formation Avancée</p>
+</div>
+<div class="flex flex-col gap-3 pt-2">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-text-muted text-[20px]">schedule</span>
+<span class="text-sm font-medium text-text-main dark:text-white">10:00 - 12:30</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-text-muted text-[20px]">person</span>
+<span class="text-sm font-medium text-text-main dark:text-white">Formateur: A. Dubois</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-text-muted text-[20px]">meeting_room</span>
+<span class="text-sm font-medium text-text-main dark:text-white">Salle 204 (Bâtiment B)</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-text-muted text-[20px]">group</span>
+<span class="text-sm font-medium text-text-main dark:text-white">8 Participants</span>
+</div>
+</div>
+<div class="flex gap-2 mt-2 pt-2 border-t border-primary/10">
+<button class="flex-1 rounded-lg border border-slate-300 bg-white py-2 text-sm font-bold text-text-main shadow-sm hover:bg-slate-50 transition">Éditer</button>
+<button class="flex-1 rounded-lg bg-primary py-2 text-sm font-bold text-white shadow-sm hover:bg-primary-hover transition">Rejoindre</button>
+</div>
+</div>
+<div class="flex flex-col gap-3">
+<h4 class="text-xs font-bold text-text-muted dark:text-gray-400 uppercase tracking-wider">Autres événements</h4>
+<div class="flex items-center gap-3 p-3 rounded-lg border border-border-light dark:border-border-dark hover:bg-slate-50 dark:hover:bg-slate-800 cursor-pointer transition">
+<div class="size-10 rounded-full bg-slate-100 dark:bg-slate-700 flex items-center justify-center text-slate-600 dark:text-gray-300 font-bold text-xs shrink-0">PM</div>
+<div class="flex flex-col min-w-0">
+<span class="text-sm font-bold text-text-main dark:text-white truncate">Workshop UX</span>
+<span class="text-xs text-text-muted truncate">14:00 - 17:00</span>
+</div>
+</div>
+<div class="rounded-lg border border-dashed border-border-light p-4 text-center bg-slate-50/50">
+<p class="text-sm text-text-muted">Aucune indisponibilité signalée ce jour.</p>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</div>
+
+</body></html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Intranet Formation - Sélection de Profil</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display antialiased min-h-screen flex flex-col overflow-x-hidden">
+<div class="relative flex flex-col w-full h-full grow">
+<header class="w-full bg-white dark:bg-[#1e2736] border-b border-solid border-[#f0f2f4] dark:border-gray-800 px-6 py-4 lg:px-10">
+<div class="max-w-[1200px] mx-auto flex items-center justify-between whitespace-nowrap">
+<div class="flex items-center gap-4 text-[#111318] dark:text-white">
+<div class="text-primary">
+<span class="material-symbols-outlined text-3xl">school</span>
+</div>
+<h2 class="text-lg font-bold leading-tight tracking-[-0.015em]">Intranet Formation</h2>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden sm:flex flex-col items-end">
+<span class="text-sm font-bold text-[#111318] dark:text-white">Jean Dupont</span>
+<span class="text-xs text-[#616f89] dark:text-gray-400">Connecté</span>
+</div>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 ring-2 ring-gray-100 dark:ring-gray-700" data-alt="Portrait of a professional man in a suit" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA2wvHFJd0FV1jZBOeTJAO3JuN47Jy1hxquKljKN2-AmBuQlRWWGDLStviLIRP1QpXTYOBHRT0stw1rqEOBlY6M4khJSrkKZYnywvZmbMLwESREJF7aNGEJYVUK6kiUpLl7MnX4_4-uc1D6QwtyaUAMVHgY1MT8dekUulAMZ1GacudoqDioLABBoTqfMxZ3nsvv8_gqqb2zzKVIvL48xAXXp_5VgGyXfSRTOSqRs36SaZlLOwZ5WzYwx_muzwC5WzXkfiHBThZDzb_6");'>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-1 flex flex-col items-center justify-center px-4 py-10 lg:px-10">
+<div class="layout-content-container flex flex-col max-w-[1024px] w-full flex-1 gap-8">
+<div class="flex flex-col items-center gap-6 animate-fade-in-up">
+<div class="relative">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-32 w-32 shadow-lg ring-4 ring-white dark:ring-[#1e2736]" data-alt="Portrait of a professional man in a suit" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBx8XaLgv1q2xUEjrLVG7srhgxPwrDb_AURhG-ICjnfKnetk7jrlfQfqVGRXQlyqLmlb6Pvzhgsqy7jlBZwSlm6rJo92i8srcJzpaycUm8qek-COJa8YEN-75ieG2b_O41e5_C7Betlss5G6YuddAblMrWJQd2JJm5F7BO_-RbObkRaKxe6rW1WMHT1aQGwbvPz1l71Vmz15FPrSigzXOkUvwDqDGQYNZvLH0PAkzKWSlSZ0vqNj4-h1NrmH8cC0uMX0ZO9TI6Tf2WQ");'>
+</div>
+<div class="absolute bottom-1 right-1 bg-green-500 w-6 h-6 rounded-full border-4 border-white dark:border-[#1e2736]" title="Online"></div>
+</div>
+<div class="flex flex-col items-center justify-center text-center max-w-lg">
+<h1 class="text-[#111318] dark:text-white text-3xl font-bold leading-tight tracking-tight mb-2">
+                            Bienvenue, Jean Dupont
+                        </h1>
+<p class="text-[#616f89] dark:text-gray-400 text-base font-normal leading-relaxed">
+                            Veuillez sélectionner votre profil de travail pour cette session. Cette action déterminera vos droits d'accès.
+                        </p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 py-6">
+<div class="group relative flex flex-col gap-4 rounded-xl border border-[#dbdfe6] dark:border-gray-700 bg-white dark:bg-[#1e2736] p-6 cursor-pointer transition-all duration-200 hover:border-primary hover:shadow-lg dark:hover:border-primary/70">
+<div class="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity text-primary">
+<span class="material-symbols-outlined">radio_button_unchecked</span>
+</div>
+<div class="w-12 h-12 rounded-lg bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-primary mb-2 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl">assignment_add</span>
+</div>
+<div class="flex flex-col gap-2">
+<h3 class="text-[#111318] dark:text-white text-lg font-bold leading-tight group-hover:text-primary transition-colors">
+                                DEMANDEUR (Régions)
+                            </h3>
+<ul class="text-[#616f89] dark:text-gray-400 text-sm font-normal leading-normal space-y-2">
+<li class="flex gap-2 items-start">
+<span class="material-symbols-outlined text-[16px] mt-0.5 text-gray-400">check</span>
+                                    Soumettre des demandes de formation
+                                </li>
+<li class="flex gap-2 items-start">
+<span class="material-symbols-outlined text-[16px] mt-0.5 text-gray-400">check</span>
+                                    Suivre l'état des demandes
+                                </li>
+</ul>
+</div>
+</div>
+<div class="group relative flex flex-col gap-4 rounded-xl border-2 border-primary bg-blue-50/30 dark:bg-primary/10 p-6 cursor-pointer transition-all duration-200 shadow-md">
+<div class="absolute top-4 right-4 text-primary">
+<span class="material-symbols-outlined">check_circle</span>
+</div>
+<div class="w-12 h-12 rounded-lg bg-primary text-white flex items-center justify-center mb-2">
+<span class="material-symbols-outlined text-3xl">calendar_month</span>
+</div>
+<div class="flex flex-col gap-2">
+<h3 class="text-primary dark:text-blue-400 text-lg font-bold leading-tight">
+                                FORMATEUR / PLANIF.
+                            </h3>
+<ul class="text-[#111318] dark:text-gray-300 text-sm font-normal leading-normal space-y-2">
+<li class="flex gap-2 items-start">
+<span class="material-symbols-outlined text-[16px] mt-0.5 text-primary">check</span>
+                                    Valider et refuser des demandes
+                                </li>
+<li class="flex gap-2 items-start">
+<span class="material-symbols-outlined text-[16px] mt-0.5 text-primary">check</span>
+                                    Gérer les plannings de session
+                                </li>
+</ul>
+</div>
+</div>
+<div class="group relative flex flex-col gap-4 rounded-xl border border-[#dbdfe6] dark:border-gray-700 bg-white dark:bg-[#1e2736] p-6 cursor-pointer transition-all duration-200 hover:border-primary hover:shadow-lg dark:hover:border-primary/70">
+<div class="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity text-primary">
+<span class="material-symbols-outlined">radio_button_unchecked</span>
+</div>
+<div class="w-12 h-12 rounded-lg bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-primary mb-2 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl">tune</span>
+</div>
+<div class="flex flex-col gap-2">
+<h3 class="text-[#111318] dark:text-white text-lg font-bold leading-tight group-hover:text-primary transition-colors">
+                                TMA
+                            </h3>
+<ul class="text-[#616f89] dark:text-gray-400 text-sm font-normal leading-normal space-y-2">
+<li class="flex gap-2 items-start">
+<span class="material-symbols-outlined text-[16px] mt-0.5 text-gray-400">check</span>
+                                    Gérer les périodes de MEP
+                                </li>
+<li class="flex gap-2 items-start">
+<span class="material-symbols-outlined text-[16px] mt-0.5 text-gray-400">check</span>
+                                    Configuration technique
+                                </li>
+</ul>
+</div>
+</div>
+<div class="group relative flex flex-col gap-4 rounded-xl border border-[#dbdfe6] dark:border-gray-700 bg-white dark:bg-[#1e2736] p-6 cursor-pointer transition-all duration-200 hover:border-primary hover:shadow-lg dark:hover:border-primary/70">
+<div class="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity text-primary">
+<span class="material-symbols-outlined">radio_button_unchecked</span>
+</div>
+<div class="w-12 h-12 rounded-lg bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-primary mb-2 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl">admin_panel_settings</span>
+</div>
+<div class="flex flex-col gap-2">
+<h3 class="text-[#111318] dark:text-white text-lg font-bold leading-tight group-hover:text-primary transition-colors">
+                                ADMINISTRATEUR
+                            </h3>
+<ul class="text-[#616f89] dark:text-gray-400 text-sm font-normal leading-normal space-y-2">
+<li class="flex gap-2 items-start">
+<span class="material-symbols-outlined text-[16px] mt-0.5 text-gray-400">check</span>
+                                    Gère les utilisateurs
+                                </li>
+<li class="flex gap-2 items-start">
+<span class="material-symbols-outlined text-[16px] mt-0.5 text-gray-400">check</span>
+                                    Supervise l'activité globale du système
+                                </li>
+</ul>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-center gap-4 mt-4">
+<button class="flex w-full md:w-auto min-w-[280px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-14 px-8 bg-primary hover:bg-blue-700 text-white text-base font-bold leading-normal tracking-[0.015em] shadow-md hover:shadow-lg transition-all transform active:scale-95">
+<span class="flex items-center gap-2">
+                            Accéder au Tableau de Bord
+                            <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</span>
+</button>
+<a class="text-[#616f89] dark:text-gray-500 text-sm font-medium leading-normal hover:text-primary dark:hover:text-blue-400 underline decoration-gray-300 dark:decoration-gray-600 underline-offset-4 transition-colors" href="#">
+                        Une erreur dans vos profils ? Contactez le support
+                    </a>
+</div>
+</div>
+</main>
+<footer class="py-6 text-center text-xs text-gray-400 dark:text-gray-600">
+            © 2024 Intranet Formation. Tous droits réservés.
+        </footer>
+</div>
+</body></html>

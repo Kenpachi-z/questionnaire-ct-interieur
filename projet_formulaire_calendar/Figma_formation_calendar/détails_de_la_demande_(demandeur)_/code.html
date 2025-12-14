@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Détails de la Demande - Intranet Formation</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#111318] dark:text-white">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden font-display">
+<!-- TopNavBar -->
+<header class="bg-white dark:bg-[#1e2732] border-b border-gray-200 dark:border-gray-700 sticky top-0 z-50">
+<div class="layout-container flex h-full flex-col max-w-[1280px] mx-auto px-4 md:px-8">
+<div class="flex items-center justify-between whitespace-nowrap py-3">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4">
+<div class="size-8 text-primary">
+<span class="material-symbols-outlined text-3xl">school</span>
+</div>
+<h2 class="text-lg font-bold leading-tight tracking-[-0.015em]">Intranet Formation</h2>
+</div>
+<nav class="hidden md:flex items-center gap-9">
+<a class="text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Tableau de Bord</a>
+<a class="text-sm font-bold leading-normal text-primary" href="#">Mes Demandes</a>
+<a class="text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Catalogue</a>
+<a class="text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Planning</a>
+</nav>
+</div>
+<div class="flex items-center gap-4 sm:gap-8">
+<div class="hidden sm:flex flex-col min-w-40 !h-10 max-w-64">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full relative">
+<div class="text-[#616f89] absolute left-3 top-1/2 transform -translate-y-1/2 pointer-events-none">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#111318] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border-none bg-[#f0f2f4] dark:bg-gray-800 focus:border-none h-full placeholder:text-[#616f89] px-4 pl-10 text-sm font-normal leading-normal" placeholder="Rechercher..." value=""/>
+</div>
+</div>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 ring-2 ring-white dark:ring-gray-800 cursor-pointer" data-alt="User profile avatar showing a professional portrait" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBFpCTWvGT-GyGVJAP01bhk-HMdlRsQC3bJfADjgHABQjBy-ma3F41Fy210dsdJ6V5W7GB-eszx-CdlHWgjd888xbzHZfuYuGs7ZoA3aUI3nRx0-918G7oNk7i-MctpsoMjjZnwUjlsoEhjRoKUMNKD3zdU0WujX_boXHxu4axUcw-2TlH7MDVCphz2KrQEPd4AcwoJNiWIcyyCwAG692jTzHc36BlNqAorehSeIVmROPojBzYcZJA7c1I_2VnbrHKMnbaDcC4mkeuu");'></div>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Wrapper -->
+<main class="flex-1 w-full max-w-[1280px] mx-auto px-4 md:px-8 py-6">
+<!-- Breadcrumbs -->
+<div class="flex flex-wrap items-center gap-2 pb-6 text-sm">
+<a class="text-[#616f89] dark:text-gray-400 font-medium hover:text-primary hover:underline" href="#">Accueil</a>
+<span class="material-symbols-outlined text-[#616f89] text-[16px]">chevron_right</span>
+<a class="text-[#616f89] dark:text-gray-400 font-medium hover:text-primary hover:underline" href="#">Mes Demandes</a>
+<span class="material-symbols-outlined text-[#616f89] text-[16px]">chevron_right</span>
+<span class="text-primary font-medium">Détails #TR-2023-849</span>
+</div>
+<!-- Page Header with Actions -->
+<div class="flex flex-col md:flex-row md:items-start justify-between gap-6 mb-8">
+<div class="flex flex-col gap-3 max-w-2xl">
+<div class="flex items-center gap-3">
+<h1 class="text-3xl md:text-4xl font-black leading-tight tracking-[-0.033em] text-[#111318] dark:text-white">Détails de la Demande</h1>
+<span class="inline-flex items-center gap-1 rounded-full bg-orange-100 dark:bg-orange-900/30 px-3 py-1 text-sm font-bold text-orange-700 dark:text-orange-300 ring-1 ring-inset ring-orange-600/20">
+<span class="w-2 h-2 rounded-full bg-orange-500 mr-1"></span>
+                            En Validation
+                        </span>
+</div>
+<p class="text-[#616f89] dark:text-gray-400 text-base font-normal">Référence: #TR-2023-849 • Soumise le 28 Septembre 2023</p>
+</div>
+<div class="flex flex-wrap gap-3">
+<button class="flex items-center justify-center gap-2 rounded-lg h-10 px-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 text-[#111318] dark:text-white text-sm font-bold transition-all shadow-sm">
+<span class="material-symbols-outlined text-[20px]">print</span>
+<span>Imprimer</span>
+</button>
+<button class="flex items-center justify-center gap-2 rounded-lg h-10 px-4 bg-red-50 hover:bg-red-100 text-red-600 dark:bg-red-900/20 dark:hover:bg-red-900/40 dark:text-red-400 text-sm font-bold transition-all border border-transparent">
+<span class="material-symbols-outlined text-[20px]">cancel</span>
+<span>Annuler la Demande</span>
+</button>
+</div>
+</div>
+<!-- Tabs / Progress Stepper -->
+<div class="bg-white dark:bg-[#1e2732] rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 mb-8 overflow-hidden">
+<div class="p-6">
+<h3 class="text-lg font-bold mb-6 text-[#111318] dark:text-white">Suivi de la demande</h3>
+<div class="relative flex items-center justify-between w-full max-w-4xl mx-auto">
+<!-- Progress Line -->
+<div class="absolute left-0 top-1/2 transform -translate-y-1/2 w-full h-1 bg-gray-200 dark:bg-gray-700 -z-0"></div>
+<div class="absolute left-0 top-1/2 transform -translate-y-1/2 w-1/2 h-1 bg-primary -z-0"></div>
+<!-- Step 1: Soumise -->
+<div class="relative z-10 flex flex-col items-center gap-2">
+<div class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center ring-4 ring-white dark:ring-[#1e2732]">
+<span class="material-symbols-outlined text-[20px]">check</span>
+</div>
+<span class="text-sm font-bold text-primary">Soumise</span>
+<span class="text-xs text-gray-500 dark:text-gray-400">28/09/2023</span>
+</div>
+<!-- Step 2: En Validation (Current) -->
+<div class="relative z-10 flex flex-col items-center gap-2">
+<div class="w-10 h-10 rounded-full bg-white dark:bg-[#1e2732] border-2 border-primary text-primary flex items-center justify-center ring-4 ring-white dark:ring-[#1e2732]">
+<span class="material-symbols-outlined text-[20px] fill">pending</span>
+</div>
+<span class="text-sm font-bold text-primary">En Validation</span>
+<span class="text-xs text-gray-500 dark:text-gray-400">En cours</span>
+</div>
+<!-- Step 3: Validée -->
+<div class="relative z-10 flex flex-col items-center gap-2">
+<div class="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-400 flex items-center justify-center ring-4 ring-white dark:ring-[#1e2732]">
+<span class="material-symbols-outlined text-[20px]">verified</span>
+</div>
+<span class="text-sm font-bold text-gray-400">Validée</span>
+<span class="text-xs text-gray-500 dark:text-gray-400">-</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Content Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Left Column: General Info -->
+<div class="lg:col-span-2 space-y-8">
+<!-- General Info Card -->
+<section class="bg-white dark:bg-[#1e2732] rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden">
+<div class="border-b border-gray-100 dark:border-gray-700 px-6 py-4 flex items-center justify-between">
+<h3 class="text-lg font-bold text-[#111318] dark:text-white flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">info</span>
+                                Informations Générales
+                            </h3>
+</div>
+<div class="p-6 grid gap-6">
+<div class="grid sm:grid-cols-2 gap-6">
+<div>
+<p class="text-sm font-medium text-[#616f89] dark:text-gray-400 mb-1">Intitulé de la formation</p>
+<p class="text-base font-semibold text-[#111318] dark:text-white">Gestion de Projet Avancée : Méthodes Agiles</p>
+</div>
+<div>
+<p class="text-sm font-medium text-[#616f89] dark:text-gray-400 mb-1">Date souhaitée</p>
+<div class="flex items-center gap-2 text-base font-semibold text-[#111318] dark:text-white">
+<span class="material-symbols-outlined text-gray-400">calendar_today</span>
+                                        12 Octobre 2023
+                                    </div>
+</div>
+</div>
+<div>
+<p class="text-sm font-medium text-[#616f89] dark:text-gray-400 mb-2">Objectifs de la formation</p>
+<div class="bg-gray-50 dark:bg-gray-800/50 p-4 rounded-lg border border-gray-100 dark:border-gray-700">
+<p class="text-sm leading-relaxed text-[#111318] dark:text-gray-300">
+                                        Cette formation vise à maîtriser les concepts clés des méthodologies Agiles (Scrum, Kanban) pour améliorer la flexibilité et l'efficacité des équipes projets industriels. Les participants apprendront à planifier des sprints, gérer le backlog et faciliter les réunions d'équipe.
+                                    </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Participants List -->
+<section class="bg-white dark:bg-[#1e2732] rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden">
+<div class="border-b border-gray-100 dark:border-gray-700 px-6 py-4 flex items-center justify-between">
+<h3 class="text-lg font-bold text-[#111318] dark:text-white flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">group</span>
+                                Liste des Participants
+                            </h3>
+<span class="bg-primary/10 text-primary text-xs font-bold px-2 py-1 rounded-md">4 Participants</span>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left text-sm whitespace-nowrap">
+<thead class="bg-gray-50 dark:bg-gray-800/50 text-[#616f89] dark:text-gray-400 border-b border-gray-100 dark:border-gray-700">
+<tr>
+<th class="px-6 py-3 font-semibold">Matricule</th>
+<th class="px-6 py-3 font-semibold">Nom Prénom</th>
+<th class="px-6 py-3 font-semibold">Rôle</th>
+<th class="px-6 py-3 font-semibold">Secteur</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-gray-100 dark:divide-gray-700">
+<tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+<td class="px-6 py-4 font-medium text-gray-900 dark:text-white">M-1024</td>
+<td class="px-6 py-4 flex items-center gap-3">
+<div class="size-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold text-xs">JD</div>
+<span class="text-gray-700 dark:text-gray-300">Jean Dupont</span>
+</td>
+<td class="px-6 py-4 text-gray-500 dark:text-gray-400">Chef de Projet</td>
+<td class="px-6 py-4 text-gray-500 dark:text-gray-400">Ingénierie</td>
+</tr>
+<tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+<td class="px-6 py-4 font-medium text-gray-900 dark:text-white">M-1055</td>
+<td class="px-6 py-4 flex items-center gap-3">
+<div class="size-8 rounded-full bg-green-100 text-green-600 flex items-center justify-center font-bold text-xs">AM</div>
+<span class="text-gray-700 dark:text-gray-300">Alice Martin</span>
+</td>
+<td class="px-6 py-4 text-gray-500 dark:text-gray-400">Développeuse</td>
+<td class="px-6 py-4 text-gray-500 dark:text-gray-400">R&amp;D</td>
+</tr>
+<tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+<td class="px-6 py-4 font-medium text-gray-900 dark:text-white">M-1089</td>
+<td class="px-6 py-4 flex items-center gap-3">
+<div class="size-8 rounded-full bg-purple-100 text-purple-600 flex items-center justify-center font-bold text-xs">PL</div>
+<span class="text-gray-700 dark:text-gray-300">Pierre Lefebvre</span>
+</td>
+<td class="px-6 py-4 text-gray-500 dark:text-gray-400">Analyste Qualité</td>
+<td class="px-6 py-4 text-gray-500 dark:text-gray-400">Qualité</td>
+</tr>
+<tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+<td class="px-6 py-4 font-medium text-gray-900 dark:text-white">M-1102</td>
+<td class="px-6 py-4 flex items-center gap-3">
+<div class="size-8 rounded-full bg-yellow-100 text-yellow-600 flex items-center justify-center font-bold text-xs">SB</div>
+<span class="text-gray-700 dark:text-gray-300">Sophie Bernard</span>
+</td>
+<td class="px-6 py-4 text-gray-500 dark:text-gray-400">Designer UX</td>
+<td class="px-6 py-4 text-gray-500 dark:text-gray-400">Produit</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</div>
+<!-- Right Column: Context/Sidebar -->
+<div class="space-y-6">
+<!-- Status Card Details -->
+<div class="bg-white dark:bg-[#1e2732] rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6">
+<h4 class="text-sm font-bold text-[#616f89] dark:text-gray-400 uppercase tracking-wider mb-4">Statut Actuel</h4>
+<div class="flex items-start gap-4 mb-6">
+<div class="bg-orange-100 dark:bg-orange-900/30 p-3 rounded-lg text-orange-600 dark:text-orange-400">
+<span class="material-symbols-outlined text-[24px]">hourglass_top</span>
+</div>
+<div>
+<p class="font-bold text-lg text-[#111318] dark:text-white">En attente de validation</p>
+<p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Votre demande est en cours d'examen par le service formation.</p>
+</div>
+</div>
+<div class="border-t border-gray-100 dark:border-gray-700 pt-4 mt-4">
+<div class="flex justify-between items-center text-sm mb-2">
+<span class="text-gray-500 dark:text-gray-400">Manager:</span>
+<span class="font-medium text-[#111318] dark:text-white">Thomas Dubois</span>
+</div>
+<div class="flex justify-between items-center text-sm">
+<span class="text-gray-500 dark:text-gray-400">Délai estimé:</span>
+<span class="font-medium text-[#111318] dark:text-white">~ 2 jours</span>
+</div>
+</div>
+</div>
+<!-- Example of a 'Refused' Alert Box (Hidden by default or shown for context if needed, here shown as 'Refused' scenario example but visually distinct) -->
+<!-- Uncomment to see how a refusal would look -->
+<!-- 
+                    <div class="bg-red-50 dark:bg-red-900/10 rounded-xl shadow-sm border border-red-200 dark:border-red-900/30 p-6">
+                        <div class="flex items-center gap-2 mb-2 text-red-700 dark:text-red-400 font-bold">
+                            <span class="material-symbols-outlined">warning</span>
+                            Justification du Refus
+                        </div>
+                        <p class="text-sm text-red-800 dark:text-red-300 leading-relaxed">
+                            Le budget formation pour ce trimestre a été atteint. Merci de reprogrammer cette session pour le trimestre prochain (Q1 2024).
+                        </p>
+                    </div> 
+                    -->
+<!-- Contact Card -->
+<div class="bg-primary/5 dark:bg-primary/10 rounded-xl border border-primary/10 p-6">
+<h4 class="text-sm font-bold text-primary mb-3">Besoin d'aide ?</h4>
+<p class="text-sm text-gray-600 dark:text-gray-300 mb-4">
+                            Pour toute modification urgente ou question sur cette demande, contactez le support RH.
+                        </p>
+<a class="text-sm font-bold text-primary hover:underline flex items-center gap-1" href="#">
+                            Contactez le support
+                            <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Footer Action Bar for Mobile (Optional sticky bottom) -->
+<div class="fixed bottom-0 left-0 right-0 bg-white dark:bg-[#1e2732] border-t border-gray-200 dark:border-gray-700 p-4 md:hidden z-40 flex justify-between items-center shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)]">
+<button class="text-red-600 font-medium text-sm px-4 py-2">Annuler</button>
+<button class="bg-primary text-white font-bold text-sm px-6 py-2 rounded-lg">Modifier</button>
+</div>
+</main>
+</div>
+</body></html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Détails Bloc MEP (TMA) - Intranet</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "primary-dark": "#0f4bc4",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1a2332",
+                        "text-main-light": "#111318",
+                        "text-main-dark": "#e2e8f0",
+                        "text-secondary-light": "#616f89",
+                        "text-secondary-dark": "#94a3b8",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "body": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.375rem", 
+                        "lg": "0.5rem", 
+                        "xl": "0.75rem", 
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-main-light dark:text-text-main-dark antialiased transition-colors duration-200">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Top Navigation -->
+<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 bg-surface-light dark:bg-surface-dark px-10 py-3 shadow-sm">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-primary dark:text-blue-400">
+<div class="size-8 rounded-lg bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-2xl">dns</span>
+</div>
+<h2 class="text-text-main-light dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">TMA Intranet</h2>
+</div>
+<nav class="hidden md:flex items-center gap-9">
+<a class="text-text-secondary-light dark:text-text-secondary-dark hover:text-primary dark:hover:text-blue-400 text-sm font-medium leading-normal transition-colors" href="#">Dashboard</a>
+<a class="text-text-secondary-light dark:text-text-secondary-dark hover:text-primary dark:hover:text-blue-400 text-sm font-medium leading-normal transition-colors" href="#">Planning</a>
+<a class="text-text-secondary-light dark:text-text-secondary-dark hover:text-primary dark:hover:text-blue-400 text-sm font-medium leading-normal transition-colors" href="#">Formations</a>
+<a class="text-primary dark:text-blue-400 text-sm font-medium leading-normal" href="#">Blocs MEP</a>
+<a class="text-text-secondary-light dark:text-text-secondary-dark hover:text-primary dark:hover:text-blue-400 text-sm font-medium leading-normal transition-colors" href="#">Rapports</a>
+</nav>
+</div>
+<div class="flex flex-1 justify-end gap-6 items-center">
+<div class="relative hidden sm:flex w-full max-w-xs">
+<span class="absolute inset-y-0 left-0 flex items-center pl-3 text-text-secondary-light dark:text-text-secondary-dark">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</span>
+<input class="w-full rounded-lg border-none bg-slate-100 dark:bg-slate-800 py-2 pl-10 pr-4 text-sm text-text-main-light dark:text-white placeholder-text-secondary-light focus:ring-2 focus:ring-primary dark:focus:ring-blue-500" placeholder="Rechercher..." type="search"/>
+</div>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-slate-200 dark:border-slate-700" data-alt="User profile avatar showing a smiling professional man" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDiZysh5jNPtQOlqbR7MzLLUnLEdKougU4bgD0NwZgESm-z4IprXYgBgOHntoDHVzC8Xgs4V1byrHordsG_OBbC_Ajq9AHitPGH8xiPoC3Q38QEefs78F_1aGCBB6vhuThxUpIo3AgcE-EkDMuvAJL614Ex7mVY-jMXsuJijTLFDeyjKbeA7Q_DInxDz-N3CyoIbC7XZut7pEuDyCpk_Nf0qd5HC4eWFtm3p0nb-DitgiwAaj-fRBPqD6ZtMqAALsif0Np4_IlkqzQf");'></div>
+</div>
+</header>
+<main class="flex-1 px-4 sm:px-10 py-8 mx-auto w-full max-w-[1280px]">
+<!-- Breadcrumbs -->
+<div class="flex flex-wrap gap-2 mb-6 text-sm">
+<a class="text-text-secondary-light dark:text-text-secondary-dark hover:text-primary dark:hover:text-blue-400 font-medium" href="#">Accueil</a>
+<span class="text-text-secondary-light dark:text-text-secondary-dark">/</span>
+<a class="text-text-secondary-light dark:text-text-secondary-dark hover:text-primary dark:hover:text-blue-400 font-medium" href="#">Planning</a>
+<span class="text-text-secondary-light dark:text-text-secondary-dark">/</span>
+<span class="text-text-main-light dark:text-white font-medium">Détails Bloc MEP #1234</span>
+</div>
+<!-- Page Header -->
+<div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 mb-8">
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-3">
+<h1 class="text-3xl font-black text-text-main-light dark:text-white tracking-tight">Maintenance Annuelle</h1>
+<span class="px-3 py-1 rounded-full bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-400 text-xs font-bold uppercase tracking-wider border border-amber-200 dark:border-amber-800 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">warning</span>
+                            Conflits Détectés
+                        </span>
+</div>
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-base">ID: #1234 • Créé le 10 Oct 2023 par Admin Système</p>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center justify-center gap-2 rounded-lg h-10 px-5 bg-white dark:bg-surface-dark border border-slate-200 dark:border-slate-700 text-text-main-light dark:text-white hover:bg-slate-50 dark:hover:bg-slate-800 font-semibold transition-all shadow-sm">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+<span>Modifier</span>
+</button>
+<button class="flex items-center justify-center gap-2 rounded-lg h-10 px-5 bg-primary hover:bg-primary-dark text-white font-semibold transition-all shadow-md shadow-primary/20">
+<span class="material-symbols-outlined text-[20px]">mail</span>
+<span>Notifier Équipes</span>
+</button>
+</div>
+</div>
+<!-- Main Layout Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<!-- Left Column (Content) -->
+<div class="lg:col-span-2 flex flex-col gap-6">
+<!-- Conflict Alert Banner -->
+<div class="rounded-xl border border-red-200 dark:border-red-900/50 bg-red-50 dark:bg-red-900/20 p-4 flex gap-4 items-start">
+<div class="rounded-full bg-red-100 dark:bg-red-900/50 p-2 text-red-600 dark:text-red-400 flex-shrink-0">
+<span class="material-symbols-outlined">report_problem</span>
+</div>
+<div class="flex-1">
+<h3 class="text-red-900 dark:text-red-200 font-bold text-lg mb-1">Conflits de Planning Identifiés</h3>
+<p class="text-red-700 dark:text-red-300 text-sm mb-3">Ce blocage MEP chevauche 2 sessions de formation validées. Une action est requise pour résoudre ces conflits.</p>
+<div class="bg-white dark:bg-surface-dark rounded-lg overflow-hidden border border-red-100 dark:border-red-900/30 shadow-sm">
+<table class="w-full text-sm text-left">
+<thead class="bg-red-50/50 dark:bg-red-900/10 text-red-900 dark:text-red-200 font-semibold border-b border-red-100 dark:border-red-900/30">
+<tr>
+<th class="px-4 py-3">Formation Impactée</th>
+<th class="px-4 py-3">Formateur</th>
+<th class="px-4 py-3">Chevauchement</th>
+<th class="px-4 py-3 text-right">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-red-100 dark:divide-slate-800">
+<tr>
+<td class="px-4 py-3 font-medium text-text-main-light dark:text-white">Java Basics - Session 42</td>
+<td class="px-4 py-3 text-text-secondary-light dark:text-text-secondary-dark">Jean Dupont</td>
+<td class="px-4 py-3 text-red-600 dark:text-red-400 font-medium">4 heures</td>
+<td class="px-4 py-3 text-right">
+<a class="text-primary hover:underline text-xs font-bold" href="#">Voir</a>
+</td>
+</tr>
+<tr>
+<td class="px-4 py-3 font-medium text-text-main-light dark:text-white">Agile Scrum Master</td>
+<td class="px-4 py-3 text-text-secondary-light dark:text-text-secondary-dark">Marie Martin</td>
+<td class="px-4 py-3 text-red-600 dark:text-red-400 font-medium">Journée entière</td>
+<td class="px-4 py-3 text-right">
+<a class="text-primary hover:underline text-xs font-bold" href="#">Voir</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- General Info Card -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden">
+<div class="px-6 py-4 border-b border-slate-100 dark:border-slate-800 flex justify-between items-center bg-slate-50/50 dark:bg-slate-800/50">
+<h2 class="text-lg font-bold text-text-main-light dark:text-white flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">info</span>
+                                Informations Générales
+                            </h2>
+</div>
+<div class="p-6 grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="flex flex-col gap-1">
+<label class="text-xs font-semibold uppercase tracking-wider text-text-secondary-light dark:text-text-secondary-dark">Date de début</label>
+<div class="flex items-center gap-3 p-3 rounded-lg bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700">
+<span class="material-symbols-outlined text-primary">calendar_today</span>
+<div>
+<div class="font-bold text-text-main-light dark:text-white">12 Octobre 2023</div>
+<div class="text-xs text-text-secondary-light dark:text-text-secondary-dark">08:00 AM</div>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<label class="text-xs font-semibold uppercase tracking-wider text-text-secondary-light dark:text-text-secondary-dark">Date de fin</label>
+<div class="flex items-center gap-3 p-3 rounded-lg bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700">
+<span class="material-symbols-outlined text-primary">event_busy</span>
+<div>
+<div class="font-bold text-text-main-light dark:text-white">14 Octobre 2023</div>
+<div class="text-xs text-text-secondary-light dark:text-text-secondary-dark">18:00 PM</div>
+</div>
+</div>
+</div>
+<div class="md:col-span-2 flex flex-col gap-2">
+<label class="text-xs font-semibold uppercase tracking-wider text-text-secondary-light dark:text-text-secondary-dark">Motif du Blocage</label>
+<p class="text-text-main-light dark:text-white leading-relaxed">
+                                    Mise à jour majeure de l'infrastructure serveur (V2.0). Indisponibilité totale des environnements de formation prévue. Cette maintenance est critique pour la sécurité et la performance des futurs modules de formation en ligne.
+                                </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column (Sidebar) -->
+<div class="lg:col-span-1 flex flex-col gap-6">
+<!-- Status Card -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm p-6">
+<h3 class="text-sm font-bold uppercase tracking-wider text-text-secondary-light dark:text-text-secondary-dark mb-4">État du Bloc</h3>
+<div class="space-y-4">
+<div class="flex justify-between items-center py-2 border-b border-slate-100 dark:border-slate-800">
+<span class="text-sm text-text-secondary-light dark:text-text-secondary-dark">Statut Actuel</span>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400">
+<span class="size-1.5 rounded-full bg-green-500"></span>
+                                    Planifié
+                                </span>
+</div>
+<div class="flex justify-between items-center py-2 border-b border-slate-100 dark:border-slate-800">
+<span class="text-sm text-text-secondary-light dark:text-text-secondary-dark">Durée Totale</span>
+<span class="text-sm font-semibold text-text-main-light dark:text-white">2 Jours, 10 Heures</span>
+</div>
+<div class="flex justify-between items-center py-2">
+<span class="text-sm text-text-secondary-light dark:text-text-secondary-dark">Priorité</span>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-400">
+                                    Haute
+                                </span>
+</div>
+</div>
+</div>
+<!-- History Timeline -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm p-6 flex-1">
+<h3 class="text-sm font-bold uppercase tracking-wider text-text-secondary-light dark:text-text-secondary-dark mb-6">Historique</h3>
+<div class="relative border-l border-slate-200 dark:border-slate-700 ml-3 space-y-8">
+<div class="relative pl-6">
+<div class="absolute -left-[5px] top-1 size-2.5 rounded-full bg-slate-300 dark:bg-slate-600 ring-4 ring-white dark:ring-surface-dark"></div>
+<p class="text-xs text-text-secondary-light dark:text-text-secondary-dark mb-0.5">Aujourd'hui, 09:30</p>
+<p class="text-sm font-medium text-text-main-light dark:text-white">Conflit détecté (Auto)</p>
+<p class="text-xs text-text-secondary-light dark:text-text-secondary-dark mt-1">2 formations ajoutées au planning.</p>
+</div>
+<div class="relative pl-6">
+<div class="absolute -left-[5px] top-1 size-2.5 rounded-full bg-primary ring-4 ring-white dark:ring-surface-dark"></div>
+<div class="flex items-center gap-2 mb-1">
+<div class="size-5 rounded-full bg-cover bg-center" data-alt="Avatar of user Alice" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAckEepenDcMKl8NiijK1NBQnEIIr5g3YjGb5xXIedgcQYUC0ajaze48ab40ppFH2IJkcfclvlYjQpMKiI4o4IF0OCcsBA8hkegtmC3kEksGPkR_GessWJiz-VfjZaWOqvQ6ohMD0O0rUVckbQKapIRjYJctySSe10j4RjanlnGA7PqdiFIuzGqcwt9KhZeQO_WFd_NnmGv15nu_FGkMBiMMlcoDpENtvsG8jt3CZr2gb6fBjw--KO9EdRXD6Wug8cq-jvBRpC8B6A9");'></div>
+<p class="text-xs text-text-secondary-light dark:text-text-secondary-dark">11 Oct 2023, 14:20</p>
+</div>
+<p class="text-sm font-medium text-text-main-light dark:text-white">Modification par Alice R.</p>
+<p class="text-xs text-text-secondary-light dark:text-text-secondary-dark mt-1">Changement de la date de fin.</p>
+</div>
+<div class="relative pl-6">
+<div class="absolute -left-[5px] top-1 size-2.5 rounded-full bg-slate-300 dark:bg-slate-600 ring-4 ring-white dark:ring-surface-dark"></div>
+<div class="flex items-center gap-2 mb-1">
+<div class="size-5 rounded-full bg-cover bg-center" data-alt="Avatar of user Bob" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBA_TrVp3lFUe1us3N8zGkokHs8iFnKiCNjcLVMJ8Li25wX3memzJ_SUcFyeWOJ0DZJ4HnYuJxb-TNxQ5FxRv9CchUQvkv5-N6gjOiPH3IMfAyVst997vFrWdc6pSFyNFqaQIPNRG6w06pvxC6nxJXWQ-ZmlKS0wZ9gVbZa2jMbqmue-OY4ptfRO_9_g7IgNB4vxodK6C8u5Bw71kZ_T5inrblcP42Y4NZnueUkGBZcJzHlSnF4QGIyYfUW8AOSIDQ9u4a7sxse3rQP");'></div>
+<p class="text-xs text-text-secondary-light dark:text-text-secondary-dark">10 Oct 2023, 09:00</p>
+</div>
+<p class="text-sm font-medium text-text-main-light dark:text-white">Création du Bloc</p>
+<p class="text-xs text-text-secondary-light dark:text-text-secondary-dark mt-1">Initialisé par Bob M.</p>
+</div>
+</div>
+</div>
+<!-- Destructive Action -->
+<button class="w-full flex items-center justify-center gap-2 rounded-lg py-3 px-4 border border-red-200 dark:border-red-900/50 bg-red-50 dark:bg-red-900/20 text-red-700 dark:text-red-400 hover:bg-red-100 dark:hover:bg-red-900/30 font-bold text-sm transition-colors mt-auto">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+                        Supprimer le Bloc MEP
+                    </button>
+</div>
+</div>
+</main>
+</div>
+</body></html>

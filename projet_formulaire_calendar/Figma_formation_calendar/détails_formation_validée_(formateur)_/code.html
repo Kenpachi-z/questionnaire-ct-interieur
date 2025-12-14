@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Détails Formation - Intranet Formateur</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#111318] dark:text-white font-display min-h-screen flex flex-col overflow-x-hidden">
+<!-- TopNavBar -->
+<header class="bg-white dark:bg-[#1e2736] border-b border-[#f0f2f4] dark:border-gray-800 sticky top-0 z-50">
+<div class="max-w-[1440px] mx-auto px-4 lg:px-10 py-3 flex items-center justify-between whitespace-nowrap">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-[#111318] dark:text-white">
+<div class="size-8 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl">school</span>
+</div>
+<h2 class="text-[#111318] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">Intranet Formation</h2>
+</div>
+<nav class="hidden md:flex items-center gap-9">
+<a class="text-[#111318] dark:text-gray-300 hover:text-primary text-sm font-medium leading-normal transition-colors" href="#">Tableau de bord</a>
+<a class="text-primary text-sm font-bold leading-normal" href="#">Mes Formations</a>
+<a class="text-[#111318] dark:text-gray-300 hover:text-primary text-sm font-medium leading-normal transition-colors" href="#">Catalogue</a>
+<a class="text-[#111318] dark:text-gray-300 hover:text-primary text-sm font-medium leading-normal transition-colors" href="#">Calendrier</a>
+</nav>
+</div>
+<div class="flex items-center gap-6">
+<label class="hidden md:flex flex-col min-w-40 !h-10 max-w-64">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+<div class="text-[#616f89] dark:text-gray-400 flex border-none bg-[#f0f2f4] dark:bg-gray-800 items-center justify-center pl-4 rounded-l-lg border-r-0">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#111318] dark:text-white focus:outline-0 focus:ring-0 border-none bg-[#f0f2f4] dark:bg-gray-800 focus:border-none h-full placeholder:text-[#616f89] px-4 rounded-l-none border-l-0 pl-2 text-sm font-normal leading-normal" placeholder="Rechercher..." value=""/>
+</div>
+</label>
+<div class="flex items-center gap-3">
+<div class="flex flex-col items-end hidden sm:block">
+<span class="text-sm font-bold text-[#111318] dark:text-white">Marc Dubois</span>
+<span class="text-xs text-[#616f89] dark:text-gray-400">Formateur Senior</span>
+</div>
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-10 border-2 border-white dark:border-gray-700 shadow-sm" data-alt="Portrait of a professional man in a suit smiling" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDJdvUU0xvs0LhX__V9_9SKQMN9RvEv0EppgaXbxjFdELr_5USFlrJdA0FCCVK0gnXiBWK0-kRdQBnZsmvq5bGvfEuvv7LiSVtDD9tbtDEqygM7lqCIE29_XnKg3Y8QyaQrq0Q7YBg-oVgA7S17tgk-QzU29-S9iYkm5qY94JAimhC1zADZXwvWMpExYr0cNHujpYNcFe5cG6KEcU7498jp1oxnoutzgyXlTRV2Ou2GXalVfxYMDDH3FwkLP0r5eLKpBdwHbiNuk-2i");'></div>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-grow w-full max-w-[1200px] mx-auto px-4 md:px-6 lg:px-8 py-8 flex flex-col gap-8">
+<!-- Breadcrumbs -->
+<div class="flex flex-wrap gap-2 text-sm">
+<a class="text-[#616f89] dark:text-gray-400 font-medium hover:text-primary transition-colors" href="#">Accueil</a>
+<span class="text-[#616f89] dark:text-gray-400 font-medium">/</span>
+<a class="text-[#616f89] dark:text-gray-400 font-medium hover:text-primary transition-colors" href="#">Mes Formations</a>
+<span class="text-[#616f89] dark:text-gray-400 font-medium">/</span>
+<span class="text-[#111318] dark:text-white font-medium">Sécurité Incendie - Niveau 1</span>
+</div>
+<!-- Page Heading & Status -->
+<div class="flex flex-col md:flex-row md:items-start justify-between gap-6 pb-2 border-b border-gray-200 dark:border-gray-800">
+<div class="flex flex-col gap-3 max-w-3xl">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-3">
+<h1 class="text-[#111318] dark:text-white text-3xl md:text-4xl font-black leading-tight tracking-tight">Sécurité Incendie - Niveau 1</h1>
+<span class="hidden md:inline-flex bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 px-3 py-1 rounded-full text-sm font-bold items-center gap-1.5 border border-green-200 dark:border-green-900/50">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+                            Validée
+                        </span>
+</div>
+<p class="text-[#616f89] dark:text-gray-400 text-sm font-medium">Référence: SEC-2023-LVL1-084</p>
+</div>
+<div class="md:hidden">
+<span class="inline-flex bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 px-3 py-1 rounded-full text-sm font-bold items-center gap-1.5 border border-green-200 dark:border-green-900/50">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+                        Validée
+                    </span>
+</div>
+<p class="text-[#111318] dark:text-gray-200 text-base leading-relaxed mt-2">
+<span class="font-bold text-primary">Objectif:</span> Acquérir les réflexes et les principes de base pour lutter contre un début d'incendie. Savoir donner l'alerte et utiliser les moyens de première intervention (extincteurs, RIA).
+                </p>
+</div>
+<!-- Quick Actions Mobile (Hidden on Desktop) -->
+<div class="md:hidden w-full">
+<button class="w-full bg-primary text-white font-bold h-12 rounded-lg shadow-md flex items-center justify-center gap-2 active:scale-[0.98] transition-transform">
+<span class="material-symbols-outlined">fact_check</span>
+                    Saisir les Présences
+                </button>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- LEFT COLUMN (Main Content) -->
+<div class="lg:col-span-2 flex flex-col gap-8">
+<!-- Stats / Logistics Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="flex flex-col gap-1.5 rounded-xl p-5 border border-[#dbdfe6] dark:border-gray-700 bg-white dark:bg-[#1e2736] shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-center gap-2 text-[#616f89] dark:text-gray-400 mb-1">
+<span class="material-symbols-outlined text-[20px]">calendar_month</span>
+<p class="text-sm font-semibold uppercase tracking-wide">Date</p>
+</div>
+<p class="text-[#111318] dark:text-white text-xl font-bold">12 Oct 2023</p>
+</div>
+<div class="flex flex-col gap-1.5 rounded-xl p-5 border border-[#dbdfe6] dark:border-gray-700 bg-white dark:bg-[#1e2736] shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-center gap-2 text-[#616f89] dark:text-gray-400 mb-1">
+<span class="material-symbols-outlined text-[20px]">schedule</span>
+<p class="text-sm font-semibold uppercase tracking-wide">Heure</p>
+</div>
+<p class="text-[#111318] dark:text-white text-xl font-bold">09:00 - 12:00</p>
+</div>
+<div class="flex flex-col gap-1.5 rounded-xl p-5 border border-[#dbdfe6] dark:border-gray-700 bg-white dark:bg-[#1e2736] shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-center gap-2 text-[#616f89] dark:text-gray-400 mb-1">
+<span class="material-symbols-outlined text-[20px]">timer</span>
+<p class="text-sm font-semibold uppercase tracking-wide">Durée</p>
+</div>
+<p class="text-[#111318] dark:text-white text-xl font-bold">3 Heures</p>
+</div>
+<div class="flex flex-col gap-1.5 rounded-xl p-5 border border-[#dbdfe6] dark:border-gray-700 bg-white dark:bg-[#1e2736] shadow-sm hover:shadow-md transition-shadow group cursor-pointer">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2 text-[#616f89] dark:text-gray-400 mb-1">
+<span class="material-symbols-outlined text-[20px]">location_on</span>
+<p class="text-sm font-semibold uppercase tracking-wide">Lieu</p>
+</div>
+<span class="material-symbols-outlined text-primary opacity-0 group-hover:opacity-100 transition-opacity">open_in_new</span>
+</div>
+<p class="text-[#111318] dark:text-white text-xl font-bold">Salle Bâtiment A</p>
+</div>
+</div>
+<!-- Participants List -->
+<div class="flex flex-col gap-4">
+<div class="flex flex-wrap items-center justify-between gap-4">
+<h3 class="text-[#111318] dark:text-white text-xl font-bold flex items-center gap-2">
+                            Liste des Participants 
+                            <span class="bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 text-sm px-2 py-0.5 rounded-full">12</span>
+</h3>
+<div class="flex items-center gap-3">
+<button class="flex items-center gap-2 px-3 py-2 bg-white dark:bg-[#1e2736] border border-[#dbdfe6] dark:border-gray-700 rounded-lg text-sm font-medium text-[#111318] dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
+<span class="material-symbols-outlined text-[20px]">download</span>
+<span class="hidden sm:inline">Exporter CSV</span>
+</button>
+</div>
+</div>
+<div class="bg-white dark:bg-[#1e2736] rounded-xl border border-[#dbdfe6] dark:border-gray-700 overflow-hidden shadow-sm">
+<div class="overflow-x-auto">
+<table class="w-full text-left text-sm border-collapse">
+<thead class="bg-[#f8f9fa] dark:bg-gray-800/50 border-b border-[#dbdfe6] dark:border-gray-700">
+<tr>
+<th class="p-4 font-semibold text-[#616f89] dark:text-gray-400 whitespace-nowrap">Matricule</th>
+<th class="p-4 font-semibold text-[#616f89] dark:text-gray-400 whitespace-nowrap">Nom &amp; Prénom</th>
+<th class="p-4 font-semibold text-[#616f89] dark:text-gray-400 whitespace-nowrap">Rôle</th>
+<th class="p-4 font-semibold text-[#616f89] dark:text-gray-400 whitespace-nowrap">Secteur</th>
+<th class="p-4 font-semibold text-[#616f89] dark:text-gray-400 whitespace-nowrap w-10">Statut</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#dbdfe6] dark:divide-gray-700">
+<tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+<td class="p-4 font-medium text-[#111318] dark:text-gray-200">EMP-4829</td>
+<td class="p-4">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-gray-200 dark:bg-gray-700 bg-cover bg-center" data-alt="Avatar of participant Sophie Martin" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAmxyA0BG-FEyWOfot2zyi5LoSeAmOGNL1nZZPQTLKEQdqgZWzwefm1itd3bw1c3O8rYPW-a_Zhv9YSnf0CvXdAuPWI_q7XKgSO5Qr7JOPtClJ_rqOaamR9WJz7DPI0bvu388mGVMM-8AQbRSIAL63WnRBslDgqnV0MzE3RnJJeWTZXCbaOFgBmI5mhbnNc4rolnYGoctEiXvHHa7Z-eooSTy6mTJPUrVI9C4Eabeq_gUNcss_E5f3jX2g3-QISN6u6KnH0Zp698YhG')"></div>
+<span class="font-bold text-[#111318] dark:text-white">Sophie Martin</span>
+</div>
+</td>
+<td class="p-4 text-gray-600 dark:text-gray-300">Responsable RH</td>
+<td class="p-4 text-gray-600 dark:text-gray-300">Ressources Humaines</td>
+<td class="p-4 text-right">
+<span class="material-symbols-outlined text-green-600" title="Confirmé">check_circle</span>
+</td>
+</tr>
+<tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+<td class="p-4 font-medium text-[#111318] dark:text-gray-200">EMP-3920</td>
+<td class="p-4">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-indigo-100 text-indigo-700 flex items-center justify-center font-bold text-xs">TL</div>
+<span class="font-bold text-[#111318] dark:text-white">Thomas Leroy</span>
+</div>
+</td>
+<td class="p-4 text-gray-600 dark:text-gray-300">Technicien IT</td>
+<td class="p-4 text-gray-600 dark:text-gray-300">Informatique</td>
+<td class="p-4 text-right">
+<span class="material-symbols-outlined text-green-600" title="Confirmé">check_circle</span>
+</td>
+</tr>
+<tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+<td class="p-4 font-medium text-[#111318] dark:text-gray-200">EMP-1029</td>
+<td class="p-4">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-gray-200 dark:bg-gray-700 bg-cover bg-center" data-alt="Avatar of participant Julie Bernard" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA8WYGocMKF0yv_naFmTbvDG1hHQJLiiVsh_XWkWRhCYOq6J5JwcUkipf5o-GKY3hDdydQfhKvpJ1_nHTVaZDZBUkEMCHE0-VoFFA6p-hBgcyYFw0-7CWQxFaKgivoqv6SStvYDUZqF0LLUylXVkg1xWMOV0gdyuPhXsHsbw_fr4s1klPfYoSZjjY88wg4JU4JQzok0I1d75InzUpiWZHSQmbtNI1XHp3GCW3tdrsbK1Chd3OwD2_vodhzrB1k4ZlcdoI6OQJpsFa1d')"></div>
+<span class="font-bold text-[#111318] dark:text-white">Julie Bernard</span>
+</div>
+</td>
+<td class="p-4 text-gray-600 dark:text-gray-300">Chef de Projet</td>
+<td class="p-4 text-gray-600 dark:text-gray-300">Marketing</td>
+<td class="p-4 text-right">
+<span class="material-symbols-outlined text-gray-300" title="En attente">schedule</span>
+</td>
+</tr>
+<tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+<td class="p-4 font-medium text-[#111318] dark:text-gray-200">EMP-5521</td>
+<td class="p-4">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-orange-100 text-orange-700 flex items-center justify-center font-bold text-xs">AD</div>
+<span class="font-bold text-[#111318] dark:text-white">Alain Dubois</span>
+</div>
+</td>
+<td class="p-4 text-gray-600 dark:text-gray-300">Logistique</td>
+<td class="p-4 text-gray-600 dark:text-gray-300">Opérations</td>
+<td class="p-4 text-right">
+<span class="material-symbols-outlined text-green-600" title="Confirmé">check_circle</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="p-4 border-t border-[#dbdfe6] dark:border-gray-700 bg-[#f8f9fa] dark:bg-gray-800/30 flex justify-center">
+<button class="text-sm text-primary font-bold hover:underline">Voir tous les participants</button>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN (Sidebar & Actions) -->
+<div class="flex flex-col gap-6">
+<!-- Primary Actions Card -->
+<div class="bg-white dark:bg-[#1e2736] p-6 rounded-xl border border-[#dbdfe6] dark:border-gray-700 shadow-sm flex flex-col gap-4 sticky top-24">
+<h3 class="font-bold text-[#111318] dark:text-white text-lg border-b border-[#f0f2f4] dark:border-gray-700 pb-3">Actions Formateur</h3>
+<button class="w-full bg-primary text-white font-bold py-3.5 px-4 rounded-lg hover:bg-blue-700 transition flex items-center justify-center gap-2 shadow-lg shadow-blue-500/20 active:translate-y-0.5">
+<span class="material-symbols-outlined">fact_check</span>
+                        Saisir les Présences
+                    </button>
+<button class="w-full bg-white dark:bg-gray-800 border border-[#dbdfe6] dark:border-gray-600 text-[#111318] dark:text-gray-200 font-medium py-2.5 px-4 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-gray-500">edit_calendar</span>
+                        Modifier la Formation
+                    </button>
+<div class="w-full h-px bg-[#f0f2f4] dark:bg-gray-700 my-1"></div>
+<button class="w-full bg-red-50 dark:bg-red-900/10 border border-transparent hover:border-red-200 dark:hover:border-red-900/30 text-red-600 font-medium py-2.5 px-4 rounded-lg transition flex items-center justify-center gap-2 group">
+<span class="material-symbols-outlined group-hover:animate-pulse">cancel</span>
+                        Annuler la Formation
+                    </button>
+</div>
+<!-- Trainer Profile -->
+<div class="bg-white dark:bg-[#1e2736] p-6 rounded-xl border border-[#dbdfe6] dark:border-gray-700 shadow-sm">
+<h3 class="font-bold text-[#111318] dark:text-white text-lg mb-4">Formateur Assigné</h3>
+<div class="flex items-center gap-4">
+<div class="size-12 rounded-full border-2 border-white dark:border-gray-600 shadow-sm bg-cover bg-center" data-alt="Portrait of the assigned trainer Marc Dubois" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCMR58qRqUIGQfk6a-6mbF0tw02KgmfsmOiI8qxumEk2BYi7yNc3x0Fi4AZekiiuCYG_3tCrfaSovOq9JDuRtJz67ZfoZi7Gygp1QwyZpRLPBikW16SbElz8RbkpPGeLYTs0Di0NyaIgv4TK7JsTkmObFZ4Ql8F53pMreY7m0HguwOtRckqo7dABB7261TdPUoBt-db-AryoUYHA1_hSGCE00Cxw1TTTxmOp2XHTFs6IP36bJooQnItTd4ExVOm9jeJ7QCpYe3n4JuQ");'></div>
+<div>
+<p class="font-bold text-[#111318] dark:text-white text-base">Marc Dubois</p>
+<p class="text-xs font-medium text-primary bg-blue-50 dark:bg-blue-900/20 px-2 py-0.5 rounded inline-block mt-0.5">Formateur Principal</p>
+</div>
+</div>
+</div>
+<!-- Notes Widget -->
+<div class="bg-white dark:bg-[#1e2736] p-6 rounded-xl border border-[#dbdfe6] dark:border-gray-700 shadow-sm flex flex-col flex-1">
+<div class="flex items-center justify-between mb-3">
+<h3 class="font-bold text-[#111318] dark:text-white text-lg">Notes Privées</h3>
+<span class="material-symbols-outlined text-gray-400 text-sm">lock</span>
+</div>
+<div class="relative flex-1">
+<textarea class="w-full h-32 md:h-auto min-h-[120px] bg-[#f8f9fa] dark:bg-gray-800 border border-[#dbdfe6] dark:border-gray-700 rounded-lg p-3 text-sm text-[#111318] dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent focus:outline-none resize-none" placeholder="Ajouter un commentaire ou un mémo pour cette session..."></textarea>
+</div>
+<button class="mt-3 text-sm text-primary font-bold hover:text-blue-700 flex items-center gap-1 self-end">
+<span class="material-symbols-outlined text-lg">save</span>
+                        Enregistrer
+                    </button>
+</div>
+</div>
+</div>
+</main>
+</body></html>

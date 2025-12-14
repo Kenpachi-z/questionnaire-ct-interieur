@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ajouter Utilisateur - Intranet Formation</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "primary-dark": "#0e45b5",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1e2736",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#111318] dark:text-gray-100 transition-colors duration-200">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-gray-200 dark:border-gray-800 bg-surface-light dark:bg-surface-dark px-10 py-3 sticky top-0 z-50">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-[#111318] dark:text-white">
+<div class="size-8 flex items-center justify-center bg-primary/10 rounded-lg text-primary">
+<span class="material-symbols-outlined text-2xl">school</span>
+</div>
+<h2 class="text-lg font-bold leading-tight tracking-tight">Intranet Formation</h2>
+</div>
+<nav class="hidden md:flex items-center gap-9">
+<a class="text-gray-600 dark:text-gray-400 text-sm font-medium hover:text-primary transition-colors" href="#">Dashboard Admin</a>
+<a class="text-gray-600 dark:text-gray-400 text-sm font-medium hover:text-primary transition-colors" href="#">Demandes</a>
+<a class="text-gray-600 dark:text-gray-400 text-sm font-medium hover:text-primary transition-colors" href="#">Planification</a>
+<a class="text-gray-600 dark:text-gray-400 text-sm font-medium hover:text-primary transition-colors" href="#">Reporting</a>
+<a class="text-primary text-sm font-bold leading-normal" href="#">Utilisateurs</a>
+</nav>
+</div>
+<div class="flex flex-1 justify-end gap-6 items-center">
+<div class="relative hidden sm:flex items-center w-full max-w-xs">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-400">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</div>
+<input class="block w-full rounded-lg border-none bg-gray-100 dark:bg-gray-800 py-2 pl-10 pr-3 text-sm placeholder-gray-500 focus:ring-2 focus:ring-primary dark:text-white" placeholder="Rechercher..." type="text"/>
+</div>
+<div class="flex items-center gap-3">
+<button class="flex items-center justify-center size-10 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-600 dark:text-gray-300">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-10 border-2 border-white dark:border-gray-700 shadow-sm" data-alt="Portrait of the administrator user" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBSIWwuj-TTtaeswbdROp9UZl9nvHsScK7GrYpSPSieD9JGBq8mThZr0yKlNKWEe-KCBaLDAbZncF3v4IlnQHwyWvh4MElrCDkPfMfCk49dLzBshJ3kiJ7HQbUHmvhGqKQ4T3krOT_oWeWwXTanTAPQPysKQSpSjIWFaY9Mcgx_QRcsRNSzuECjNSF1M39Dx4Pds96Lkw0o7DXOXOVz08xgMw2Cc2EFJu8u6A9G1FRT4ZYOx_bR66kUAuXbDSO09vMioc3o9obhV20E");'></div>
+</div>
+</div>
+</header>
+<main class="flex-1 flex justify-center py-8 px-4 sm:px-6 lg:px-8">
+<div class="flex flex-col max-w-4xl w-full gap-8">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2 text-gray-500 dark:text-gray-400 text-sm mb-1">
+<a class="hover:text-primary transition-colors" href="#">Utilisateurs</a>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+<span class="text-[#111318] dark:text-white font-medium">Nouveau</span>
+</div>
+<h1 class="text-3xl font-black text-[#111318] dark:text-white tracking-tight">Ajouter un Utilisateur</h1>
+<p class="text-gray-500 dark:text-gray-400 text-base">Créez un nouveau compte et attribuez les rôles nécessaires pour l'accès à l'intranet.</p>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center gap-2 bg-white dark:bg-surface-dark border border-gray-300 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-200 px-4 py-2.5 rounded-lg font-bold text-sm transition-colors">
+                        Annuler
+                    </button>
+</div>
+</div>
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 p-8">
+<form action="#" class="flex flex-col gap-8">
+<div class="space-y-6">
+<h3 class="text-lg font-bold text-[#111318] dark:text-white border-b border-gray-100 dark:border-gray-800 pb-2">Informations Générales</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="flex flex-col gap-1.5">
+<label class="text-sm font-semibold text-gray-700 dark:text-gray-300" for="fullname">Nom Complet <span class="text-red-500">*</span></label>
+<input class="w-full rounded-lg border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-[#111318] dark:text-white shadow-sm focus:border-primary focus:ring-primary sm:text-sm py-2.5 px-3" id="fullname" name="fullname" placeholder="ex: Jean Dupont" type="text"/>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="text-sm font-semibold text-gray-700 dark:text-gray-300" for="matricule">Matricule <span class="text-red-500">*</span></label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-400">
+<span class="material-symbols-outlined text-[18px]">badge</span>
+</div>
+<input class="w-full rounded-lg border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-[#111318] dark:text-white shadow-sm focus:border-primary focus:ring-primary sm:text-sm py-2.5 pl-10 pr-3" id="matricule" name="matricule" placeholder="ex: EMP123456" type="text"/>
+</div>
+<p class="text-xs text-gray-500">Identifiant unique pour le lien avec le SIRH.</p>
+</div>
+<div class="flex flex-col gap-1.5 md:col-span-2">
+<label class="text-sm font-semibold text-gray-700 dark:text-gray-300" for="email">Adresse e-mail <span class="text-red-500">*</span></label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-400">
+<span class="material-symbols-outlined text-[18px]">mail</span>
+</div>
+<input class="w-full rounded-lg border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-[#111318] dark:text-white shadow-sm focus:border-primary focus:ring-primary sm:text-sm py-2.5 pl-10 pr-3" id="email" name="email" placeholder="jean.dupont@entreprise.com" type="email"/>
+</div>
+<p class="text-xs text-gray-500">Utilisée pour la communication et l'authentification SSO.</p>
+</div>
+</div>
+</div>
+<div class="space-y-6">
+<div class="flex items-center justify-between border-b border-gray-100 dark:border-gray-800 pb-2">
+<h3 class="text-lg font-bold text-[#111318] dark:text-white">Rôles à attribuer</h3>
+<span class="text-xs font-medium text-gray-500 bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">Sélection multiple possible</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<label class="relative flex items-start p-4 rounded-xl border border-gray-200 dark:border-gray-700 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors group">
+<div class="flex items-center h-5">
+<input class="size-5 text-primary border-gray-300 dark:border-gray-600 rounded focus:ring-primary dark:bg-gray-700 dark:checked:bg-primary" name="role_demandeur" type="checkbox"/>
+</div>
+<div class="ml-3 text-sm">
+<div class="font-bold text-[#111318] dark:text-white flex items-center gap-2">
+                                        Demandeur
+                                        <span class="material-symbols-outlined text-lg text-blue-500">person_add</span>
+</div>
+<p class="text-gray-500 dark:text-gray-400 mt-1 text-xs leading-snug">Peut créer des demandes de formation et suivre leur statut personnel.</p>
+</div>
+</label>
+<label class="relative flex items-start p-4 rounded-xl border border-gray-200 dark:border-gray-700 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors group">
+<div class="flex items-center h-5">
+<input class="size-5 text-primary border-gray-300 dark:border-gray-600 rounded focus:ring-primary dark:bg-gray-700 dark:checked:bg-primary" name="role_formateur" type="checkbox"/>
+</div>
+<div class="ml-3 text-sm">
+<div class="font-bold text-[#111318] dark:text-white flex items-center gap-2">
+                                        Formateur
+                                        <span class="material-symbols-outlined text-lg text-purple-500">school</span>
+</div>
+<p class="text-gray-500 dark:text-gray-400 mt-1 text-xs leading-snug">Accès au planning des sessions, validation pédagogique et gestion des présences.</p>
+</div>
+</label>
+<label class="relative flex items-start p-4 rounded-xl border border-gray-200 dark:border-gray-700 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors group">
+<div class="flex items-center h-5">
+<input class="size-5 text-primary border-gray-300 dark:border-gray-600 rounded focus:ring-primary dark:bg-gray-700 dark:checked:bg-primary" name="role_tma" type="checkbox"/>
+</div>
+<div class="ml-3 text-sm">
+<div class="font-bold text-[#111318] dark:text-white flex items-center gap-2">
+                                        TMA (Technique)
+                                        <span class="material-symbols-outlined text-lg text-orange-500">build</span>
+</div>
+<p class="text-gray-500 dark:text-gray-400 mt-1 text-xs leading-snug">Gestion des blocages techniques, MEP et maintenance applicative.</p>
+</div>
+</label>
+<label class="relative flex items-start p-4 rounded-xl border-2 border-transparent hover:border-red-100 dark:hover:border-red-900/30 bg-red-50/50 dark:bg-red-900/10 cursor-pointer transition-colors group">
+<div class="flex items-center h-5">
+<input class="size-5 text-red-600 border-gray-300 dark:border-gray-600 rounded focus:ring-red-500 dark:bg-gray-700 dark:checked:bg-red-600" name="role_admin" type="checkbox"/>
+</div>
+<div class="ml-3 text-sm">
+<div class="font-bold text-[#111318] dark:text-white flex items-center gap-2">
+                                        Administrateur
+                                        <span class="material-symbols-outlined text-lg text-red-500">shield_person</span>
+</div>
+<p class="text-gray-500 dark:text-gray-400 mt-1 text-xs leading-snug">Accès complet à toutes les fonctionnalités, gestion des utilisateurs et reporting.</p>
+</div>
+</label>
+</div>
+</div>
+<div class="pt-6 border-t border-gray-200 dark:border-gray-700 flex items-center justify-end gap-4">
+<button class="px-6 py-3 rounded-lg text-sm font-bold text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" type="button">
+                            Annuler
+                        </button>
+<button class="px-8 py-3 rounded-lg text-sm font-bold text-white bg-primary hover:bg-primary-dark shadow-lg shadow-primary/30 transition-all flex items-center gap-2" type="submit">
+<span class="material-symbols-outlined text-xl">person_add</span>
+                            Ajouter l'Utilisateur
+                        </button>
+</div>
+</form>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Réinitialisation du Mot de Passe (Admin)</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "primary-dark": "#104ab5",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for better aesthetic */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display min-h-screen flex flex-col antialiased">
+<!-- Navbar -->
+<header class="w-full bg-white dark:bg-[#1a202c] border-b border-[#f0f2f4] dark:border-gray-800 px-4 sm:px-10 py-3 sticky top-0 z-50">
+<div class="max-w-7xl mx-auto flex items-center justify-between">
+<div class="flex items-center gap-4 text-[#111318] dark:text-white">
+<div class="size-8 text-primary flex items-center justify-center bg-primary/10 rounded-lg">
+<span class="material-symbols-outlined">security</span>
+</div>
+<h2 class="text-lg font-bold leading-tight tracking-[-0.015em]">Intranet Admin Portal</h2>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden sm:flex items-center text-sm font-medium text-gray-500 dark:text-gray-400">
+<span class="material-symbols-outlined mr-2 text-lg">help</span>
+                    Aide
+                </div>
+<div class="h-8 w-px bg-gray-200 dark:bg-gray-700 mx-2 hidden sm:block"></div>
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-10 border-2 border-white dark:border-gray-700 shadow-sm" data-alt="Default user avatar silhouette" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBlcZ1wnO81a7wBrbUb8jSLjxBOfR_z_NmNNHH7B0rLL9llJVjCysBYpKgTuOKpwWZYdq3TDgf5NpA0ovQylK4XAKHu1w41pexJx6p2AkGIqcvf6FWK-RElYcLiw3xeqeTUtbPltQHi2Cdf6tGRv-rKrVUdw-TZMA31J4d7pO4i8uZ9wyOEv4okLPq_WeG3i6_J0xQ5kQ6-2rWI-owucYLsyJoQfXP-tvqAYQLn1mgkr8_OV_753_h53ZqBtxFGnv0B3Nm87r9AUL56");'></div>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow flex items-center justify-center p-6">
+<div class="w-full max-w-[640px] flex flex-col gap-6">
+<!-- Card -->
+<div class="bg-white dark:bg-[#1e2532] rounded-xl shadow-lg border border-gray-100 dark:border-gray-700 overflow-hidden">
+<!-- Card Header -->
+<div class="p-8 pb-0">
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-3xl">lock_reset</span>
+<h1 class="text-[#111318] dark:text-white tracking-tight text-2xl sm:text-3xl font-bold leading-tight">
+                                Définir un Nouveau Mot de Passe
+                            </h1>
+</div>
+<p class="text-[#616f89] dark:text-gray-400 text-sm sm:text-base font-normal leading-normal pl-1">
+                            Veuillez choisir un mot de passe sécurisé pour accéder au portail de gestion administrateur.
+                        </p>
+</div>
+</div>
+<!-- Form Content -->
+<div class="p-8 flex flex-col gap-6">
+<!-- Password Field 1 -->
+<div class="flex flex-col gap-2">
+<label class="text-[#111318] dark:text-gray-200 text-sm font-semibold leading-normal" for="new-password">
+                            Nouveau Mot de Passe
+                        </label>
+<div class="relative flex w-full items-center rounded-lg">
+<input class="form-input flex w-full flex-1 rounded-lg text-[#111318] dark:text-white dark:bg-gray-800 border border-[#dbdfe6] dark:border-gray-600 focus:outline-0 focus:ring-2 focus:ring-primary/20 focus:border-primary h-12 px-4 text-base placeholder:text-gray-400 transition-all duration-200" id="new-password" placeholder="••••••••••••" type="password"/>
+<button class="absolute right-0 top-0 bottom-0 px-4 text-[#616f89] hover:text-primary transition-colors flex items-center justify-center" type="button">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+</div>
+</div>
+<!-- Password Strength Checklist -->
+<div class="bg-background-light dark:bg-gray-800/50 rounded-lg p-4 border border-gray-100 dark:border-gray-700/50">
+<h4 class="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-3">Critères de sécurité</h4>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+<div class="flex items-center gap-3">
+<div class="size-5 rounded-full bg-green-500/10 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-green-600 text-[14px] font-bold">check</span>
+</div>
+<p class="text-[#111318] dark:text-gray-300 text-sm">Minimum 8 caractères</p>
+</div>
+<div class="flex items-center gap-3">
+<div class="size-5 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-gray-400 text-[14px]">remove</span>
+</div>
+<p class="text-[#616f89] dark:text-gray-400 text-sm">Inclure une majuscule</p>
+</div>
+<div class="flex items-center gap-3">
+<div class="size-5 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-gray-400 text-[14px]">remove</span>
+</div>
+<p class="text-[#616f89] dark:text-gray-400 text-sm">Inclure un chiffre</p>
+</div>
+<div class="flex items-center gap-3">
+<div class="size-5 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-gray-400 text-[14px]">remove</span>
+</div>
+<p class="text-[#616f89] dark:text-gray-400 text-sm">Caractère spécial (!@#$%^&amp;*)</p>
+</div>
+</div>
+</div>
+<!-- Password Field 2 -->
+<div class="flex flex-col gap-2">
+<label class="text-[#111318] dark:text-gray-200 text-sm font-semibold leading-normal" for="confirm-password">
+                            Confirmer le Nouveau Mot de Passe
+                        </label>
+<div class="relative flex w-full items-center rounded-lg">
+<input class="form-input flex w-full flex-1 rounded-lg text-[#111318] dark:text-white dark:bg-gray-800 border border-[#dbdfe6] dark:border-gray-600 focus:outline-0 focus:ring-2 focus:ring-primary/20 focus:border-primary h-12 px-4 text-base placeholder:text-gray-400 transition-all duration-200" id="confirm-password" placeholder="••••••••••••" type="password"/>
+<button class="absolute right-0 top-0 bottom-0 px-4 text-[#616f89] hover:text-primary transition-colors flex items-center justify-center" type="button">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-col pt-4 gap-4">
+<button class="flex w-full items-center justify-center rounded-lg bg-primary hover:bg-primary-dark text-white font-medium text-base h-12 px-6 shadow-sm transition-all duration-200 focus:ring-4 focus:ring-primary/20">
+                            Enregistrer le Nouveau Mot de Passe
+                        </button>
+<a class="text-sm text-center text-gray-500 hover:text-primary dark:text-gray-400 dark:hover:text-white transition-colors" href="#">
+                            Annuler et retourner à l'accueil
+                        </a>
+</div>
+</div>
+</div>
+<!-- Success State Hidden (Example of what it would look like) -->
+<!-- This part is visually hidden but structured for the demo as if it could replace the form -->
+<div class="hidden bg-white dark:bg-[#1e2532] rounded-xl shadow-lg border border-green-100 dark:border-green-900 overflow-hidden p-10 text-center">
+<div class="mx-auto bg-green-100 dark:bg-green-900/30 w-20 h-20 rounded-full flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-green-600 dark:text-green-400 text-4xl">check_circle</span>
+</div>
+<h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">Mot de passe réinitialisé !</h3>
+<p class="text-gray-500 dark:text-gray-400 mb-8 max-w-md mx-auto">Votre mot de passe administrateur a été mis à jour avec succès. Vous pouvez maintenant vous connecter avec vos nouveaux identifiants.</p>
+<button class="w-full max-w-xs mx-auto flex items-center justify-center rounded-lg bg-primary hover:bg-primary-dark text-white font-medium text-base h-12 px-6 shadow-sm transition-all duration-200">
+                    Retourner à la page de connexion
+                </button>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-6 text-center text-sm text-gray-400 dark:text-gray-600">
+<p>© 2023 Intranet Entreprise. Tous droits réservés. <span class="mx-2">•</span> Sécurisé par SSL</p>
+</footer>
+</body></html>
