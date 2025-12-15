@@ -1,0 +1,85 @@
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch main
+# Your branch is up to date with 'origin/main'.
+#
+# Changes to be committed:
+#	new file:   projet_formulaire_calendar/Figma_formation_calendar/agenda_des_formations_(formateur/tma)_/code.html
+#	new file:   projet_formulaire_calendar/Figma_formation_calendar/agenda_des_formations_(formateur/tma)_/screen.png
+#	new file:   projet_formulaire_calendar/Figma_formation_calendar/authentification_admin_secondaire_1/code.html
+#	new file:   projet_formulaire_calendar/Figma_formation_calendar/authentification_admin_secondaire_1/screen.png
+#	new file:   projet_formulaire_calendar/Figma_formation_calendar/authentification_admin_secondaire_2/code.html
+#	new file:   projet_formulaire_calendar/Figma_formation_calendar/authentification_admin_secondaire_2/screen.png
+#	new file:   projet_formulaire_calendar/Figma_formation_calendar/calendrier_central_(formateur)_-_gestion/code.html
+#	new file:   projet_formulaire_calendar/Figma_formation_calendar/calendrier_central_(formateur)_-_gestion/screen.png
+#	new file:   projet_formulaire_calendar/Figma_formation_calendar/calendrier_complet_(admin)_/code.html
+#	new file:   projet_formulaire_calendar/Figma_formation_calendar/calendrier_complet_(admin)_/screen.png
+#	new file:   "projet_formulaire_calendar/Figma_formation_calendar/dashboard_demandeur_(r\303\251gions)_/code.html"
+#	new file:   "projet_formulaire_calendar/Figma_formation_calendar/dashboard_demandeur_(r\303\251gions)_/screen.png"
+#	new file:   projet_formulaire_calendar/Figma_formation_calendar/dashboard_formateur_/_planificateur_/code.html
+#	new file:   projet_formulaire_calendar/Figma_formation_calendar/dashboard_formateur_/_planificateur_/screen.png
+#	new file:   projet_formulaire_calendar/Figma_formation_calendar/dashboard_tma_/code.html
+#	new file:   projet_formulaire_calendar/Figma_formation_calendar/dashboard_tma_/screen.png
+#	new file:   projet_formulaire_calendar/Figma_formation_calendar/demande_de_formation__saisie_des_participants/code.html
+#	new file:   projet_formulaire_calendar/Figma_formation_calendar/demande_de_formation__saisie_des_participants/screen.png
+#	new file:   projet_formulaire_calendar/Figma_formation_calendar/demande_de_formation__saisie_du_formulaire_1/code.html
+#	new file:   projet_formulaire_calendar/Figma_formation_calendar/demande_de_formation__saisie_du_formulaire_1/screen.png
+#	new file:   projet_formulaire_calendar/Figma_formation_calendar/demande_de_formation__saisie_du_formulaire_2/code.html
+#	new file:   projet_formulaire_calendar/Figma_formation_calendar/demande_de_formation__saisie_du_formulaire_2/screen.png
+#	new file:   "projet_formulaire_calendar/Figma_formation_calendar/d\303\251tails_bloc_mep_(tma)_/code.html"
+#	new file:   "projet_formulaire_calendar/Figma_formation_calendar/d\303\251tails_bloc_mep_(tma)_/screen.png"
+#	new file:   "projet_formulaire_calendar/Figma_formation_calendar/d\303\251tails_de_la_demande_(demandeur)_/code.html"
+#	new file:   "projet_formulaire_calendar/Figma_formation_calendar/d\303\251tails_de_la_demande_(demandeur)_/screen.png"
+#	new file:   "projet_formulaire_calendar/Figma_formation_calendar/d\303\251tails_formation_valid\303\251e_(formateur)_/code.html"
+#	new file:   "projet_formulaire_calendar/Figma_formation_calendar/d\303\251tails_formation_valid\303\251e_(formateur)_/screen.png"
+#	new file:   projet_formulaire_calendar/Figma_formation_calendar/formulaire_ajout_bloc_mep_(tma)_/code.html
+#	new file:   projet_formulaire_calendar/Figma_formation_calendar/formulaire_ajout_bloc_mep_(tma)_/screen.png
+#	new file:   projet_formulaire_calendar/Figma_formation_calendar/gestion_des_blocs_mep_(tma)_/code.html
+#	new file:   projet_formulaire_calendar/Figma_formation_calendar/gestion_des_blocs_mep_(tma)_/screen.png
+#	new file:   projet_formulaire_calendar/Figma_formation_calendar/mes_demandes_(demandeur)_-_liste/code.html
+#	new file:   projet_formulaire_calendar/Figma_formation_calendar/mes_demandes_(demandeur)_-_liste/screen.png
+#	new file:   "projet_formulaire_calendar/Figma_formation_calendar/modifier_les_r\303\264les_(admin)_-_modal/code.html"
+#	new file:   "projet_formulaire_calendar/Figma_formation_calendar/modifier_les_r\303\264les_(admin)_-_modal/screen.png"
+#	new file:   "projet_formulaire_calendar/Figma_formation_calendar/page_de_s\303\251lection_de_profil_(sso_hybride)_/code.html"
+#	new file:   "projet_formulaire_calendar/Figma_formation_calendar/page_de_s\303\251lection_de_profil_(sso_hybride)_/screen.png"
+#	new file:   projet_formulaire_calendar/Figma_formation_calendar/reporting_global_(admin)__1/code.html
+#	new file:   projet_formulaire_calendar/Figma_formation_calendar/reporting_global_(admin)__1/screen.png
+#	new file:   projet_formulaire_calendar/Figma_formation_calendar/reporting_global_(admin)__2/code.html
+#	new file:   projet_formulaire_calendar/Figma_formation_calendar/reporting_global_(admin)__2/screen.png
+#	new file:   projet_formulaire_calendar/Figma_formation_calendar/reporting_global_(admin)__3/code.html
+#	new file:   projet_formulaire_calendar/Figma_formation_calendar/reporting_global_(admin)__3/screen.png
+#	new file:   "projet_formulaire_calendar/Figma_formation_calendar/r\303\251cup\303\251ration_mdp_(admin)_-_confirmation/code.html"
+#	new file:   "projet_formulaire_calendar/Figma_formation_calendar/r\303\251cup\303\251ration_mdp_(admin)_-_confirmation/screen.png"
+#	new file:   "projet_formulaire_calendar/Figma_formation_calendar/r\303\251cup\303\251ration_mdp_(admin)_-_demande/code.html"
+#	new file:   "projet_formulaire_calendar/Figma_formation_calendar/r\303\251cup\303\251ration_mdp_(admin)_-_demande/screen.png"
+#	new file:   "projet_formulaire_calendar/Figma_formation_calendar/r\303\251initialisation_mdp_(admin)_-_form/code.html"
+#	new file:   "projet_formulaire_calendar/Figma_formation_calendar/r\303\251initialisation_mdp_(admin)_-_form/screen.png"
+#	new file:   "projet_formulaire_calendar/Figma_formation_calendar/saisie_des_pr\303\251sences_(formateur)_/code.html"
+#	new file:   "projet_formulaire_calendar/Figma_formation_calendar/saisie_des_pr\303\251sences_(formateur)_/screen.png"
+#	new file:   projet_formulaire_calendar/Figma_formation_calendar/src/css/style.js
+#	new file:   projet_formulaire_calendar/Figma_formation_calendar/src/index.html
+#	new file:   projet_formulaire_calendar/Figma_formation_calendar/src/js/app.js
+#	new file:   projet_formulaire_calendar/Figma_formation_calendar/src/js/bundle.js
+#	new file:   projet_formulaire_calendar/Figma_formation_calendar/src/js/router.js
+#	new file:   projet_formulaire_calendar/Figma_formation_calendar/src/js/state.js
+#	new file:   projet_formulaire_calendar/Figma_formation_calendar/src/js/views/CalendarView.js
+#	new file:   projet_formulaire_calendar/Figma_formation_calendar/src/js/views/DashboardAdmin.js
+#	new file:   projet_formulaire_calendar/Figma_formation_calendar/src/js/views/DashboardDemandeur.js
+#	new file:   projet_formulaire_calendar/Figma_formation_calendar/src/js/views/DashboardFormateur.js
+#	new file:   projet_formulaire_calendar/Figma_formation_calendar/src/js/views/DashboardTMA.js
+#	new file:   projet_formulaire_calendar/Figma_formation_calendar/src/js/views/RequestForm.js
+#	new file:   projet_formulaire_calendar/Figma_formation_calendar/src/js/views/RoleSelection.js
+#	new file:   projet_formulaire_calendar/Figma_formation_calendar/tableau_de_bord_global_(intranet)_/code.html
+#	new file:   projet_formulaire_calendar/Figma_formation_calendar/tableau_de_bord_global_(intranet)_/screen.png
+#	new file:   "projet_formulaire_calendar/Figma_formation_calendar/\303\251cran_de_chargement_(post-s\303\251lection_r\303\264le)_/code.html"
+#	new file:   "projet_formulaire_calendar/Figma_formation_calendar/\303\251cran_de_chargement_(post-s\303\251lection_r\303\264le)_/screen.png"
+#	new file:   projet_formulaire_calendar/cahier_des_charges/CDCF - Plateforme Digitale de Gestion des Formations v2.2.docx
+#	new file:   projet_formulaire_calendar/cahier_des_charges/CDCF - Plateforme Digitale de Gestion des Formations v2.2.pdf
+#	new file:   projet_formulaire_calendar/cahier_des_charges/DocumentCDCF - Plateforme Digitale de Gestion des Formations v2.1 sans titre.docx
+#	new file:   projet_formulaire_calendar/cahier_des_charges/DocumentCDCF - Plateforme Digitale de Gestion des Formations v2.1 sans titre.pdf
+#	new file:   projet_formulaire_calendar/cahier_des_charges/PDGF - Cahier des Charges.pdf
+#	new file:   projet_formulaire_calendar/cahier_des_charges/cadre_CP_MOA_MOE.pdf
+#	new file:   projet_formulaire_calendar/demande_de_formation_saisie_des_participants (2).zip
+#
